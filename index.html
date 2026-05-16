@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DigiRise India — Digital Growth Agency</title>
+<meta name="theme-color" content="#c8890a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="DigiRise">
+<meta name="application-name" content="DigiRise India">
+<meta name="description" content="India ka Digital Growth Agency">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" id="pwa-manifest">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%23c8890a'/%3E%3Ctext x='90' y='118' text-anchor='middle' font-family='Bricolage Grotesque,Arial,sans-serif' font-size='108' font-weight='800' fill='white'%3ED%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -462,6 +471,103 @@
     .projects-list { gap: 56px; }
   }
 
+
+  /* ===== PWA INSTALL UI ===== */
+  .pwa-install-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(16,12,8,0.45);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    padding:18px;
+    z-index:520;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease;
+  }
+  .pwa-install-overlay.show{opacity:1;pointer-events:auto;}
+  .pwa-install-sheet{
+    width:min(520px,100%);
+    background:#fff;
+    border-radius:28px 28px 18px 18px;
+    box-shadow:0 24px 70px rgba(122,79,10,.24);
+    border:1px solid rgba(200,137,10,.2);
+    padding:16px 18px 20px;
+    transform:translateY(110%);
+    transition:transform .65s cubic-bezier(.22,1.32,.4,1);
+  }
+  .pwa-install-overlay.show .pwa-install-sheet{transform:translateY(0);}
+  .pwa-drag-handle{width:56px;height:6px;border-radius:99px;background:#e9dfd2;margin:0 auto 14px;}
+  .pwa-install-head{display:flex;gap:12px;align-items:center;margin-bottom:14px;}
+  .pwa-app-icon{
+    width:64px;height:64px;border-radius:18px;
+    background:linear-gradient(145deg,var(--gold-light),var(--gold));
+    color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-size:36px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px rgba(200,137,10,.34);
+    flex-shrink:0;
+  }
+  .pwa-install-title{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:800;color:var(--text);line-height:1.1;}
+  .pwa-install-url{font-size:13px;color:var(--muted);margin-top:4px;font-weight:600;}
+  .pwa-feature-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:8px 0 16px;}
+  .pwa-feature-list li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text);line-height:1.45;}
+  .pwa-feature-emoji{
+    width:28px;height:28px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    font-size:15px;flex-shrink:0;
+  }
+  .pwa-feature-1{background:rgba(250,204,21,.2);}
+  .pwa-feature-2{background:rgba(59,130,246,.18);}
+  .pwa-feature-3{background:rgba(16,185,129,.18);}
+  .pwa-feature-4{background:rgba(124,58,237,.16);}
+  .pwa-install-btn{
+    width:100%;border:none;cursor:pointer;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:#fff;padding:14px 18px;border-radius:999px;
+    font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:800;
+    box-shadow:0 12px 26px rgba(200,137,10,.35);
+  }
+  .pwa-install-btn:hover{filter:brightness(.97);}
+  .pwa-later-btn{
+    width:100%;background:transparent;border:none;cursor:pointer;
+    color:var(--muted);font-weight:700;padding:12px 10px 2px;font-size:14px;
+  }
+
+  .pwa-ios-banner{
+    position:fixed;left:16px;right:16px;bottom:24px;z-index:510;
+    background:#fff;border:1.5px solid rgba(200,137,10,.45);border-radius:18px;
+    box-shadow:0 14px 35px rgba(122,79,10,.18);
+    padding:12px 14px;
+    display:none;align-items:flex-start;gap:10px;
+  }
+  .pwa-ios-banner.show{display:flex;}
+  .pwa-ios-text{font-size:13px;color:var(--text);line-height:1.45;}
+  .pwa-ios-text strong{font-family:'Bricolage Grotesque',sans-serif;font-size:14px;display:block;margin-bottom:2px;}
+  .pwa-ios-close{margin-left:auto;border:none;background:none;color:var(--muted);font-size:20px;line-height:1;cursor:pointer;padding:0 4px;}
+
+  .pwa-install-fab{
+    position:fixed;left:18px;bottom:24px;z-index:500;
+    border:none;cursor:pointer;
+    background:linear-gradient(135deg,var(--gold-light),var(--gold));
+    color:#fff;padding:12px 18px;border-radius:999px;
+    font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:800;
+    box-shadow:0 8px 20px rgba(200,137,10,.32);
+    display:none;align-items:center;gap:6px;
+    animation:pwaFabPulse 3s infinite;
+  }
+  .pwa-install-fab.show{display:flex;}
+  @keyframes pwaFabPulse{
+    0%,100%{box-shadow:0 8px 20px rgba(200,137,10,.32),0 0 0 0 rgba(200,137,10,.35);}
+    50%{box-shadow:0 8px 20px rgba(200,137,10,.32),0 0 0 12px rgba(200,137,10,0);}
+  }
+
+  @media(max-width:768px){
+    .pwa-ios-banner{bottom:84px;}
+    .pwa-install-fab{bottom:148px;left:14px;}
+  }
+
 </style>
 </head>
 <body>
@@ -839,6 +945,42 @@
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
+
+<!-- PWA INSTALL POPUP -->
+<div class="pwa-install-overlay" id="pwaInstallOverlay">
+  <div class="pwa-install-sheet" role="dialog" aria-modal="true" aria-labelledby="pwaInstallTitle">
+    <div class="pwa-drag-handle"></div>
+    <div class="pwa-install-head">
+      <div class="pwa-app-icon">D</div>
+      <div>
+        <div class="pwa-install-title" id="pwaInstallTitle">DigiRise India</div>
+        <div class="pwa-install-url" id="pwaInstallUrl"></div>
+      </div>
+    </div>
+    <ul class="pwa-feature-list">
+      <li><span class="pwa-feature-emoji pwa-feature-1">⚡</span><span>Instant access — home screen pe app jaisa</span></li>
+      <li><span class="pwa-feature-emoji pwa-feature-2">📶</span><span>Offline bhi kaam karta hai</span></li>
+      <li><span class="pwa-feature-emoji pwa-feature-3">🔔</span><span>Zero storage — koi extra space nahi lagega</span></li>
+      <li><span class="pwa-feature-emoji pwa-feature-4">🔒</span><span>100% secure</span></li>
+    </ul>
+    <button class="pwa-install-btn" id="pwaInstallBtn">📲 Install DigiRise App — Free</button>
+    <button class="pwa-later-btn" id="pwaInstallLaterBtn">Abhi nahi, baad mein</button>
+  </div>
+</div>
+
+<!-- IOS INSTALL BANNER -->
+<div class="pwa-ios-banner" id="pwaIosBanner">
+  <div class="pwa-app-icon" style="width:46px;height:46px;border-radius:14px;font-size:24px;">D</div>
+  <div class="pwa-ios-text">
+    <strong>Install DigiRise App (iPhone/iPad)</strong>
+    Tap Share 📤 → Add to Home Screen ➕
+  </div>
+  <button class="pwa-ios-close" id="pwaIosCloseBtn" aria-label="Close iOS install banner">✕</button>
+</div>
+
+<!-- INSTALL FAB -->
+<button class="pwa-install-fab" id="pwaInstallFab">📲 Install App</button>
+
 <script>
 // ============ DATA ============
 const industries = [
@@ -1143,6 +1285,131 @@ window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');
   nav.style.background = window.scrollY > 60 ? 'rgba(247,243,238,0.98)' : 'rgba(247,243,238,0.92)';
 });
+
+// ============ PWA SETUP ============
+const pwaIconDataUri = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='120' fill='%23c8890a'/%3E%3Ctext x='256' y='345' text-anchor='middle' font-family='Bricolage Grotesque,Arial,sans-serif' font-size='290' font-weight='800' fill='white'%3ED%3C/text%3E%3C/svg%3E";
+const pwaManifest = {
+  name: 'DigiRise India',
+  short_name: 'DigiRise',
+  start_url: './',
+  display: 'standalone',
+  background_color: '#f7f3ee',
+  theme_color: '#c8890a',
+  orientation: 'portrait-primary',
+  icons: [{
+    src: pwaIconDataUri,
+    sizes: '512x512',
+    type: 'image/svg+xml',
+    purpose: 'any maskable'
+  }]
+};
+const pwaManifestBlob = new Blob([JSON.stringify(pwaManifest)], { type: 'application/json' });
+const pwaManifestUrl = URL.createObjectURL(pwaManifestBlob);
+const pwaManifestLink = document.getElementById('pwa-manifest');
+if (pwaManifestLink) pwaManifestLink.href = pwaManifestUrl;
+
+if ('serviceWorker' in navigator) {
+  const swCode = `
+    const CACHE_NAME = 'digirise-v1';
+    self.addEventListener('install', (event) => {
+      event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(['./'])));
+      self.skipWaiting();
+    });
+    self.addEventListener('fetch', (event) => {
+      if (event.request.method !== 'GET') return;
+      event.respondWith(caches.match(event.request).then((cached) => cached || fetch(event.request)));
+    });
+  `;
+  const swBlob = new Blob([swCode], { type: 'text/javascript' });
+  const swUrl = URL.createObjectURL(swBlob);
+  navigator.serviceWorker.register(swUrl).catch(() => {});
+}
+
+const pwaInstallOverlay = document.getElementById('pwaInstallOverlay');
+const pwaInstallBtn = document.getElementById('pwaInstallBtn');
+const pwaInstallLaterBtn = document.getElementById('pwaInstallLaterBtn');
+const pwaInstallFab = document.getElementById('pwaInstallFab');
+const pwaIosBanner = document.getElementById('pwaIosBanner');
+const pwaIosCloseBtn = document.getElementById('pwaIosCloseBtn');
+const pwaInstallUrl = document.getElementById('pwaInstallUrl');
+if (pwaInstallUrl) pwaInstallUrl.textContent = window.location.host || window.location.pathname;
+
+const isIOS = /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+let deferredPrompt = null;
+
+function showInstallPopup() {
+  pwaInstallOverlay.classList.add('show');
+}
+
+function closeInstallPopup(setDismissed = false) {
+  pwaInstallOverlay.classList.remove('show');
+  if (setDismissed) localStorage.setItem('pwa-dismissed', '1');
+}
+
+function showInstallFab() {
+  pwaInstallFab.classList.add('show');
+}
+
+function hideInstallFab() {
+  pwaInstallFab.classList.remove('show');
+}
+
+function showIosBanner() {
+  pwaIosBanner.classList.add('show');
+}
+
+function hideIosBanner(setDismissed = false) {
+  pwaIosBanner.classList.remove('show');
+  if (setDismissed) localStorage.setItem('pwa-ios-dismissed', '1');
+}
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  showInstallFab();
+});
+
+window.addEventListener('appinstalled', () => {
+  hideInstallFab();
+  closeInstallPopup();
+  showToast('✅ DigiRise App install ho gaya!');
+});
+
+pwaInstallBtn.addEventListener('click', async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    try { await deferredPrompt.userChoice; } catch(_) {}
+    deferredPrompt = null;
+    return;
+  }
+
+  if (isIOS) {
+    closeInstallPopup();
+    showIosBanner();
+    showInstallFab();
+    return;
+  }
+
+  showToast('Browser menu mein "Add to Home Screen" click karo! 📲');
+});
+
+pwaInstallLaterBtn.addEventListener('click', () => closeInstallPopup(true));
+pwaInstallOverlay.addEventListener('click', (e) => {
+  if (e.target === pwaInstallOverlay) closeInstallPopup(true);
+});
+pwaInstallFab.addEventListener('click', () => showInstallPopup());
+pwaIosCloseBtn.addEventListener('click', () => hideIosBanner(true));
+
+if (isIOS) showInstallFab();
+
+if (isIOS && localStorage.getItem('pwa-ios-dismissed') !== '1') {
+  setTimeout(() => showIosBanner(), 5000);
+}
+
+if (localStorage.getItem('pwa-dismissed') !== '1') {
+  setTimeout(() => showInstallPopup(), 4000);
+}
+
 </script>
 </body>
 </html>
