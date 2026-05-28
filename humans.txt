@@ -1,0 +1,11 @@
+/* TEAM */
+Founder: Satyam Kumar (Satzzxzxx)
+Site: DigiRise India
+GitHub: https://github.com/S2zxx0zxx
+
+/* THANKS */
+Clients, collaborators, and open web contributors.
+
+/* SITE */
+Standards: HTML5, CSS3, JavaScript
+Hosting: Vercel

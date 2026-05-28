@@ -62,12 +62,18 @@
 ```bash
 📁 DigiRise-India/
 │
-├── 📄 agency-website-v6.html     # Main website — sab kuch ek file mein
-│   ├── 🎨 <style>                # 500+ lines — responsive CSS, animations
-│   ├── 🏗️ <body>                 # 12 sections — hero to footer
-│   └── ⚙️ <script>              # Dynamic rendering — JS se sab inject hota hai
-│
-└── 📄 README.md                  # Yahi file hai bhai 😄
+├── 📄 index.html                  # Main website (single-page)
+├── 📄 404.html                    # Custom not-found page
+├── 📄 robots.txt                  # Search crawler rules
+├── 📄 sitemap.xml                 # SEO URL map
+├── 📄 manifest.json               # PWA manifest
+├── 🖼️ favicon.ico / og-image.png  # Social + browser assets
+├── 🤖 llms.txt                    # AI-readable brand context
+├── 🔐 security.txt                # Responsible disclosure contact
+├── 👥 humans.txt                  # Team + stack metadata
+├── 📁 blog/                        # Blog index + articles + blogs.json
+├── 📁 .github/                     # CODEOWNERS + validation workflow
+└── 📄 README.md                   # Project documentation
 ```
 
 ---
