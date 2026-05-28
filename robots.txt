@@ -11,7 +11,6 @@ Disallow: /node_modules/
 
 # Sitemap location
 Sitemap: https://digi-rise-india.vercel.app/sitemap.xml
-Host: digi-rise-india.vercel.app
 
 # Crawl delay for bots (not Google — Google ignores this)
 Crawl-delay: 1

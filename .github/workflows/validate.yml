@@ -32,6 +32,7 @@ jobs:
             ".gitignore"
             ".github/workflows/validate.yml"
             ".github/CODEOWNERS"
+            "blog/blogs.json"
           )
           for f in "${required_files[@]}"; do
             test -f "$f" || { echo "Missing required file: $f"; exit 1; }
