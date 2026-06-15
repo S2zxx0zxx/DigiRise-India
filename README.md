@@ -237,12 +237,8 @@ Jewellery & Luxury      •  B2B & Professional Svcs  •  Fashion & Clothing Br
 
 ---
 
-## 🏗️ Built With Claude AI Agent
-
-> Yeh website **Claude AI Agent** ke saath banai gayi hai — Anthropic ka AI jo complex multi-step tasks kar sakta hai. Single prompt se poora website — HTML, CSS, JS, content, data — sab generated aur iteratively refined.
-
 ```
-AI Agent  →  Claude Sonnet (Anthropic)
+Shit 💔 by   →  Satzzxzxx • Developer • Tester • Repeat 
 Workflow  →  Prompt → Generate → Review → Iterate → Ship 🚀
 ```
 
