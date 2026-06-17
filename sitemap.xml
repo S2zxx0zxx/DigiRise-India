@@ -1,47 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<!--  Main Pages  -->
-<url>
-<loc>https://digi-rise-india.vercel.app/</loc>
-<lastmod>2026-06-17</lastmod>
-<changefreq>weekly</changefreq>
-<priority>1.0</priority>
-</url>
-<!--  Blog Index  -->
-<url>
-<loc>https://digi-rise-india.vercel.app/blog/</loc>
-<lastmod>2026-06-17</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<!--  Blog Articles  -->
-<url>
-<loc>https://digi-rise-india.vercel.app/blog/google-my-business-setup-2025.html</loc>
-<lastmod>2026-06-17</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://digi-rise-india.vercel.app/blog/website-cost-india-2025.html</loc>
-<lastmod>2026-06-17</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://digi-rise-india.vercel.app/blog/whatsapp-business-customers-2026.html</loc>
-<lastmod>2026-06-17</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://digi-rise-india.vercel.app/blog/instagram-reels-business-2026.html</loc>
-<lastmod>2026-06-17</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://digi-rise-india.vercel.app/blog/digital-marketing-agency-vs-khud-2026.html</loc>
-<lastmod>2026-06-17</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
+
+  <url>
+    <loc>https://digi-rise-india.vercel.app/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://digi-rise-india.vercel.app/blog/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://digi-rise-india.vercel.app/blog/google-my-business-setup-2025.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://digi-rise-india.vercel.app/blog/website-cost-india-2025.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://digi-rise-india.vercel.app/blog/whatsapp-business-customers-2026.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://digi-rise-india.vercel.app/blog/instagram-reels-business-2026.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://digi-rise-india.vercel.app/blog/digital-marketing-agency-vs-khud-2026.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
