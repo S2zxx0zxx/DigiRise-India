@@ -10,11 +10,7 @@
       "date": "28 May 2025",
       "readTime": "10 min read",
       "url": "/blog/google-my-business-setup-2025.html",
-      "tags": [
-        "Google My Business",
-        "Local SEO",
-        "Free Tools"
-      ]
+      "tags": ["Google My Business", "Local SEO", "Free Tools"]
     },
     {
       "id": "website-cost-2025",
@@ -26,11 +22,43 @@
       "date": "28 May 2025",
       "readTime": "8 min read",
       "url": "/blog/website-cost-india-2025.html",
-      "tags": [
-        "Website Cost",
-        "Small Business",
-        "India Pricing"
-      ]
+      "tags": ["Website Cost", "Small Business", "India Pricing"]
+    },
+    {
+      "id": "whatsapp-business-customers-2026",
+      "slug": "whatsapp-business-customers-2026",
+      "title": "WhatsApp Business Se Customers Kaise Banao?",
+      "subtitle": "30 min mein professional setup — auto-reply, catalog, broadcast sab free. Indian small business ke liye proven strategy.",
+      "category": "WhatsApp Marketing",
+      "categoryColor": "#25D366",
+      "date": "17 Jun 2026",
+      "readTime": "12 min read",
+      "url": "/blog/whatsapp-business-customers-2026.html",
+      "tags": ["WhatsApp Business", "Small Business", "India 2026"]
+    },
+    {
+      "id": "instagram-reels-business-2026",
+      "slug": "instagram-reels-business-2026",
+      "title": "Instagram Reels Se Business Kaise Badhao?",
+      "subtitle": "Zero budget mein viral strategy — hook formula, content pillars, posting schedule. Indian small business ke liye proven tips.",
+      "category": "Instagram Marketing",
+      "categoryColor": "#E1306C",
+      "date": "17 Jun 2026",
+      "readTime": "11 min read",
+      "url": "/blog/instagram-reels-business-2026.html",
+      "tags": ["Instagram Reels", "Zero Budget", "India 2026"]
+    },
+    {
+      "id": "digital-marketing-agency-vs-khud-2026",
+      "slug": "digital-marketing-agency-vs-khud-2026",
+      "title": "Digital Marketing Agency Hire Karein Ya Khud Karein?",
+      "subtitle": "Agency ko ₹25,000 dein ya Canva se khud karein? Honest comparison — cost, time, results. Indian small business ke liye sahi decision.",
+      "category": "Business Strategy",
+      "categoryColor": "#7c3aed",
+      "date": "17 Jun 2026",
+      "readTime": "12 min read",
+      "url": "/blog/digital-marketing-agency-vs-khud-2026.html",
+      "tags": ["Agency vs DIY", "Business Strategy", "India 2026"]
     }
   ]
 }
