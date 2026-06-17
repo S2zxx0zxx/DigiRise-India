@@ -28,7 +28,6 @@
 ```
 🎯 Target Audience  →  Indian Small Business Owners (Kirana to Clinics to D2C brands)
 🛠️ Tech Stack       →  Pure HTML5 + CSS3 + Vanilla JS
-📦 Size             →  Single .html file (4200+ lines, embedded SVGs + JSON-LD)
 🌐 Deployment       →  Vercel (digi-rise-india.vercel.app)
 📱 Responsive       →  Mobile-first, real iPhone-style mockups, dark mode supported
 ```
@@ -164,23 +163,30 @@ Ek file — browser mein open karo aur run karo. 🔥
 
 ## ⚙️ How to Run
 
+## 🔍 Verification
+
+Run these commands after deployment to verify all fixes:
+
 ```bash
-# Option 1 — Direct open (fastest)
-Just open index.html in any browser. Done. ✅
+# Critical
+grep -c 'id="ai-tools"' index.html        # → 1
+grep -c 'api.anthropic.com' index.html    # → 0
+grep -c 'MODIJEE' 404.html               # → 0
 
-# Option 2 — Vercel deploy (current)
-1. Push to GitHub
-2. Import repo in Vercel
-3. Framework preset: Other / Static
-4. Live at: https://digi-rise-india.vercel.app
+# SEO
+grep -c '250+' index.html                 # → 0
+grep -c 'Certified Partner' index.html    # → 0
+grep -c '2026-06-17' sitemap.xml          # → 4
+grep 'geo.region' blog/website-cost*      # → IN-WB
+grep -c 'hreflang' index.html            # → 3
 
-# Option 3 — Local server
-npx serve .
-# or
-python3 -m http.server 8080
-```
+# Prices
+grep '"price": "5999"' index.html         # → 0
+grep '"price": "7999"' index.html         # → 1 ✓
 
----
+# JS Safety
+grep -c 'if(!el) return' index.html       # → 8+
+grep -c 'DOMContentLoaded' index.html     # → 1
 
 ## 🎨 Color Palette
 
