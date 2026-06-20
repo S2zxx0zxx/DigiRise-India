@@ -1,0 +1,101 @@
+{
+  "blogs": [
+    {
+      "id": "digirise-india-8-software-1-agency-2026",
+      "slug": "digirise-india-8-software-1-agency-2026",
+      "title": "DigiRise India — 8 Software, 1 Agency",
+      "subtitle": "After Effects, Blender 3D, Illustrator, Canva, Meta Ads, SEO, Web Dev — sab ek agency mein, in-house. Real client results ke saath complete breakdown.",
+      "category": "Agency Capabilities",
+      "categoryColor": "#833ab4",
+      "date": "20 Jun 2026",
+      "readTime": "18 min read",
+      "url": "/blog/digirise-india-8-software-1-agency-2026.html",
+      "tags": ["DigiRise India", "Multi-Skill Agency", "Real Results", "India 2026"],
+      "featured": true
+    },
+    {
+      "id": "whatsapp-se-online-business-kaise-shuru-karein-2026",
+      "slug": "whatsapp-se-online-business-kaise-shuru-karein-2026",
+      "title": "WhatsApp Se Online Business Kaise Shuru Karein?",
+      "subtitle": "Zero investment se ₹30,000-₹1 lakh/month — 12 business ideas, complete setup, templates, 30-day roadmap.",
+      "category": "Business Growth",
+      "categoryColor": "#25D366",
+      "date": "19 Jun 2026",
+      "readTime": "18 min read",
+      "url": "/blog/whatsapp-se-online-business-kaise-shuru-karein-2026.html",
+      "tags": ["WhatsApp Business", "Zero Investment", "Online Business", "India 2026"]
+    },
+    {
+      "id": "meta-ads-kaise-chalayein-2026",
+      "slug": "meta-ads-kaise-chalayein-2026",
+      "title": "Meta Ads Kaise Chalayein? 2026 Complete Guide",
+      "subtitle": "₹300/day se shuru karke 3x ROI — Indian small business ke liye complete Facebook & Instagram Ads guide. Real client data.",
+      "category": "Meta Ads",
+      "categoryColor": "#1d4ed8",
+      "date": "19 Jun 2026",
+      "readTime": "16 min read",
+      "url": "/blog/meta-ads-kaise-chalayein-2026.html",
+      "tags": ["Meta Ads", "Facebook Ads", "Instagram Ads", "India 2026"]
+    },
+    {
+      "id": "canva-se-professional-posts-2026",
+      "slug": "canva-se-professional-posts-2026",
+      "title": "Canva Se Professional Posts Kaise Banayein?",
+      "subtitle": "Free mein Instagram, Facebook, WhatsApp ke liye professional posts — zero design experience chahiye. Step-by-step guide 2026.",
+      "category": "Design & Content",
+      "categoryColor": "#7c3aed",
+      "date": "18 Jun 2026",
+      "readTime": "12 min read",
+      "url": "/blog/canva-se-professional-posts-2026.html",
+      "tags": ["Canva", "Social Media Design", "Free Tools", "India 2026"]
+    },
+    {
+      "id": "digital-marketing-agency-vs-khud-2026",
+      "slug": "digital-marketing-agency-vs-khud-2026",
+      "title": "Digital Marketing Agency Hire Karein Ya Khud Karein?",
+      "subtitle": "Agency ko ₹25,000 dein ya Canva se khud karein? Honest comparison — cost, time, results. Indian small business ke liye sahi decision.",
+      "category": "Business Strategy",
+      "categoryColor": "#7c3aed",
+      "date": "17 Jun 2026",
+      "readTime": "12 min read",
+      "url": "/blog/digital-marketing-agency-vs-khud-2026.html",
+      "tags": ["Agency vs DIY", "Business Strategy", "India 2026"]
+    },
+    {
+      "id": "whatsapp-business-customers-2026",
+      "slug": "whatsapp-business-customers-2026",
+      "title": "WhatsApp Business Se Customers Kaise Banao?",
+      "subtitle": "30 min mein professional setup — auto-reply, catalog, broadcast sab free. Indian small business ke liye proven strategy.",
+      "category": "WhatsApp Marketing",
+      "categoryColor": "#25D366",
+      "date": "17 Jun 2026",
+      "readTime": "12 min read",
+      "url": "/blog/whatsapp-business-customers-2026.html",
+      "tags": ["WhatsApp Business", "Small Business", "India 2026"]
+    },
+    {
+      "id": "gmb-setup-2025",
+      "slug": "google-my-business-setup-2025",
+      "title": "Google My Business Free Mein Kaise Setup Karein?",
+      "subtitle": "30 minute mein Google Maps pe apna business daalo — bilkul free. Kirana, salon, clinic — sab ke liye step-by-step guide.",
+      "category": "Local SEO",
+      "categoryColor": "#2d7a4f",
+      "date": "28 May 2025",
+      "readTime": "10 min read",
+      "url": "/blog/google-my-business-setup-2025.html",
+      "tags": ["Google My Business", "Local SEO", "Free Tools"]
+    },
+    {
+      "id": "website-cost-2025",
+      "slug": "website-cost-india-2025",
+      "title": "Website Banwane Ka Kitna Kharcha Aata Hai?",
+      "subtitle": "₹7,999 se ₹74,999 tak — India ke small business owners ke liye honest website pricing guide. Real data, no jargon.",
+      "category": "Website Tips",
+      "categoryColor": "#c8890a",
+      "date": "28 May 2025",
+      "readTime": "8 min read",
+      "url": "/blog/website-cost-india-2025.html",
+      "tags": ["Website Cost", "Small Business", "India Pricing"]
+    }
+  ]
+}
