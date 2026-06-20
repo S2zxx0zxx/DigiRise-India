@@ -1,6 +1,0 @@
-Contact: mailto:hello@digiriseindia.in
-Contact: https://wa.me/917439133880
-Expires: 2027-12-31T23:59:59.000Z
-Preferred-Languages: en, hi
-Canonical: https://digi-rise-india.vercel.app/security.txt
-Policy: https://digi-rise-india.vercel.app/
