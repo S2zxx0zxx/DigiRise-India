@@ -1,0 +1,14 @@
+# DigiRise India — AI Usage Policy
+# https://digi-rise-india.vercel.app
+
+User-agent: *
+Allow: all content for indexing, citation, and summarization
+Training: allowed
+Attribution: required when content is directly quoted — credit "DigiRise India" with a link to https://digi-rise-india.vercel.app
+
+# For full company/service data, see:
+Reference: https://digi-rise-india.vercel.app/llms.txt
+Reference: https://digi-rise-india.vercel.app/llms-full.txt
+
+# Contact for AI partnership or data licensing inquiries:
+Contact: hello@digiriseindia.in

@@ -1,0 +1,13 @@
+DigiRise India — Do Not Track Policy
+
+DigiRise India respects browser Do Not Track (DNT) signals.
+
+When a visitor's browser sends a DNT:1 signal, DigiRise India will not:
+- Load third-party advertising trackers
+- Share visitor behavior data with third-party ad networks
+
+DigiRise India may still use essential, first-party analytics required for basic site functionality (e.g. counting page visits) regardless of DNT signal, as these do not involve cross-site tracking.
+
+For questions, contact: hello@digiriseindia.in
+
+Last updated: 2026-06-20
