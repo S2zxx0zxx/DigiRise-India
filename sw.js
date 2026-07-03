@@ -5,17 +5,17 @@ const CACHE_NAME = 'digirise-india-v2';
 const OFFLINE_URL = '/404.html';
 
 const PRECACHE_ASSETS = [
-  '/nextgen.css',
-  '/nextgen.js',
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/favicon.ico',
-  '/icon-192.png',
-  '/icon-512.png',
-  '/og-image.png',
-  '/blog/',
-  '/blog/index.html'
+  './nextgen.css',
+  './nextgen.js',
+  './',
+  './index.html',
+  './manifest.json',
+  './favicon.ico',
+  './icon-192.png',
+  './icon-512.png',
+  './og-image.png',
+  './blog/',
+  './blog/index.html'
 ];
 
 self.addEventListener('install', (event) => {

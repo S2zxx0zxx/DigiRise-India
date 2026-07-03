@@ -24,7 +24,7 @@ for (const file of allFiles) {
     let content = fs.readFileSync(file, 'utf8');
     let originalContent = content;
 
-    // 1. Fix absolute paths in HTML tags (e.g. href="/manifest.json" -> href="manifest.json")
+    // 1. Fix absolute paths in HTML tags (e.g. href="manifest.json" -> href="manifest.json")
     const absoluteReplacements = [
         'manifest.json',
         'favicon.ico',
@@ -46,7 +46,7 @@ for (const file of allFiles) {
     content = content.replace(/(href|src)="\/assets\//g, '$1="assets/');
     content = content.replace(/url\(['"]?\/assets\//g, 'url(\'assets/');
 
-    // 3. Fix missing folder for posters (if poster="reel1-poster.jpg" instead of "assets/reels/...")
+    // 3. Fix missing folder for posters (if poster="assets/reels/reel1-poster.jpg" instead of "assets/reels/...")
     content = content.replace(/poster="reel(\d+)-poster\.jpg"/g, 'poster="assets/reels/reel$1-poster.jpg"');
     
     // 4. Fix sw.js specific absolute paths
