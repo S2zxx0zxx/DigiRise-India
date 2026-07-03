@@ -1,0 +1,126 @@
+name: Validate Static Site
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify required files exist
+        run: |
+          set -e
+          required_files=(
+            "index.html"
+            "404.html"
+            "robots.txt"
+            "manifest.json"
+            "favicon.ico"
+            "og-image.png"
+            "llms.txt"
+            "security.txt"
+            "humans.txt"
+            "README.md"
+            ".gitignore"
+            ".github/workflows/validate.yml"
+            ".github/CODEOWNERS"
+            "blog/blogs.json"
+          )
+          for f in "${required_files[@]}"; do
+            test -f "$f" || { echo "Missing required file: $f"; exit 1; }
+          done
+
+      - name: Validate JSON files
+        run: |
+          python -m json.tool manifest.json > /dev/null
+          python -m json.tool blog/blogs.json > /dev/null
+
+      - name: Check required URLs in robots.txt
+        run: |
+          grep -q "Sitemap:" robots.txt
+
+      - name: Warn if sitemap lastmod dates are very old
+        run: |
+          python3 -c "
+          import re
+          from datetime import datetime, timedelta
+
+          with open('sitemap.xml') as f:
+              content = f.read()
+
+          dates = re.findall(r'<lastmod>(.*?)</lastmod>', content)
+          stale_cutoff = datetime.now() - timedelta(days=180)
+          stale = [d for d in dates if datetime.strptime(d, '%Y-%m-%d') < stale_cutoff]
+
+          if stale:
+              print(f'::warning::{len(stale)} sitemap.xml entries have lastmod dates older than 180 days. Consider reviewing.')
+          else:
+              print('Sitemap lastmod dates look current. ✓')
+          "
+        continue-on-error: true
+
+  check-blog-consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify every blogs.json entry has a real HTML file
+        run: |
+          set -e
+          python3 -c "
+          import json, os, sys
+
+          with open('blog/blogs.json') as f:
+              data = json.load(f)
+
+          missing = []
+          for blog in data['blogs']:
+              slug = blog['slug']
+              path = f'blog/{slug}.html'
+              if not os.path.isfile(path):
+                  missing.append(path)
+
+          if missing:
+              print('Missing blog HTML files referenced in blogs.json:')
+              for m in missing:
+                  print(f'  - {m}')
+              sys.exit(1)
+          else:
+              print('All blogs.json entries have matching HTML files. ✓')
+          "
+
+      - name: Verify every sitemap.xml blog URL has a real HTML file
+        run: |
+          set -e
+          python3 -c "
+          import re, os, sys
+
+          with open('sitemap.xml') as f:
+              content = f.read()
+
+          urls = re.findall(r'<loc>(.*?)</loc>', content)
+          missing = []
+          for url in urls:
+              if '/blog/' in url and url.endswith('.html'):
+                  filename = url.split('/blog/')[-1]
+                  path = f'blog/{filename}'
+                  if not os.path.isfile(path):
+                      missing.append(path)
+
+          if missing:
+              print('Missing blog HTML files referenced in sitemap.xml:')
+              for m in missing:
+                  print(f'  - {m}')
+              sys.exit(1)
+          else:
+              print('All sitemap.xml blog URLs have matching HTML files. ✓')
+          "

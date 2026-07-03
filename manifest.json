@@ -1,0 +1,42 @@
+{
+  "name": "DigiRise India",
+  "short_name": "DigiRise",
+  "description": "DigiRise India — Digital Marketing Agency serving India, US & UK. Meta Ads, SEO, Website Design & Lead Generation.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f3ee",
+  "theme_color": "#c8890a",
+  "orientation": "portrait-primary",
+  "lang": "en-IN",
+  "categories": ["business", "marketing"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Free Audit",
+      "short_name": "Audit",
+      "description": "Get free digital audit worth ₹3,499",
+      "url": "/#audit",
+      "icons": [{"src": "/icon-192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Packages",
+      "short_name": "Packages",
+      "description": "View our pricing packages — India, UK & US",
+      "url": "/#packages",
+      "icons": [{"src": "/icon-192.png", "sizes": "192x192"}]
+    }
+  ]
+}
