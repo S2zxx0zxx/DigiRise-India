@@ -1418,12 +1418,17 @@ footer{background:var(--bg2);border-top:1px solid var(--border2);padding:56px 5%
 @media(max-width:768px){
   .nav-links,.nav-cta{display:none;}
   .hamburger{display:flex;}
-  .hero{padding:82px 4% 48px;}
-  .hero h1{font-size:clamp(30px,8.5vw,44px);letter-spacing:-1.2px;}
+  .hero{padding:82px 4% 48px; overflow-x: hidden;}
+  .hero-content { width: 100%; }
+  .hero * { max-width: 100%; box-sizing: border-box; overflow-wrap: break-word; }
+  .hero h1, .hero-sub, .hero-btns, .hero-ticker, .stat-item { white-space: normal !important; }
+  .hero h1{font-size:clamp(30px,8.5vw,44px);letter-spacing:-1.2px; margin-bottom:12px;}
+  .hero-sub{margin-bottom: 24px;}
+  .hero-pill{margin-bottom: 20px;}
   .hero-btns{flex-direction:column;gap:10px;}
   .btn-primary,.btn-secondary{width:100%;justify-content:center;padding:13px 18px;font-size:13px;}
   /* hero stats — keep 2x2 grid, just tighten padding */
-  .stat-item{padding:14px 16px;}
+  .stat-item{padding:14px 16px; min-width: 0;}
   .stat-item .num{font-size:22px;}
   .audit-banner{flex-direction:column;text-align:center;padding:20px 16px;}
   .audit-banner .btn-primary{width:100%;justify-content:center;}

@@ -68,7 +68,8 @@
       });
     }
 
-    // logo scroll-progress ring
+    // logo scroll-progress ring (Disabled to fix Bug 3: spinning circle glitch on scroll)
+    /*
     var logo = nav.querySelector('.logo, [class*="logo"]');
     if (logo && logo.style) {
       logo.style.position = 'relative';
@@ -86,6 +87,7 @@
         circ.style.strokeDashoffset = C - C * p;
       }, { passive: true });
     }
+    */
   }
 
   /* ───────────────────────────────────────────
