@@ -84,14 +84,14 @@ if(nav){
   }
   
   // Update the island chip to be a live IST clock instead of slots
-  chip.style.cssText = 'background: linear-gradient(145deg, #1f1a14, #0a0806); border: 1px solid rgba(218,165,32,0.4); box-shadow: 0 4px 12px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.05), 0 0 10px rgba(184,123,10,0.2); border-radius: 100px;';
+  chip.style.cssText = 'background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; padding: 6px 14px; display: flex; align-items: center; justify-content: center; margin-left: auto;';
   
   function updateClock(){
     var timeStr = getISTTime();
-    // Use a pulsing dot and smaller "IST" text
-    isTxt.innerHTML = '<span style="color:var(--gold); margin-right:4px; display:inline-block; animation:pulse 2s infinite;">&#9679;</span>' 
-      + '<span style="font-weight:700; letter-spacing:0.5px; color:#f0ebe0;">' + timeStr + '</span>'
-      + '<span style="font-size:9px; color:var(--muted); margin-left:4px; font-weight:800;">IST</span>';
+    // Monochrome flat design
+    isTxt.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px; flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>' 
+      + '<span style="font-weight:600; letter-spacing:0.2px; color:#fff; font-size:11.5px; display:flex; align-items:baseline; line-height:1;">' + timeStr 
+      + '<span style="font-size:9px; color:rgba(255,255,255,0.6); margin-left:4px; font-weight:700;">IST</span></span>';
   }
   
   setInterval(function(){

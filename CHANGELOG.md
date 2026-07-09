@@ -4,6 +4,12 @@ All notable changes to the DigiRise India website are documented here.
 
 ## [Unreleased]
 
+## v3.2 — UI/UX Polish (July 2026)
+- 🧹 Removed redundant client accordion below phone mockup, added tap-to-cycle to the mockup itself.
+- 📱 Fixed mobile pricing section blank bug by adding error boundaries to initialization sequence.
+- ⌚ Redesigned header live clock to a clean, flat monochrome pill style.
+- 🕹️ Upgraded premium floating action bar (FAB) with circular icons, SVG theme toggle, and a VT323 LED brand display.
+
 ## [7.1] - 2026-06-20
 ### Added
 - RSS feed (`feed.xml`) for blog content syndication
