@@ -8,6 +8,8 @@ Allow: /
 Disallow: /cdn-cgi/
 Disallow: /.git/
 Disallow: /node_modules/
+Disallow: /.ai-brain.md
+Disallow: /ai-brain.md
 
 # Sitemap location
 Sitemap: https://digi-rise-india.vercel.app/sitemap.xml

@@ -1,7 +1,7 @@
 // DigiRise India — Service Worker
 // Provides offline fallback + caches static assets for faster repeat visits
 
-const CACHE_NAME = 'digirise-india-v3';
+const CACHE_NAME = 'digirise-india-v4';
 const OFFLINE_URL = '/404.html';
 
 const PRECACHE_ASSETS = [

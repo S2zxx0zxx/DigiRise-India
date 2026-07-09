@@ -363,7 +363,7 @@ if(nav){
       + '<h3 class="sheet-title">'+name.trim()+'</h3>'
       + '<div class="sheet-price">'+(priceEl?priceEl.textContent:'')+' <small>'+(billing==='ret'?'/month (retainer −20%)':'one-time')+'</small></div>'
       + feats.slice(0,14).map(function(f){ return '<div class="sheet-feat"><b>✓</b><span>'+f.replace(/^[✓✔︎•\-\s]+/,'')+'</span></div>'; }).join('')
-      + '<a class="sheet-cta" target="_blank" href="https://wa.me/917439133880?text='+encodeURIComponent('Hi DigiRise! '+name.trim()+' package ke bare mein baat karni hai.')+'">💬 WhatsApp pe Book Karo →</a>';
+      + '<a class="sheet-cta" target="_blank" rel="noopener" href="https://wa.me/917439133880?text='+encodeURIComponent('Hi DigiRise! '+name.trim()+' package ke bare mein baat karni hai.')+'">💬 WhatsApp pe Book Karo →</a>';
     bd.classList.add('open'); sh.classList.add('open');
     document.body.style.overflow='hidden';
   }
@@ -384,7 +384,7 @@ if(nav){
 
   /* ── sticky mini price bar ── */
   var mb = document.createElement('div'); mb.className='pkg-mini-bar';
-  mb.innerHTML = '<div><div class="pmb-name">GROWTH</div><div class="pmb-price">₹24,999</div></div><a target="_blank" href="https://wa.me/917439133880?text=Hi%20DigiRise!%20Package%20book%20karna%20hai.">Book Now →</a>';
+  mb.innerHTML = '<div><div class="pmb-name">GROWTH</div><div class="pmb-price">₹24,999</div></div><a target="_blank" rel="noopener" href="https://wa.me/917439133880?text=Hi%20DigiRise!%20Package%20book%20karna%20hai.">Book Now →</a>';
   document.body.appendChild(mb);
   function updateMiniBar(card){
     var n = ($('.pkg-name, h3', card)||{}).textContent || '';
