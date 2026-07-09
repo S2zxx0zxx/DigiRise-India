@@ -496,7 +496,7 @@ body::after{content:'';position:fixed;inset:0;background-image:repeating-linear-
 .poc-shot-biz{font-size:15px;font-weight:800;color:#fff;line-height:1.2;}
 .poc-shot-industry{font-size:9.5px;color:rgba(255,255,255,0.45);font-weight:700;letter-spacing:1.5px;margin:2px 0 8px;}
 .poc-shot-after{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:#4ade80;margin-bottom:8px;}
-.poc-shot-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:#fff;text-decoration:none;background:rgba(255,255,255,0.12);backdrop-filter:blur(8px);padding:8px 14px;border-radius:100px;border:1px solid rgba(255,255,255,0.15);}
+.poc-shot-link{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:#fff;text-decoration:none;background:rgba(255,255,255,0.12);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);padding:8px 14px;border-radius:100px;border:1px solid rgba(255,255,255,0.15);}
 .poc-shot-link::after{content:'\2197';transition:transform 0.2s;}
 .poc-shot-link:hover::after{transform:translate(2px,-2px);}
 .poc-app-card{animation:poc-pop 0.5s cubic-bezier(.2,.85,.3,1.3);}
@@ -784,7 +784,7 @@ nav>*{position:relative;z-index:1;}
 .steps-track{
   display:flex;gap:18px;padding:16px 70px 28px;
   overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab;user-select:none;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab;-webkit-user-select:none;user-select:none;
 }
 .steps-track:active{cursor:grabbing;}
 .steps-track::-webkit-scrollbar{display:none;}
@@ -839,7 +839,7 @@ section{padding:90px 5%;}
 .reel-card video{width:100%;height:100%;object-fit:cover;display:block;background:#000;}
 .reel-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.15) 35%,transparent 60%);pointer-events:none;z-index:1;}
 .reel-caption{position:absolute;left:0;right:0;bottom:0;padding:14px 12px;color:#fff;font-size:12.5px;font-weight:700;line-height:1.4;z-index:2;text-shadow:0 1px 4px rgba(0,0,0,0.4);}
-.reel-sound-btn{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,0.45);color:#fff;border:none;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);z-index:2;transition:background 0.2s;}
+.reel-sound-btn{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,0.45);color:#fff;border:none;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);z-index:2;transition:background 0.2s;}
 .reel-sound-btn:hover{background:rgba(0,0,0,0.7);}
 .reels-follow{text-align:center;margin-top:36px;}
 .ig-follow-card{max-width:560px;margin:0 auto;background:var(--card);border:2.5px solid var(--hard-border);border-radius:20px;padding:24px 22px 26px;box-shadow:4px 4px 0 var(--hard-shadow);}
@@ -1079,7 +1079,7 @@ section{padding:90px 5%;}
 .quiz-q-label{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px;}
 .quiz-question{font-size:clamp(17px,3vw,24px);font-weight:800;color:var(--text);letter-spacing:-0.4px;margin-bottom:24px;line-height:1.35;}
 .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px;}
-.quiz-opt{background:var(--card);border:2.5px solid var(--hard-border);border-radius:14px;padding:16px 14px;cursor:pointer;transition:all 0.2s;text-align:left;-webkit-tap-highlight-color:transparent;user-select:none;box-shadow:3px 3px 0 var(--hard-shadow);}
+.quiz-opt{background:var(--card);border:2.5px solid var(--hard-border);border-radius:14px;padding:16px 14px;cursor:pointer;transition:all 0.2s;text-align:left;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;box-shadow:3px 3px 0 var(--hard-shadow);}
 .quiz-opt:active{transform:scale(0.97);}
 .quiz-opt:hover{background:var(--gold-pale);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--hard-border-hover);}
 .quiz-opt.selected{background:var(--gold-pale2);box-shadow:3px 3px 0 var(--gold),0 0 0 1px var(--gold);transform:translate(-1px,-1px);}
@@ -1137,7 +1137,7 @@ section{padding:90px 5%;}
 #industries{background:var(--bg2);}
 .ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(148px,30%),1fr));gap:10px;margin-top:44px;}
 .ind-card{background:var(--card);border:1.5px solid transparent;border-radius:16px;padding:22px 12px 18px;text-align:center;cursor:pointer;transition:all 0.28s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden;background-clip:padding-box;}
-.ind-card::after{content:'';position:absolute;inset:0;border-radius:16px;padding:1.5px;background:linear-gradient(135deg,var(--ic),transparent 40%,transparent 60%,var(--ic));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;background-size:300% 300%;animation:ind-border-flow 4s linear infinite;opacity:0.55;transition:opacity 0.3s;pointer-events:none;}
+.ind-card::after{content:'';position:absolute;inset:0;border-radius:16px;padding:1.5px;background:linear-gradient(135deg,var(--ic),transparent 40%,transparent 60%,var(--ic));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;background-size:300% 300%;animation:ind-border-flow 4s linear infinite;opacity:0.55;transition:opacity 0.3s;pointer-events:none;}
 @keyframes ind-border-flow{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
 .ind-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 30%, var(--ic), transparent 70%);opacity:0.05;transition:opacity 0.3s;}
 .ind-card:hover::before{opacity:0.12;}
@@ -1409,7 +1409,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border2);padding:56px 5%
 .wa-float-label{background:#25d366;color:#fff;font-size:12px;font-weight:700;padding:6px 14px 6px 10px;border-radius:28px 0 0 28px;margin-right:-8px;white-space:nowrap;opacity:0;transform:translateX(10px);transition:all 0.3s;pointer-events:none;box-shadow:0 4px 14px rgba(37,211,102,0.3);}
 .wa-float:hover .wa-float-label{opacity:1;transform:translateX(0);}
 @keyframes wa-ring{0%{transform:scale(1);opacity:0.6;}100%{transform:scale(1.6);opacity:0;}}
-.mob-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(245,240,232,0.97);border-top:1px solid var(--border2);padding:10px 16px;gap:10px;align-items:center;backdrop-filter:blur(20px);}
+.mob-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(245,240,232,0.97);border-top:1px solid var(--border2);padding:10px 16px;gap:10px;align-items:center;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);}
 .mob-cta a{flex:1;text-align:center;padding:11px;border-radius:10px;font-weight:700;font-size:12.5px;text-decoration:none;}
 .mob-wa{background:#25d366;color:#fff;}
 .mob-call{background:var(--gold);color:#fff;}
@@ -1926,8 +1926,8 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <!-- FIX-8 DONE -->
-  <a href="https://www.instagram.com/digiriseindia/" target="_blank" class="nav-cta" style="background:transparent;border:1.5px solid var(--border);color:var(--text2);box-shadow:none;margin-right:6px;">&#128247; Instagram</a>
-  <a href="https://wa.me/917439133880?text=Hi%2C%20DigiRise%20se%20baat%20karni%20hai!" target="_blank" class="nav-cta">Book Free Call</a>
+  <a href="https://www.instagram.com/digiriseindia/" target="_blank" rel="noopener" class="nav-cta" style="background:transparent;border:1.5px solid var(--border);color:var(--text2);box-shadow:none;margin-right:6px;">&#128247; Instagram</a>
+  <a href="https://wa.me/917439133880?text=Hi%2C%20DigiRise%20se%20baat%20karni%20hai!" target="_blank" rel="noopener" class="nav-cta">Book Free Call</a>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 
@@ -1939,8 +1939,8 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
   <a href="#audit" onclick="toggleMenu()">Free Audit</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <!-- FIX-8 DONE -->
-  <a href="https://www.instagram.com/digiriseindia/" target="_blank" onclick="toggleMenu()">&#128247; Instagram</a>
-  <a href="https://wa.me/917439133880" target="_blank" style="color:var(--gold);">WhatsApp Now &#8594;</a>
+  <a href="https://www.instagram.com/digiriseindia/" target="_blank" rel="noopener" onclick="toggleMenu()">&#128247; Instagram</a>
+  <a href="https://wa.me/917439133880" target="_blank" rel="noopener" style="color:var(--gold);">WhatsApp Now &#8594;</a>
 </div>
 
 <!-- HERO -->
@@ -1978,7 +1978,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
     <p class="hero-sub" id="heroSub" aria-live="polite"><strong>Canva • Blender 3D • AI Visuals • Meta Ads — All Under One Roof.</strong> Kolkata se PAN India tak, har Indian business ka trusted growth partner.</p>
     <div class="hero-btns">
       <div class="magnetic-btn-wrap" id="magneticBtn">
-        <a href="https://wa.me/917439133880?text=Hi%2C%20Free%20Digital%20Audit%20chahiye!" target="_blank" class="btn-primary">&#127873; Free Audit Lo — Worth &#8377;3,499</a>
+        <a href="https://wa.me/917439133880?text=Hi%2C%20Free%20Digital%20Audit%20chahiye!" target="_blank" rel="noopener" class="btn-primary">&#127873; Free Audit Lo — Worth &#8377;3,499</a>
       </div>
       <a href="#roi-calc" class="btn-secondary">&#128200; ROI Calculate Karo &#8594;</a>
     </div>
@@ -1986,7 +1986,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
     <div class="slots-banner">
       <span class="slots-icon">&#9889;</span>
       <span class="slots-text">Limited slots: Only <strong>3 new clients</strong> onboarding this month</span>
-      <span class="slots-cta"><a href="https://wa.me/917439133880?text=Hi%2C+I+want+to+discuss+a+slot+for+DigiRise+services" target="_blank">Check Availability &#8594;</a></span>
+      <span class="slots-cta"><a href="https://wa.me/917439133880?text=Hi%2C+I+want+to+discuss+a+slot+for+DigiRise+services" target="_blank" rel="noopener">Check Availability &#8594;</a></span>
     </div>
     <div class="hero-stats">
       <div class="stat-item"><div class="num" data-count="200" data-suffix="+">0+</div><div class="lbl">Brands Grown</div></div>
@@ -2145,7 +2145,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
       </div>
       <div class="ig-wire"><span class="ig-wire-node"></span></div>
       <div class="ig-follow-accounts">
-        <a href="https://www.instagram.com/digiriseindia/" target="_blank" class="ig-acc-box">
+        <a href="https://www.instagram.com/digiriseindia/" target="_blank" rel="noopener" class="ig-acc-box">
           <span class="ig-acc-handle">@digiriseindia</span>
           <span class="ig-acc-label">Agency Page</span>
           <span class="ig-acc-follow">Follow &#8594;</span>
@@ -2286,7 +2286,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
         <div class="roi-tl-item"><div class="roi-tl-wk">Month 1</div><div class="roi-tl-val" id="rtl-m1">+80%</div></div>
         <div class="roi-tl-item"><div class="roi-tl-wk">Month 2</div><div class="roi-tl-val" id="rtl-m2">2.5x</div></div>
       </div>
-      <a id="roi-cta-link" href="https://wa.me/917439133880?text=Hi%2C%20ROI%20Calculator%20dekha%20-%20GROWTH%20Package%20lena%20chahta%20hoon!" target="_blank" class="roi-cta">
+      <a id="roi-cta-link" href="https://wa.me/917439133880?text=Hi%2C%20ROI%20Calculator%20dekha%20-%20GROWTH%20Package%20lena%20chahta%20hoon!" target="_blank" rel="noopener" class="roi-cta">
         &#128640; Yeh Result Chahiye &rarr; WhatsApp Abhi Karo
       </a>
     </div>
@@ -2317,7 +2317,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
         <div class="quiz-result-old" id="qr-old">&#8377;36,000</div>
         <div class="quiz-result-saving" id="qr-save">Save &#8377;17,001</div>
       </div>
-      <a id="qr-wa-link" href="https://wa.me/917439133880?text=Hi%2C%20Quiz%20se%20GROWTH%20Package%20recommend%20hua%20-%20details%20chahiye!" target="_blank" class="quiz-result-whatsapp">
+      <a id="qr-wa-link" href="https://wa.me/917439133880?text=Hi%2C%20Quiz%20se%20GROWTH%20Package%20recommend%20hua%20-%20details%20chahiye!" target="_blank" rel="noopener" class="quiz-result-whatsapp">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         WhatsApp pe Ye Package Lo &#8594;
       </a>
@@ -2400,7 +2400,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
   <p class="sec-sub">Week 1 se Month 3 tak — clear milestones jo fence-sitters ko convert karte hain.</p>
   <div class="rtl-grid" id="rtlGrid"></div>
   <div style="margin-top:36px;text-align:center;">
-    <a href="https://wa.me/917439133880?text=Hi%2C%20Results%20timeline%20dekha%20-%20start%20karna%20chahta%20hoon!" target="_blank" class="btn-primary" style="display:inline-flex;">&#128640; Abhi Start Karo &#8594;</a>
+    <a href="https://wa.me/917439133880?text=Hi%2C%20Results%20timeline%20dekha%20-%20start%20karna%20chahta%20hoon!" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;">&#128640; Abhi Start Karo &#8594;</a>
   </div>
 </section>
 
@@ -2697,7 +2697,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
           <span class="proj-tag">SEO</span>
           <span class="proj-tag">Meta Ads</span>
         </div>
-        <a href="https://www.lalsweets.com/" target="_blank" class="proj-view-btn" style="background:#ef4444;">View Website &#8594;</a>
+        <a href="https://www.lalsweets.com/" target="_blank" rel="noopener" class="proj-view-btn" style="background:#ef4444;">View Website &#8594;</a>
       </div>
     </div>
   </div>
@@ -2726,7 +2726,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
         </ul>
         <div class="proj-footer">
           <div class="proj-tags"><span class="proj-tag">E-Commerce</span><span class="proj-tag">Google Ads</span><span class="proj-tag">SEO</span></div>
-          <a href="https://www.kirtilals.com/" target="_blank" class="proj-view-btn" style="background:#d97706;">View Website &#8594;</a>
+          <a href="https://www.kirtilals.com/" target="_blank" rel="noopener" class="proj-view-btn" style="background:#d97706;">View Website &#8594;</a>
         </div>
       </div>
     </div>
@@ -2752,7 +2752,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
         </ul>
         <div class="proj-footer">
           <div class="proj-tags"><span class="proj-tag">SaaS</span><span class="proj-tag">Branding</span><span class="proj-tag">Meta Ads</span></div>
-          <a href="https://tradescribe.in/" target="_blank" class="proj-view-btn" style="background:#16a34a;">View Website &#8594;</a>
+          <a href="https://tradescribe.in/" target="_blank" rel="noopener" class="proj-view-btn" style="background:#16a34a;">View Website &#8594;</a>
         </div>
       </div>
     </div>
@@ -2778,7 +2778,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
         </ul>
         <div class="proj-footer">
           <div class="proj-tags"><span class="proj-tag">Shopify</span><span class="proj-tag">Fashion</span><span class="proj-tag">Global</span></div>
-          <a href="https://murzban.in/" target="_blank" class="proj-view-btn" style="background:#1c1c2e;">View Website &#8594;</a>
+          <a href="https://murzban.in/" target="_blank" rel="noopener" class="proj-view-btn" style="background:#1c1c2e;">View Website &#8594;</a>
         </div>
       </div>
     </div>
@@ -2805,7 +2805,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
         </ul>
         <div class="proj-footer">
           <div class="proj-tags"><span class="proj-tag">SEO</span><span class="proj-tag">D2C Brand</span><span class="proj-tag">Content</span></div>
-          <a href="https://farmfres.co/" target="_blank" class="proj-view-btn" style="background:#059669;">View Website &#8594;</a>
+          <a href="https://farmfres.co/" target="_blank" rel="noopener" class="proj-view-btn" style="background:#059669;">View Website &#8594;</a>
         </div>
       </div>
     </div>
@@ -2929,7 +2929,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
   <h2>Ready to <span>3x your revenue?</span></h2>
   <p>Abhi free audit lo — zero risk, zero cost. Agar kaam pasand aaya toh package lo. Guarantee hai.</p>
   <div class="cta-btns">
-    <a href="https://wa.me/917439133880?text=Hi%2C%20Free%20Audit%20chahiye%20mujhe!" target="_blank" class="btn-primary" style="font-size:14px;padding:15px 32px;">&#127873; Abhi Claim Karo — Free Audit &#8594;</a>
+    <a href="https://wa.me/917439133880?text=Hi%2C%20Free%20Audit%20chahiye%20mujhe!" target="_blank" rel="noopener" class="btn-primary" style="font-size:14px;padding:15px 32px;">&#127873; Abhi Claim Karo — Free Audit &#8594;</a>
     <a href="tel:+917439133880" class="btn-secondary" style="font-size:14px;padding:15px 32px;">&#128222; Call Now: +91 74391 33880</a>
   </div>
 </section>
@@ -3073,7 +3073,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
     <h2 class="ffc-title">Ab aur intezaar kyun?<br><span>Apna business 3x karo.</span></h2>
     <p class="ffc-sub">Sirf 5 slots available hain is mahine. DigiRise ke 200+ satisfied clients ki list mein join karo — free ₹3,499 audit ke saath shuru karo.</p>
     <div class="ffc-btns">
-      <a href="https://wa.me/917439133880?text=Hi%20DigiRise!%20Footer%20se%20contact%20kar%20raha%20hoon%20-%20Free%20Audit%20chahiye!" target="_blank" class="ffc-btn-primary">
+      <a href="https://wa.me/917439133880?text=Hi%20DigiRise!%20Footer%20se%20contact%20kar%20raha%20hoon%20-%20Free%20Audit%20chahiye!" target="_blank" rel="noopener" class="ffc-btn-primary">
         🎯 Free Audit Lo — Worth ₹3,499
       </a>
       <a href="#packages" class="ffc-btn-secondary">
@@ -3090,12 +3090,12 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
       </a>
       <p>Kolkata-based premium digital growth agency. 200+ Indian businesses grow kiye — Meta Ads se lekar full e-commerce tak.</p>
       <div class="footer-socials">
-        <a href="https://wa.me/917439133880" target="_blank" class="soc-btn" style="--soc-grad:linear-gradient(135deg,#25d366,#128c7e);--soc-shadow:rgba(37,211,102,0.4);">
+        <a href="https://wa.me/917439133880" target="_blank" rel="noopener" class="soc-btn" style="--soc-grad:linear-gradient(135deg,#25d366,#128c7e);--soc-shadow:rgba(37,211,102,0.4);">
           <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           <span>WhatsApp</span>
         </a>
         <!-- FIX-8 DONE -->
-        <a href="https://www.instagram.com/digiriseindia/" target="_blank" class="soc-btn insta-agency" style="--soc-grad:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);--soc-shadow:rgba(220,39,67,0.4);">
+        <a href="https://www.instagram.com/digiriseindia/" target="_blank" rel="noopener" class="soc-btn insta-agency" style="--soc-grad:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);--soc-shadow:rgba(220,39,67,0.4);">
           <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           <div style="display:flex;flex-direction:column;gap:1px;">
             <span style="font-size:11px;font-weight:800;">@digiriseindia</span>
@@ -3103,19 +3103,19 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
           </div>
         </a>
         
-        <a href="https://www.facebook.com/digiriseindia" target="_blank" class="soc-btn" style="--soc-grad:linear-gradient(135deg,#1877F2,#0c5dc7);--soc-shadow:rgba(24,119,242,0.4);">
+        <a href="https://www.facebook.com/digiriseindia" target="_blank" rel="noopener" class="soc-btn" style="--soc-grad:linear-gradient(135deg,#1877F2,#0c5dc7);--soc-shadow:rgba(24,119,242,0.4);">
           <svg viewBox="0 0 24 24" fill="#fff"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.91h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
           <span>Facebook</span>
         </a>
-        <a href="https://www.pinterest.com/digiriseindia" target="_blank" class="soc-btn" style="--soc-grad:linear-gradient(135deg,#E60023,#ad001a);--soc-shadow:rgba(230,0,35,0.4);">
+        <a href="https://www.pinterest.com/digiriseindia" target="_blank" rel="noopener" class="soc-btn" style="--soc-grad:linear-gradient(135deg,#E60023,#ad001a);--soc-shadow:rgba(230,0,35,0.4);">
           <svg viewBox="0 0 24 24" fill="#fff"><path d="M12.017 0C5.396 0 0 5.396 0 12.017c0 5.082 3.158 9.42 7.618 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.024 0 1.518.769 1.518 1.69 0 1.03-.655 2.566-.994 3.984-.283 1.189.596 2.159 1.768 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.992-4.86-3.4 0-5.395 2.551-5.395 5.188 0 1.027.395 2.13.889 2.73a.357.357 0 01.082.343c-.09.378-.291 1.189-.33 1.355-.052.218-.173.264-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.768 2.738-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.349-.629-2.738-1.371 0 0-.599 2.282-.744 2.84-.27 1.036-1 2.337-1.488 3.129C9.722 23.825 10.847 24 12.017 24c6.621 0 12.017-5.396 12.017-12.017C24.034 5.396 18.638 0 12.017 0z"/></svg>
           <span>Pinterest</span>
         </a>
-        <a href="https://www.snapchat.com/add/digiriseindia" target="_blank" class="soc-btn" style="--soc-grad:linear-gradient(135deg,#FFFC00,#e6e300);--soc-shadow:rgba(255,252,0,0.4);color:#0d0d0d;">
+        <a href="https://www.snapchat.com/add/digiriseindia" target="_blank" rel="noopener" class="soc-btn" style="--soc-grad:linear-gradient(135deg,#FFFC00,#e6e300);--soc-shadow:rgba(255,252,0,0.4);color:#0d0d0d;">
           <svg viewBox="0 0 24 24" fill="#0d0d0d"><path d="M12.166 1.001c2.9-.014 5.42 2.067 5.952 4.913.106.572.096 1.221.087 1.81l-.008.589c.005.176.022.524.236.609.288.115.764-.205 1.044-.205.392 0 .813.205.875.62.05.34-.165.66-.49.86-.085.054-.39.222-.475.275-.31.193-.434.41-.31.74.31.836 1.27 1.86 2.99 2.16.236.04.41.255.41.49 0 .14-.045.275-.13.39-.34.46-1.51.79-1.7.93-.165.12-.165.345-.13.55.04.236.18.61.18.92 0 .345-.27.625-.685.625-.71 0-1.215-.255-1.96-.255-.61 0-.99.18-1.39.625-.62.69-1.45 1.74-3.31 1.74h-.07c-1.86 0-2.69-1.05-3.31-1.74-.4-.445-.78-.625-1.39-.625-.745 0-1.25.255-1.96.255-.415 0-.685-.28-.685-.625 0-.31.14-.685.18-.92.035-.205.035-.43-.13-.55-.19-.14-1.36-.47-1.7-.93-.085-.115-.13-.25-.13-.39 0-.235.174-.45.41-.49 1.72-.3 2.68-1.324 2.99-2.16.124-.33 0-.547-.31-.74-.085-.053-.39-.22-.475-.275-.325-.2-.54-.52-.49-.86.062-.415.483-.62.875-.62.28 0 .756.32 1.044.205.214-.085.231-.433.236-.609l-.008-.589c-.01-.589-.02-1.238.087-1.81.532-2.846 3.052-4.927 5.953-4.913z"/></svg>
           <span>Snapchat</span>
         </a>
-        <a href="https://github.com/S2zxx0zxx" target="_blank" class="soc-btn" style="--soc-grad:linear-gradient(135deg,#333,#0d0d0d);--soc-shadow:rgba(20,20,20,0.4);">
+        <a href="https://github.com/S2zxx0zxx" target="_blank" rel="noopener" class="soc-btn" style="--soc-grad:linear-gradient(135deg,#333,#0d0d0d);--soc-shadow:rgba(20,20,20,0.4);">
           <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.755-1.333-1.755-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.468-2.382 1.236-3.222-.124-.305-.535-1.527.117-3.18 0 0 1.008-.322 3.302 1.23A11.5 11.5 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.292-1.552 3.298-1.23 3.298-1.23.653 1.653.242 2.875.118 3.18.77.84 1.235 1.912 1.235 3.222 0 4.61-2.807 5.624-5.479 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.218.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
           <span>GitHub</span>
         </a>
@@ -3137,7 +3137,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
       <a href="blog/" style="color:var(--gold);font-weight:600;">📝 Blog</a>
       <a href="#audit">Free Audit</a>
       <a href="#faq">FAQ</a>
-      <a href="https://wa.me/917439133880" target="_blank">Contact Us</a>
+      <a href="https://wa.me/917439133880" target="_blank" rel="noopener">Contact Us</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -3150,7 +3150,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
 <div class="premium-fab-bar" id="premiumFab">
   <button id="dm-toggle" class="fab-btn fab-theme" onclick="toggleDarkMode()" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
   <a href="tel:+917439133880" class="fab-btn fab-call">&#128222; Call Now</a>
-  <a href="https://wa.me/917439133880?text=Hi%20DigiRise!%20Let's%20talk!" target="_blank" class="fab-btn fab-wa">
+  <a href="https://wa.me/917439133880?text=Hi%20DigiRise!%20Let's%20talk!" target="_blank" rel="noopener" class="fab-btn fab-wa">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     WhatsApp
   </a>
@@ -3160,7 +3160,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
 <!-- STICKY SMART CTA -->
 <div class="sticky-cta" id="stickyCTA">
   <div class="sticky-cta-txt">Still thinking? <span>Get ₹3,499 audit FREE →</span></div>
-  <a href="https://wa.me/917439133880?text=Hi%2C%20Free%20Audit%20chahiye!" target="_blank" class="sticky-cta-btn" onclick="hideStickyForever()">Claim Now</a>
+  <a href="https://wa.me/917439133880?text=Hi%2C%20Free%20Audit%20chahiye!" target="_blank" rel="noopener" class="sticky-cta-btn" onclick="hideStickyForever()">Claim Now</a>
   <button class="sticky-cta-close" onclick="hideStickyForever()">&#215;</button>
 </div>
 
@@ -3362,7 +3362,7 @@ function showInd(i){
   d.innerHTML=`<div class="id-hd"><span class="hdi" style="font-size:32px;">${ind.icon}</span><div><div class="ind-name-text" style="color:${ind.color};font-size:18px;font-weight:800;">${ind.name}</div></div></div>
   <div class="id-pain">&#128548; Common Problem: ${ind.pain}</div>
   <div class="svc-list2">${ind.services.map(s=>`<div class="si2"><span class="ck" style="color:${ind.color}">&#10003;</span><span>${s}</span></div>`).join('')}</div>
-  <div style="margin-top:18px;"><a href="https://wa.me/917439133880?text=Hi%2C%20${encodeURIComponent(ind.name)}%20ke%20liye%20package%20chahiye!" target="_blank" class="btn-primary" style="display:inline-flex;">Get Package for ${ind.name} &#8594;</a></div>`;
+  <div style="margin-top:18px;"><a href="https://wa.me/917439133880?text=Hi%2C%20${encodeURIComponent(ind.name)}%20ke%20liye%20package%20chahiye!" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;">Get Package for ${ind.name} &#8594;</a></div>`;
   d.classList.add('show');
   setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
 }
@@ -3501,7 +3501,7 @@ function renderPackages(){
       </div>
 
       <!-- CTA Button — action psychology -->
-      <a href="https://wa.me/917439133880?text=${encodeURIComponent(waMessages[pkg.name])}" target="_blank"
+      <a href="https://wa.me/917439133880?text=${encodeURIComponent(waMessages[pkg.name])}" target="_blank" rel="noopener"
          class="pkg-btn ${pkg.popular?'gold':'outline'}"
          style="${pkg.popular?'':''}">
         ${btnLabels[pkg.name]}
@@ -3588,7 +3588,7 @@ function renderAddons(){
       <div class="addon-time">⏱ Delivery: ${a.time}</div>
 
       <a href="https://wa.me/917439133880?text=${waMsg(a.name, a.price)}"
-         target="_blank" class="addon-btn">
+         target="_blank" rel="noopener" class="addon-btn">
         ➕ Add to My Package
       </a>
     </div>`;
@@ -4650,7 +4650,7 @@ function aiLoadingHTML(msg) {
 function aiCTAHTML() {
   return `<div class="ai-cta-strip">
     <span>🚀 Professional digital strategy chahiye?</span>
-    <a href="https://wa.me/917439133880?text=Hi%20DigiRise!%20AI%20Tool%20use%20kiya%20-%20expert%20help%20chahiye!" target="_blank">WhatsApp Expert →</a>
+    <a href="https://wa.me/917439133880?text=Hi%20DigiRise!%20AI%20Tool%20use%20kiya%20-%20expert%20help%20chahiye!" target="_blank" rel="noopener">WhatsApp Expert →</a>
   </div>`;
 }
 
@@ -4705,7 +4705,7 @@ Keep it concise, practical, and motivating. Use ₹ for currency. Focus on India
         <div style="font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.7;">
           Satyam personally aapka business analyze karenge aur<br><strong>2 hours mein WhatsApp pe detailed report denge — bilkul FREE.</strong>
         </div>
-        <a href="https://wa.me/917439133880?text=${encodeURIComponent('Hi DigiRise! Free AI Business Analysis chahiye')}" target="_blank"
+        <a href="https://wa.me/917439133880?text=${encodeURIComponent('Hi DigiRise! Free AI Business Analysis chahiye')}" target="_blank" rel="noopener"
            style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 28px;border-radius:14px;font-weight:800;text-decoration:none;font-size:15px;box-shadow:0 4px 20px rgba(37,211,102,0.35);">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           WhatsApp pe Free Analysis Lo
@@ -4746,7 +4746,7 @@ Write in Hinglish (Hindi + English mix). Make copies emotional, urgent, and conv
         <div style="font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.7;">
           Satyam personally aapke business ke liye <strong>3 killer ad copies</strong> likhenge<br>aur WhatsApp pe bhejenge — bilkul FREE.
         </div>
-        <a href="https://wa.me/917439133880?text=${encodeURIComponent('Hi DigiRise! Mujhe custom Ad Copy chahiye mere business ke liye')}" target="_blank"
+        <a href="https://wa.me/917439133880?text=${encodeURIComponent('Hi DigiRise! Mujhe custom Ad Copy chahiye mere business ke liye')}" target="_blank" rel="noopener"
            style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 28px;border-radius:14px;font-weight:800;text-decoration:none;font-size:15px;box-shadow:0 4px 20px rgba(37,211,102,0.35);">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           WhatsApp pe Free Ad Copies Lo
@@ -4784,7 +4784,7 @@ Do this for all 7 days. Make it practical, engaging, and specific to the busines
         <div style="font-size:13px;color:var(--muted);margin-bottom:22px;line-height:1.7;">
           Satyam personally aapke liye <strong>7-day custom content calendar</strong> banayenge<br>aur WhatsApp pe bhejenge — bilkul FREE.
         </div>
-        <a href="https://wa.me/917439133880?text=${encodeURIComponent('Hi DigiRise! Mujhe 7-day Content Calendar chahiye mere business ke liye')}" target="_blank"
+        <a href="https://wa.me/917439133880?text=${encodeURIComponent('Hi DigiRise! Mujhe 7-day Content Calendar chahiye mere business ke liye')}" target="_blank" rel="noopener"
            style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:14px 28px;border-radius:14px;font-weight:800;text-decoration:none;font-size:15px;box-shadow:0 4px 20px rgba(37,211,102,0.35);">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           WhatsApp pe Free Calendar Lo
@@ -5027,7 +5027,7 @@ function initRevealItems(){
           <div class="poc-trans-text" style="margin-bottom:8px;">${c.before}</div>
           <div class="poc-trans-label after">After</div>
           <div class="poc-trans-text">${c.after}</div>
-          <a href="${c.link}" target="_blank" class="poc-app-link" style="color:var(--gold);padding-top:10px;">Visit ${c.url}</a>
+          <a href="${c.link}" target="_blank" rel="noopener" class="poc-app-link" style="color:var(--gold);padding-top:10px;">Visit ${c.url}</a>
         </div>
       </div>
     </div>`).join('');
@@ -5039,7 +5039,7 @@ function initRevealItems(){
         <div class="poc-shot-biz">${c.biz}</div>
         <div class="poc-shot-industry">${c.industry}</div>
         <div class="poc-shot-after">${c.badge}</div>
-        <a href="${c.link}" target="_blank" class="poc-shot-link">Visit ${c.url}</a>
+        <a href="${c.link}" target="_blank" rel="noopener" class="poc-shot-link">Visit ${c.url}</a>
       </div>`;
     urlBar.textContent=c.url;
     if(phoneEl) phoneEl.style.setProperty('--poc-glow',c.glow);
