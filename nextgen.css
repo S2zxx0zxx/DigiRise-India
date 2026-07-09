@@ -44,8 +44,8 @@ html.ng-theme-fade body { transition: background-color 400ms ease, color 400ms e
   width: min(1240px, calc(100% - 24px)) !important;
   border-radius: 20px !important;
   background: var(--ng-glass) !important;
-  backdrop-filter: blur(18px) saturate(170%) !important;
   -webkit-backdrop-filter: blur(18px) saturate(170%) !important;
+  backdrop-filter: blur(18px) saturate(170%) !important;
   border: 1px solid var(--ng-glass-border) !important;
   box-shadow: var(--ng-shadow-2) !important;
   transition: padding var(--ng-dur-n) var(--ng-out),
@@ -103,8 +103,8 @@ html.ng-theme-fade body { transition: background-color 400ms ease, color 400ms e
   background-size: 46px 46px;
   transform: perspective(600px) rotateX(62deg);
   transform-origin: bottom center;
-  mask-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent 85%);
   -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent 85%);
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent 85%);
   pointer-events: none;
   z-index: 0;
   animation: ngGridDrift 24s linear infinite;
@@ -207,8 +207,8 @@ html.ng-theme-fade body { transition: background-color 400ms ease, color 400ms e
   display: flex; align-items: center; gap: 34px;
   margin-top: 34px;
   overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
 }
 .ng-trust-track {
   display: flex; align-items: center; gap: 44px;
@@ -278,6 +278,7 @@ html.ng-theme-fade body { transition: background-color 400ms ease, color 400ms e
   background: linear-gradient(120deg, var(--gold), transparent 30%, transparent 70%, var(--gold-light));
   background-size: 300% 300%;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: ngBorderFlow 6s linear infinite;
@@ -517,6 +518,7 @@ footer { position: relative; overflow: hidden; }
   color: transparent;
   -webkit-text-stroke: 1px var(--gold-pale2);
   pointer-events: none;
+  -webkit-user-select: none;
   user-select: none;
   line-height: 1;
   white-space: nowrap;
@@ -688,6 +690,7 @@ footer > *:not(.ng-footer-watermark) { position: relative; z-index: 1; }
   position: fixed;
   inset: 0;
   background: rgba(10, 8, 5, 0.7);
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   z-index: 9995;
   display: flex;

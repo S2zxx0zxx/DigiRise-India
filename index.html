@@ -1891,9 +1891,16 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
     /* FIX 5: Reels Grid Structure */
     .reels-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(var(--reel-count, 3), 1fr);
       gap: 20px;
       margin-bottom: 30px;
+    }
+    .reels-dots { display: none; }
+    @media (max-width: 768px) {
+      .reels-grid { margin-bottom: 16px; }
+      .reels-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 30px; }
+      .reel-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: 0.3s; cursor: pointer; }
+      .reel-dot.active { background: var(--gold); transform: scale(1.3); }
     }
     .reel-card {
       position: relative;
@@ -2205,29 +2212,8 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
   <div class="sec-tag">Behind The Scenes</div>
   <h2 class="sec-title">Real Kaam, Real Time — Dekho Live</h2>
   <p class="sec-sub">Canva, Photoshop &amp; Blender mein hamari design process — apne hi reels se, live.</p>
-  <div class="reels-grid">
-    <div class="reel-card reveal-item">
-      <video class="reel-video" muted loop playsinline preload="none" poster="/assets/reels/reel1-poster.jpg" loading="lazy">
-        <source src="assets/reels/reel1.mp4" type="video/mp4">
-      </video>
-      <button class="reel-sound-btn" aria-label="Toggle sound">&#128263;</button>
-      <div class="reel-caption">Pixel Stretch Effect — Photoshop</div>
-    </div>
-    <div class="reel-card reveal-item">
-      <video class="reel-video" muted loop playsinline preload="none" poster="/assets/reels/reel2-poster.jpg" loading="lazy">
-        <source src="assets/reels/reel2.mp4" type="video/mp4">
-      </video>
-      <button class="reel-sound-btn" aria-label="Toggle sound">&#128263;</button>
-      <div class="reel-caption">Blender 3D Product Ad</div>
-    </div>
-    <div class="reel-card reveal-item">
-      <video class="reel-video" muted loop playsinline preload="none" poster="/assets/reels/reel3-poster.jpg" loading="lazy">
-        <source src="assets/reels/reel3.mp4" type="video/mp4">
-      </video>
-      <button class="reel-sound-btn" aria-label="Toggle sound">&#128263;</button>
-      <div class="reel-caption">Meta Ads ROAS Breakdown</div>
-    </div>
-  </div>
+  <div class="reels-grid" id="reelsGrid"></div>
+  <div class="reels-dots" id="reelsDots"></div>
   <div class="reels-cta-wrapper reveal-item">
     <a href="https://www.instagram.com/digiriseindia/" target="_blank" rel="noopener" class="btn-primary" style="width: 100%; max-width: 320px; justify-content: center;">
       &#128247; View 200+ Results
@@ -3253,6 +3239,11 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
 // ============================================================
 // DATA
 // ============================================================
+const reelsData = [
+  { id: "reel1", src: "assets/reels/reel1.mp4", poster: "/assets/reels/reel1-poster.jpg", caption: "Pixel Stretch Effect — Photoshop" },
+  { id: "reel2", src: "assets/reels/reel2.mp4", poster: "/assets/reels/reel2-poster.jpg", caption: "Blender 3D Product Ad" }
+];
+
 const industries=[
   {id:'restaurant',name:'Restaurants & Cafés',color:'#ef4444',pain:'Customers don\'t find you on Google Maps or Swiggy',
    icon:`<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g-restaurant" x1="0" y1="0" x2="44" y2="44"><stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#ef4444"/></linearGradient></defs><rect width="44" height="44" rx="13" fill="url(#g-restaurant)"/><path d="M14 11v9a3 3 0 003 3v9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11v6M17 11v6M20 11v6a3 3 0 01-3 3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 11c-2.2 0-4 2.2-4 6 0 3 1.3 5 3 5.7V32" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="14" r="1.4" fill="#fff"/></svg>`,
@@ -5011,6 +5002,35 @@ function initRevealItems(){
 
 // ── LIVE REELS — autoplay on scroll into view + sound toggle ──
 (function(){
+  const grid = document.getElementById('reelsGrid');
+  const dotsContainer = document.getElementById('reelsDots');
+  if(grid && typeof reelsData !== 'undefined') {
+    grid.style.setProperty('--reel-count', reelsData.length);
+    grid.innerHTML = reelsData.map(reel => `
+      <div class="reel-card reveal-item">
+        <video class="reel-video" muted loop playsinline preload="none" poster="${reel.poster}" loading="lazy">
+          <source src="${reel.src}" type="video/mp4">
+        </video>
+        <button class="reel-sound-btn" aria-label="Toggle sound">&#128263;</button>
+        <div class="reel-caption">${reel.caption}</div>
+      </div>
+    `).join('');
+
+    if(dotsContainer && reelsData.length > 1) {
+      dotsContainer.innerHTML = reelsData.map((_, i) => `<div class="reel-dot${i===0?' active':''}" data-idx="${i}"></div>`).join('');
+      const dots = dotsContainer.querySelectorAll('.reel-dot');
+      grid.addEventListener('scroll', () => {
+        let activeIdx = Math.round(grid.scrollLeft / grid.clientWidth);
+        dots.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
+      });
+      dots.forEach(d => {
+        d.addEventListener('click', () => {
+          grid.scrollTo({ left: d.dataset.idx * grid.clientWidth, behavior: 'smooth' });
+        });
+      });
+    }
+  }
+
   const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const videos=document.querySelectorAll('.reel-video');
   if(!videos.length)return;
