@@ -36,7 +36,7 @@ DigiRise India 3.0 isn't just a website; it's a **hyper-optimized, motion-loaded
 | 💳 **Pricing 3.0 Ecosystem** | Segmented geo-control (India/UAE/UK), One-time vs Retainer toggle (-20% math), odometer count-ups, expandable features, iOS bottom-sheet trust chips, and a sticky mini price bar. |
 | 🎠 **Advanced Carousels** | **Live Reels:** Center-snap carousel with active autoplay, side dimming, and functional isolation mute/unmute. **Clients:** Dual opposite-direction marquees (grayscale → color hover). |
 | 🎯 **Radial FAB & Action Menus** | Idle bounce floating action button that springs out a radial menu (WhatsApp/Call/Instagram/Audit) complete with a backdrop scrim. |
-| ⌚ **Live Activity Rings** | Apple-Watch style rings wired to real dynamic stats (200+ brands, 4.9★, 3x ROI) that animate on scroll intersection. |
+| ⌚ **Live Activity Rings** | Apple-Watch style rings wired to real dynamic stats (12+ industries, 100% deliverables guarantee, verified clients) that animate on scroll intersection. |
 
 </div>
 

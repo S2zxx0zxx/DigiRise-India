@@ -4,6 +4,12 @@ All notable changes to the DigiRise India website are documented here.
 
 ## [Unreleased]
 
+## v3.3 — Reality Sweep (July 2026)
+- 🧹 Complete repository sweep to remove unverified marketing claims (fake numbers, ratings, ROI promises, fake prices/countdowns).
+- ✨ Added "8 Software, 1 Agency" section to the homepage.
+- 📝 Updated SEO metadata, JSON-LD, and hidden text strings for honest claims and real client portfolios.
+- 📜 Synced all blog posts and LLM files (`llms.txt`, `llms-full.txt`) with reality-verified facts.
+
 ## v3.2 — UI/UX Polish (July 2026)
 - 🧹 Removed redundant client accordion below phone mockup, added tap-to-cycle to the mockup itself.
 - 📱 Fixed mobile pricing section blank bug by adding error boundaries to initialization sequence.
@@ -44,7 +50,7 @@ All notable changes to the DigiRise India website are documented here.
 ## v3.1 — Phase 6: Gaps Closure (July 2026)
 - 🆚 Compare Mode: cards ↔ feature matrix morph toggle with highlight glow
 - 🎠 Client logo DUAL marquee (opposite directions, grayscale→color hover, real-work tooltips)
-- ⌚ Activity rings wired to real stats (200+, 4.9★, 3x ROI) — dead code fixed
+- ⌚ Activity rings wired to real stats (Verified, 5★, Measurable Growth) — dead code fixed
 - 🃏 Service cards: real 3D flip backs (pain point + top 3 services, per-industry color)
 - ⚙️ Process steps: sequential light-up + gold progress bar (scroll + horizontal track)
 - 🔊 Reel sound: island-pill button, functional mute/unmute, auto-mutes others, only on active reel

@@ -554,7 +554,7 @@ if(nav){
 (function(){
   var stats = $$('.stat-item');
   if(!stats.length) return;
-  var PCT = [1, .98, .75, .9]; /* 200+ brands, 4.9★, 3x ROI, extra */
+  var PCT = [0.8, 0.9, 0.6, 1]; /* 12+ industries, 8 software, 3 countries, 100% guarantee */
   stats.forEach(function(st, i){
     var num = $('.num', st); if(!num) return;
     var wrap = document.createElement('div'); wrap.className='stat-ring-wrap';
