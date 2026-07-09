@@ -58,7 +58,7 @@ if(nav){
   // status chip + progress ring
   var chip = document.createElement('div');
   chip.className = 'island-status';
-  chip.innerHTML = '<span class="is-dot"></span><span class="is-txt">DigiRise • Live</span>';
+  chip.innerHTML = '<span class="is-txt">DigiRise • Live</span>';
   var ring = document.createElementNS('http://www.w3.org/2000/svg','svg');
   ring.setAttribute('class','island-ring'); ring.setAttribute('viewBox','0 0 30 30');
   ring.innerHTML = '<circle class="ir-bg" cx="15" cy="15" r="12"/><circle class="ir-fg" cx="15" cy="15" r="12"/>';
@@ -76,16 +76,36 @@ if(nav){
     isTxt.classList.add('morph');
     setTimeout(function(){ isTxt.textContent = txt; isTxt.classList.remove('morph'); }, 240);
   }
-  // pull live slot text if nextgen exposes it
-  function slotText(){
-    var el = $('#aside-slot-text');
-    var t = el && el.textContent && el.textContent.indexOf('Loading')<0 ? el.textContent : '2 slots left';
-    return '🔥 ' + t.replace(/only /i,'');
+  function getISTTime(){
+    return new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Kolkata',
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
+    }).format(new Date());
   }
+  
+  // Update the island chip to be a live IST clock instead of slots
+  chip.style.cssText = 'background: linear-gradient(145deg, #1f1a14, #0a0806); border: 1px solid rgba(218,165,32,0.4); box-shadow: 0 4px 12px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.05), 0 0 10px rgba(184,123,10,0.2); border-radius: 100px;';
+  
+  function updateClock(){
+    var timeStr = getISTTime();
+    // Use a pulsing dot and smaller "IST" text
+    isTxt.innerHTML = '<span style="color:var(--gold); margin-right:4px; display:inline-block; animation:pulse 2s infinite;">&#9679;</span>' 
+      + '<span style="font-weight:700; letter-spacing:0.5px; color:#f0ebe0;">' + timeStr + '</span>'
+      + '<span style="font-size:9px; color:var(--muted); margin-left:4px; font-weight:800;">IST</span>';
+  }
+  
   setInterval(function(){
-    if(chipMode==='slots'){ morphChip(slotText()); }
-    chipMode = chipMode==='slots' ? 'section' : 'slots';
-  }, 5000);
+    if(chipMode === 'slots'){
+      updateClock();
+    }
+    // We can keep it always on the clock, or alternate with section name. Let's keep it mostly on clock.
+    // If we want it to alternate, we leave the chipMode logic. The user said "Replace this entire badge with a live clock". 
+    // We will just keep it on the clock always, except maybe it morphs when scrolling.
+    updateClock();
+  }, 1000);
+  
+  // Initial call
+  updateClock();
 
   // scroll: collapse/expand + progress ring + section morph
   var sections = $$('section[id]');
@@ -540,13 +560,17 @@ if(nav){
 (function(){
   var hero = $('.hero'); if(!hero) return;
   var zone = document.createElement('div'); zone.className='hero-phone-zone ios-reveal in';
-  zone.innerHTML = '<div class="iphone-frame" id="heroPhone">'
-    + '<span class="iphone-btn power"></span><span class="iphone-btn volup"></span><span class="iphone-btn voldn"></span>'
-    + '<div class="iphone-glow"></div>'
-    + '<div class="iphone-screen"><img src="assets/phone-showcase.jpg" alt="DigiRise client website live preview scrolling on iPhone" loading="lazy" onerror="this.parentNode.style.background=\'linear-gradient(160deg,#1a1207,#080604)\';this.remove();"></div>'
-    + '</div>'
-    + '<img class="hero-mascot" src="assets/mascot.png" alt="" aria-hidden="true" onerror="this.remove();">'
-    + '<div class="hero-phone-hint">⟲ Drag karke 360° ghumao</div>';
+  zone.innerHTML = '<div class="poc-phone" id="heroPhone" style="--poc-glow: rgba(239,68,68,0.35); margin:0;">'
+    + '<div class="poc-screen">'
+    + '<div class="poc-browser-bar"><span class="poc-dot r"></span><span class="poc-dot y"></span><span class="poc-dot g"></span><div class="poc-url" style="font-size:10px;">lalsweets.com</div></div>'
+    + '<div class="poc-screen-body">'
+    + '<img class="poc-shot" src="assets/lal.png" alt="LAL Sweets website preview" loading="lazy">'
+    + '<div class="poc-shot-overlay">'
+    + '<div class="poc-shot-biz">LAL Sweets</div><div class="poc-shot-industry" style="font-size:8px;">FOOD & SWEETS</div>'
+    + '<div class="poc-shot-after" style="font-size:10px;">&#9989; Professional digital identity established</div>'
+    + '<a href="https://lalsweets.com" target="_blank" rel="noopener" class="poc-shot-link" style="padding:6px 10px; font-size:10px;">Visit lalsweets.com</a>'
+    + '</div></div></div></div>'
+    + '<div class="hero-phone-hint" style="margin-top:24px;">⟲ Drag karke 360° ghumao</div>';
   var content = $('.hero-content', hero);
   (content ? content.parentNode : hero).insertBefore(zone, content ? content.nextSibling : null);
 
