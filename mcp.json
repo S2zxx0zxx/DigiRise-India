@@ -2,7 +2,7 @@
   "name": "DigiRise India",
   "description": "Digital Marketing Agency — Meta Ads, SEO, Website Design, Branding & Lead Generation. Serving India, UK, US & UAE from Kolkata.",
   "version": "1.0",
-  "homepage": "https://digi-rise-india.vercel.app/",
+  "homepage": "https://digiriseindia.tech",
   "contact": {
     "email": "hello@digiriseindia.in",
     "whatsapp": "https://wa.me/917439133880"
@@ -11,25 +11,25 @@
     {
       "name": "company_summary",
       "description": "Concise company identity, services, and pricing summary",
-      "url": "https://digi-rise-india.vercel.app/llms.txt",
+      "url": "https://digiriseindia.tech/llms.txt",
       "type": "text/plain"
     },
     {
       "name": "full_blog_content",
       "description": "Full text of published blog articles (partial coverage — see file note for current count)",
-      "url": "https://digi-rise-india.vercel.app/llms-full.txt",
+      "url": "https://digiriseindia.tech/llms-full.txt",
       "type": "text/plain"
     },
     {
       "name": "blog_feed",
       "description": "RSS feed of latest blog posts",
-      "url": "https://digi-rise-india.vercel.app/feed.xml",
+      "url": "https://digiriseindia.tech/feed.xml",
       "type": "application/rss+xml"
     },
     {
       "name": "site_structure",
       "description": "Full sitemap of all pages",
-      "url": "https://digi-rise-india.vercel.app/sitemap.xml",
+      "url": "https://digiriseindia.tech/sitemap.xml",
       "type": "application/xml"
     }
   ],

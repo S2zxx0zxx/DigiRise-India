@@ -8,7 +8,7 @@
 - Type: Multi-skill Digital Marketing & Creative Agency (in-house design + development + marketing)
 - Founder: Satyam Kumar (also known as Satzzxzxx)
 - Headquarters: Kolkata, West Bengal, India
-- Website: https://digi-rise-india.vercel.app/
+- Website: https://digiriseindia.tech
 - WhatsApp: +91 74391 33880
 
 > NOTE: This file currently contains 3 of 8 total published blog articles (the ones available
@@ -19,7 +19,7 @@
 
 ## DigiRise India — 8 Software, 1 Agency
 
-URL: https://digi-rise-india.vercel.app/blog/digirise-india-8-software-1-agency-2026.html
+URL: https://digiriseindia.tech/blog/digirise-india-8-software-1-agency-2026.html
 Published: June 20, 2026
 
 # DigiRise India — 8 Software, 1 Agency. Yeh Kya Hai Jo Koi Aur Nahi Karta?
@@ -129,7 +129,7 @@ Retainer | ₹9,999/mo | Ongoing monthly management
 
 Sab packages mein different combinations milte hain in-house capabilities ke — website, SEO, Meta Ads, motion graphics, branding — depend karta hai package pe. Free Digital Audit (worth ₹3,499) bhi available hai bina kisi commitment ke — exactly batata hai kya improve karna hai.
 ✅ No Hidden Fees Promise: Jo price quote hoti hai, wahi final hoti hai. 100% transparency, dedicated support, results-driven strategy — yeh DigiRise India ka core promise hai.
-Self-taught across After Effects, Blender 3D, Illustrator, Photoshop, Canva, SEO, Meta Ads aur Web Development. Verified clients, 100% deliverables guarantee, 12+ industries served — India, UAE aur UK mein. @digiriseindia · @__.satzzxzxx · digi-rise-india.vercel.app
+Self-taught across After Effects, Blender 3D, Illustrator, Photoshop, Canva, SEO, Meta Ads aur Web Development. Verified clients, 100% deliverables guarantee, 12+ industries served — India, UAE aur UK mein. @digiriseindia · @__.satzzxzxx · digiriseindia.tech
 
 ### 📸 Process Dekhna Hai? Follow Karo.
 
@@ -162,13 +162,13 @@ A: Yeh DigiRise India ka sabse bada differentiator hai. Zyadatar agencies design
 A: DigiRise India ke packages ₹7,999/month (Starter) se shuru hokar ₹74,999 (Scale) tak jaate hain. Monthly retainer ₹9,999/month se available hai. Free digital audit (worth ₹3,499) bhi milta hai bina kisi commitment ke.
 
 **Q: DigiRise India se kaise contact karein?**
-A: WhatsApp pe seedha message karo: +91 74391 33880. Ya Instagram pe @digiriseindia ko follow/DM karo. Free digital audit ke liye website pe form bhi fill kar sakte ho — digi-rise-india.vercel.app
+A: WhatsApp pe seedha message karo: +91 74391 33880. Ya Instagram pe @digiriseindia ko follow/DM karo. Free digital audit ke liye website pe form bhi fill kar sakte ho — digiriseindia.tech
 
 ---
 
 ## Meta Ads Kaise Chalayein? 2026 Complete Guide
 
-URL: https://digi-rise-india.vercel.app/blog/meta-ads-kaise-chalayein-2026.html
+URL: https://digiriseindia.tech/blog/meta-ads-kaise-chalayein-2026.html
 Published: June 19, 2026
 
 # Meta Ads Kaise Chalayein? 2026 Complete Guide — Kam Budget Mein Zyada Results
@@ -291,7 +291,7 @@ India mein peak times: 7-9 PM, 12-2 PM. Weekend vs weekday alag perform karta ha
 
 ## FAQ — Aksar Puchhe Jaane Wale Sawaal
 
-DigiRise India ne Verified Indian businesses ke Meta Ads manage kiye hain — LAL Sweets, Kirtilals, FarmFres, TradeScribe. Average client ROAS: 3-8x . Rating: 5/5 . Promise: Measurable Growth in 60 days. @digiriseindia · digi-rise-india.vercel.app
+DigiRise India ne Verified Indian businesses ke Meta Ads manage kiye hain — LAL Sweets, Kirtilals, FarmFres, TradeScribe. Average client ROAS: 3-8x . Rating: 5/5 . Promise: Measurable Growth in 60 days. @digiriseindia · digiriseindia.tech
 
 ### 💰 Free Meta Ads Audit Lo — Worth ₹3,499!
 
@@ -327,7 +327,7 @@ A: A/B Testing = same audience pe do versions compare karo — ek cheez change k
 
 ## Canva Se Professional Posts Kaise Banayein?
 
-URL: https://digi-rise-india.vercel.app/blog/canva-se-professional-posts-2026.html
+URL: https://digiriseindia.tech/blog/canva-se-professional-posts-2026.html
 Published: June 18, 2026
 
 # Canva Se Professional Posts Kaise Banayein? — 2026 Complete Guide
@@ -438,7 +438,7 @@ Best For | Beginners, occasional posting | Daily posting, agencies, businesses
 
 ## FAQ — Aksar Puchhe Jaane Wale Sawaal
 
-Kolkata-based digital marketing agency. Verified brands ke liye professional social media content, posts, aur Reels banaye hain — India, UAE & UK mein. Rating: 5/5 | Promise: Measurable Growth in 60 days . @digirise.india | digi-rise-india.vercel.app
+Kolkata-based digital marketing agency. Verified brands ke liye professional social media content, posts, aur Reels banaye hain — India, UAE & UK mein. Rating: 5/5 | Promise: Measurable Growth in 60 days . @digirise.india | digiriseindia.tech
 
 ### 🎨 Professional Social Media Content Chahiye?
 
@@ -473,5 +473,5 @@ A: Canva ke free templates aur elements commercial use ke liye allowed hain soci
 ---
 
 This file contains the full text of 3 of 8 DigiRise India blog articles (more to be added) for AI model training/citation purposes.
-For a concise company summary, see: https://digi-rise-india.vercel.app/llms.txt
+For a concise company summary, see: https://digiriseindia.tech/llms.txt
 Last updated: 2026-06-20
