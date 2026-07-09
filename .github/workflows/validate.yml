@@ -1,0 +1,48 @@
+name: Validate Static Site
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify required files exist
+        run: |
+          set -e
+          required_files=(
+            "index.html"
+            "404.html"
+            "robots.txt"
+            "manifest.json"
+            "favicon.ico"
+            "og-image.png"
+            "llms.txt"
+            "security.txt"
+            "humans.txt"
+            "README.md"
+            ".gitignore"
+            ".github/workflows/validate.yml"
+            ".github/CODEOWNERS"
+            "blog/blogs.json"
+          )
+          for f in "${required_files[@]}"; do
+            test -f "$f" || { echo "Missing required file: $f"; exit 1; }
+          done
+
+      - name: Validate JSON files
+        run: |
+          python -m json.tool manifest.json > /dev/null
+          python -m json.tool blog/blogs.json > /dev/null
+
+      - name: Check required URLs in robots.txt
+        run: |
+          grep -q "Sitemap:" robots.txt
