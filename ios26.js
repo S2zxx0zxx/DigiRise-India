@@ -55,85 +55,12 @@ window.toggleDarkMode = function(ev){
 var nav = $('#mainNav');
 if(nav){
   nav.classList.add('island');
-  // status chip + progress ring
-  var chip = document.createElement('div');
-  chip.className = 'island-status';
-  chip.innerHTML = '<span class="is-txt">DigiRise • Live</span>';
-  var ring = document.createElementNS('http://www.w3.org/2000/svg','svg');
-  ring.setAttribute('class','island-ring'); ring.setAttribute('viewBox','0 0 30 30');
-  ring.innerHTML = '<circle class="ir-bg" cx="15" cy="15" r="12"/><circle class="ir-fg" cx="15" cy="15" r="12"/>';
-  var cta = nav.querySelector('.nav-cta:last-of-type');
-  nav.insertBefore(chip, cta || null);
-  nav.insertBefore(ring, chip);
-
-  var irFG = ring.querySelector('.ir-fg'), C = 2*Math.PI*12;
   var lastY = 0, ticking = false;
-  var isTxt = chip.querySelector('.is-txt');
-  var chipMode = 'slots'; // alternates: slots ↔ section name
-
-  function morphChip(txt){
-    if(isTxt.textContent === txt) return;
-    isTxt.classList.add('morph');
-    setTimeout(function(){ isTxt.textContent = txt; isTxt.classList.remove('morph'); }, 240);
-  }
-  function getISTTime(){
-    return new Intl.DateTimeFormat('en-US', {
-      timeZone: 'Asia/Kolkata',
-      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
-    }).format(new Date());
-  }
-  
-  // Update the island chip to be a live IST clock instead of slots
-  chip.style.cssText = 'background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; padding: 6px 14px; display: flex; align-items: center; justify-content: center; margin-left: auto;';
-  
-  function updateClock(){
-    var timeStr = getISTTime();
-    // Monochrome flat design
-    isTxt.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px; flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>' 
-      + '<span style="font-weight:600; letter-spacing:0.2px; color:#fff; font-size:11.5px; display:flex; align-items:baseline; line-height:1;">' + timeStr 
-      + '<span style="font-size:9px; color:rgba(255,255,255,0.6); margin-left:4px; font-weight:700;">IST</span></span>';
-  }
-  
-  setInterval(function(){
-    if(chipMode === 'slots'){
-      updateClock();
-    }
-    // We can keep it always on the clock, or alternate with section name. Let's keep it mostly on clock.
-    // If we want it to alternate, we leave the chipMode logic. The user said "Replace this entire badge with a live clock". 
-    // We will just keep it on the clock always, except maybe it morphs when scrolling.
-    updateClock();
-  }, 1000);
-  
-  // Initial call
-  updateClock();
-
-  // scroll: collapse/expand + progress ring + section morph
-  var sections = $$('section[id]');
   function onScroll(){
     var y = window.scrollY;
     if(y > 90 && y > lastY + 6) nav.classList.add('collapsed');
     else if(y < lastY - 6 || y < 90) nav.classList.remove('collapsed');
     lastY = y;
-    var h = document.documentElement.scrollHeight - innerHeight;
-    var p = h>0 ? y/h : 0;
-    irFG.style.strokeDashoffset = C * (1 - p);
-    // active section
-    if(chipMode==='section'){
-      for(var i=sections.length-1; i>=0; i--){
-        var r = sections[i].getBoundingClientRect();
-        if(r.top < innerHeight*0.4){
-          var name = sections[i].id.replace(/-/g,' ');
-          name = name.charAt(0).toUpperCase()+name.slice(1);
-          var map = {'Packages':'💰 Pricing','Reels showcase':'🎬 Reels','Roi calc':'📈 ROI Calc','Before after':'✨ Our Work','Results timeline':'🗓 Timeline','Ai tools':'🤖 AI Tools','Faq':'❓ FAQ','Trust badges':'🛡 Trusted','Industries':'🧩 Services','Projects':'🖥 Projects','Blog':'📝 Blog','Quiz section':'🎯 Quiz','Geo entity':'🌍 DigiRise','Process':'⚙️ Process','Audit':'🎁 Free Audit'};
-          morphChip(map[name] || name);
-          // nav link highlight
-          $$('.nav-links a', nav).forEach(function(a){
-            a.classList.toggle('island-active', a.getAttribute('href')==='#'+sections[i].id);
-          });
-          break;
-        }
-      }
-    }
     ticking = false;
   }
   addEventListener('scroll', function(){ if(!ticking){ ticking=true; raf(onScroll); } }, {passive:true});
