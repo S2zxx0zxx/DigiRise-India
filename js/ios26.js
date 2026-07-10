@@ -171,7 +171,11 @@ if(nav && !_isToolsHub){
   var track = document.createElement('div'); track.className='marquee-track';
   var cells = $$(':scope > *', grid);
   cells.forEach(function(c){ track.appendChild(c); });
-  cells.forEach(function(c){ track.appendChild(c.cloneNode(true)); }); // duplicate for seamless loop
+  cells.forEach(function(c){ 
+    var clone = c.cloneNode(true); 
+    clone.classList.remove('reveal-hidden', 'ios-reveal');
+    track.appendChild(clone); 
+  }); // duplicate for seamless loop
   wrap.appendChild(track);
   grid.parentNode.replaceChild(wrap, grid);
 })();

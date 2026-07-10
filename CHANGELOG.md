@@ -2,6 +2,9 @@
 
 All notable changes to the DigiRise India website are documented here.
 
+## v5.7 — 2026-07-11 — Marquee Render Fix
+- Fixed: Resolved an invisible cloning bug in the trust badges marquee (`ios26.js`). Cloned elements incorrectly inherited the `.reveal-hidden` class, causing them to remain permanently invisible on scroll. 
+
 ## v5.6 — 2026-07-10 — Complete Structural Repair (Antigravity/Claude)
 - Fixed: Blog relative paths migrated to absolute paths (`/css/`, `/js/`).
 - Fixed: Redesigned desktop header and mobile menu; fixed empty mobile menu bug.
