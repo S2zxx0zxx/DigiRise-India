@@ -81,6 +81,8 @@ body {
     radial-gradient(ellipse 80% 50% at 50% -10%, rgba(240, 168, 37, 0.06), transparent 60%),
     var(--bg) !important;
   letter-spacing: -0.01em;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 h1, h2, h3, .sec-title, .hero h1 {
   font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif !important;
@@ -150,12 +152,22 @@ h1, h2, h3, .sec-title, .hero h1 {
   font-weight: 700 !important;
 }
 .hero h1 .acc {
-  background: linear-gradient(100deg, var(--gold-light) 0%, var(--gold) 45%, var(--gold-light) 90%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: rdGoldSweep 5s ease-in-out infinite;
+  color: var(--gold);
+}
+@supports (-webkit-background-clip: text) {
+  .hero h1 .acc {
+    background: linear-gradient(100deg, var(--gold-light) 0%, var(--gold) 45%, var(--gold-light) 90%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rdGoldSweep 5s ease-in-out infinite;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 .acc {
+    animation: none !important;
+  }
 }
 @keyframes rdGoldSweep { 0%,100% { background-position: 0% center; } 50% { background-position: 100% center; } }
 .hero h1 .shine-word {

@@ -17,7 +17,12 @@ const SHELL_ASSETS = [
   '/index.html',
   '/offline.html',
   '/share.html',
-  '/manifest.json'
+  '/manifest.json',
+  '/tools/',
+  '/tools/website-speed-checker/',
+  '/tools/ad-budget-calculator/',
+  '/tools/roi-calculator/',
+  '/tools/ad-copy-generator/'
 ];
 
 const STATIC_ASSETS = [
@@ -26,7 +31,10 @@ const STATIC_ASSETS = [
   '/css/redesign.css',
   '/js/nextgen.js',
   '/js/ios26.js',
-  '/js/pwa.js'
+  '/js/pwa.js',
+  '/tools/css/tools.css',
+  '/tools/js/hub.js',
+  '/tools/js/router.js'
 ];
 
 self.addEventListener('install', (event) => {

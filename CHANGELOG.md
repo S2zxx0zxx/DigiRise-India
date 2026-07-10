@@ -2,6 +2,17 @@
 
 All notable changes to the DigiRise India website are documented here.
 
+## v5.5 — 2026-07-10 — Tools Hub v2 & Site Repairs (Antigravity/Claude)
+- Fixed: Bug 1 (Mobile menu ghost text) via `display: none` in ios26.css.
+- Fixed: Bug 2 & 3 (Mobile Tools layout + bottom tab bar) via full HTML/CSS rebuild of tools dashboard.
+- Fixed: Bug 4 (Hero headline double text) via `@supports` fallback in redesign.css.
+- Fixed: Bug 6 (Horizontal overflow) via `overflow-x: hidden` on body in redesign.css.
+- Built Tools Hub v2 App Shell: Command Card router (`router.js`), Fanned deck, Tabs (`hub.js`).
+- Built 4 fully functional tools: Speed Checker (API), Ad Budget Calculator (Benchmarks), ROI Calculator, Ad Copy Generator.
+- Added PWA shortcut for Tools Hub to `manifest.json`.
+- Cached all new tool routes and assets in `sw.js` (v17).
+- Appended 5 tool URLs to `sitemap.xml`.
+
 ## v5.4 — 2026-07-10 — Tools Hub Overlay Fix (Claude, user-reported)
 - Fixed: Tools Hub pages (dashboard, speed checker, ad calculator) had nav overlapping/colliding with sidebar
 - Root cause: global ios26.js island-nav morph fought tools.css's fixed-sidebar layout — now guarded per page

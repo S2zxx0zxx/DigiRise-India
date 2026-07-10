@@ -98,6 +98,19 @@
           "type": "image/png"
         }
       ]
+    },
+    {
+      "name": "Tools Hub",
+      "short_name": "Tools",
+      "description": "Free marketing calculators and tools",
+      "url": "/tools/",
+      "icons": [
+        {
+          "src": "/assets/shortcuts/tools.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ],
   "share_target": {

@@ -3,26 +3,52 @@
     {
       "id": "website-speed-checker",
       "slug": "website-speed-checker",
-      "name": "Website Speed Checker",
-      "description": "Analyze your website's performance, load times, and SEO health in real-time.",
+      "name": "Speed Checker",
+      "description": "Analyze website performance and core web vitals in real-time.",
       "status": "live",
-      "icon": "⚡"
+      "icon": "⚡",
+      "modes": ["Quick scan", "Deep scan"],
+      "guides": ["website-cost-india-2025"]
     },
     {
       "id": "ad-budget-calculator",
       "slug": "ad-budget-calculator",
       "name": "Ad Budget Calculator",
-      "description": "Calculate your projected ROI and recommended ad budget based on real market data.",
+      "description": "Project your ROI and budget based on real India market CPC/CVR.",
       "status": "live",
-      "icon": "💰"
+      "icon": "🎯",
+      "modes": ["Monthly", "Campaign"],
+      "guides": ["meta-ads-kaise-chalayein-2026"]
+    },
+    {
+      "id": "roi-calculator",
+      "slug": "roi-calculator",
+      "name": "ROI Calculator",
+      "description": "Calculate breakeven CPA and profitability.",
+      "status": "live",
+      "icon": "📈",
+      "modes": ["Standard"],
+      "guides": ["digital-marketing-agency-vs-khud-2026"]
+    },
+    {
+      "id": "ad-copy-generator",
+      "slug": "ad-copy-generator",
+      "name": "Meta Ads Copy",
+      "description": "Generate high-converting ad copy templates.",
+      "status": "live",
+      "icon": "📝",
+      "modes": ["Professional", "Hinglish-casual", "Urgent"],
+      "guides": ["canva-se-professional-posts-2026"]
     },
     {
       "id": "seo-audit-generator",
       "slug": "seo-audit-generator",
-      "name": "SEO Audit Generator",
+      "name": "SEO Audit",
       "description": "Comprehensive technical SEO analysis for Indian small businesses.",
       "status": "soon",
-      "icon": "🔍"
+      "icon": "🔍",
+      "modes": ["Standard"],
+      "guides": []
     }
   ]
 }

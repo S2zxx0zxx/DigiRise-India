@@ -107,6 +107,7 @@
 
 /* Mobile menu → iOS sheet feel */
 .mobile-menu{
+  display: none !important;
   border-radius: 26px !important;
   top: 72px !important;
   left: 12px; right: 12px;
@@ -116,6 +117,9 @@
   border: 1px solid var(--island-border) !important;
   box-shadow: 0 24px 60px rgba(0,0,0,.5);
   transform-origin: top center;
+}
+.mobile-menu.open {
+  display: flex !important;
 }
 body{ padding-top: 0; }
 main#main-content{ scroll-margin-top: 90px; }
