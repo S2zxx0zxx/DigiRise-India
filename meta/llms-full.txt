@@ -1,6 +1,6 @@
 # DigiRise India — llms-full.txt
 # Full-text companion to llms.txt — complete blog article content for AI model citation/training.
-# Last updated: 2026-06-20
+# Last updated: 2026-07-11
 
 ## Identity
 

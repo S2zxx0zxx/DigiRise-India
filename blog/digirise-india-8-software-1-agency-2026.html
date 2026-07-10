@@ -1,6 +1,12 @@
 <!DOCTYPE html>
-<html lang="hi-IN">
+<html data-theme="dark" lang="hi-IN">
 <head>
+<style id="failsafe">
+:root{--bg:#050505;--text:#fff;--muted:#a3a3a3;--accent:#f0a825}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif}
+a{color:var(--accent)}
+</style>
+
   <link rel="apple-touch-icon" href="https://digiriseindia.tech/apple-touch-icon.png">
 <meta charset="UTF-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; connect-src 'self' https:;">
@@ -204,7 +210,7 @@
   "logo": "https://digiriseindia.tech/icon-512.png",
   "description": "Kolkata-based multi-skill digital marketing and creative agency. Real client portfolio across 12+ industries, 100% deliverables guarantee. In-house After Effects, Blender 3D, Illustrator, Canva, Meta Ads, SEO and Web Development.",
   "founder": {"@type": "Person", "name": "Satyam Kumar", "sameAs": ["https://x.com/satzzxzxx", "https://instagram.com/__.satzzxzxx"]},
-  "contactPoint": {"@type": "ContactPoint", "telephone": "+91-74391-33880", "contactType": "customer service"},
+  "contactPoint": {"@type": "ContactPoint", "contactType": "customer service"},
   "sameAs": ["https://instagram.com/digiriseindia", "https://x.com/satzzxzxx", "https://github.com/S2zxx0zxx"]
 }
 </script>
@@ -253,12 +259,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/css/redesign.css">
-<link rel="stylesheet" href="/css/ios26.css">
-<link rel="stylesheet" href="/css/blog.css">
+
+
+
 
 <!-- Vercel Web Analytics -->
 <script>if(window.top!==window.self){window.top.location=window.self.location;}</script>
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"></noscript>
+
+<!-- Core Design System -->
+<link rel="stylesheet" href="/css/core.css">
+<link rel="stylesheet" href="/css/redesign.css">
+<link rel="stylesheet" href="/css/nextgen.css">
+<link rel="stylesheet" href="/css/ios26.css">
+<link rel="stylesheet" href="/css/blog.css">
 </head>
 <body>
 
@@ -892,8 +908,8 @@ function toggleMenu() {
   <div class="related-box">
     <div class="related-title">📚 Yeh Bhi Padho</div>
     <div class="related-links">
-      <a href="/blog/digiriseindia-instagram-follow-kyun-karein-2026.html" class="related-link">📸 @DigiRiseIndia Follow Kyun Karein? →</a>
-      <a href="/blog/after-effects-2-5d-parallax-animation-tutorial-2026.html" class="related-link">🎬 After Effects 2.5D Parallax Tutorial →</a>
+      <a href="/blog/digirise-india-8-software-1-agency-2026.html" class="related-link">📸 @DigiRiseIndia Follow Kyun Karein? →</a>
+      <a href="/blog/digirise-india-8-software-1-agency-2026.html" class="related-link">🎬 After Effects 2.5D Parallax Tutorial →</a>
       <a href="/blog/meta-ads-kaise-chalayein-2026.html" class="related-link">💰 Meta Ads Kaise Chalayein? →</a>
       <a href="/blog/digital-marketing-agency-vs-khud-2026.html" class="related-link">🤔 Agency Hire Karein Ya Khud Karein? →</a>
     </div>

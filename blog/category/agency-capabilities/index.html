@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-IN" data-theme="dark" prefix="og: https://ogp.me/ns#">
 <head>
+<style id="failsafe">
+:root{--bg:#050505;--text:#fff;--muted:#a3a3a3;--accent:#f0a825}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif}
+a{color:var(--accent)}
+</style>
+
 <meta charset="UTF-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; connect-src 'self' https:;">
 <meta name="google-site-verification" content="E55uxLWY1552mjGw4SzivpjF9bYDzYVMz3eFCwSnVDg" />
@@ -42,8 +48,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="theme-color" id="metaThemeColor" content="#080604"><!-- FIX-P1: synced by ios26.js -->
 
-<link rel="preload" href="/css/redesign.css" as="style">
-<link rel="preload" href="/css/ios26.css" as="style">
+
+
 
 <!-- ═══════════════════════════════════════════════
      OPEN GRAPH (Facebook, WhatsApp, LinkedIn)
@@ -119,8 +125,7 @@
   "url": "https://digiriseindia.tech/",
   "logo": "https://digiriseindia.tech/og-image.png",
   "image": "https://digiriseindia.tech/og-image.png",
-  "telephone": "digiriseindia@gmail.com",
-  "email": "hello@digiriseindia.in",
+  "email": "digiriseindia@gmail.com",
   "foundingDate": "2024",
   "numberOfEmployees": {"@type": "QuantitativeValue", "value": 1},
   "founder": {
@@ -267,7 +272,6 @@
   "description": "Satyam Kumar is a self-taught full-stack developer, AI architect, and digital marketing strategist from West Bengal, India. He is the founder of DigiRise India, a premium digital marketing agency serving real clients including LAL Sweets, Kirtilals, TradeScribe and FarmFres across India, UAE, and the UK.",
   "url": "https://satzzxzxx.me",
   "image": "https://digiriseindia.tech/og-image.png",
-  "telephone": "digiriseindia@gmail.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Kolkata",
@@ -1844,9 +1848,9 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
 
 
 </style>
-<link rel="stylesheet" href="/css/nextgen.css">
-<link rel="stylesheet" href="/css/redesign.css">
-<link rel="stylesheet" href="/css/ios26.css"><!-- FIX-3.0: DigiRise 3.0 iOS Edition layer -->
+
+
+<!-- FIX-3.0: DigiRise 3.0 iOS Edition layer -->
   <style id="hotfixes">
     /* FIX 2: Footer Watermark */
     footer {
@@ -1950,6 +1954,13 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
     }
   </style>
 <script>if(window.top!==window.self){window.top.location=window.self.location;}</script>
+
+<!-- Core Design System -->
+<link rel="stylesheet" href="/css/core.css">
+<link rel="stylesheet" href="/css/redesign.css">
+<link rel="stylesheet" href="/css/nextgen.css">
+<link rel="stylesheet" href="/css/ios26.css">
+
 </head>
 <body>
 
@@ -2084,8 +2095,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
   "url": "https://digiriseindia.tech/",
   "logo": "https://digiriseindia.tech/og-image.png",
   "image": "https://digiriseindia.tech/og-image.png",
-  "telephone": "digiriseindia@gmail.com",
-  "email": "hello@digiriseindia.in",
+  "email": "digiriseindia@gmail.com",
   "foundingDate": "2024",
   "numberOfEmployees": {"@type": "QuantitativeValue", "value": 1},
   "founder": {

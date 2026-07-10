@@ -1,7 +1,7 @@
 // DigiRise India — Intelligent Service Worker (PWA MAX)
 // v11 - Strategy-per-resource caching engine
 
-const CACHE_VERSION = 18;
+const CACHE_VERSION = 19;
 const BUCKETS = {
   shell: `dr-shell-v${CACHE_VERSION}`,
   static: `dr-static-v${CACHE_VERSION}`,
@@ -26,6 +26,7 @@ const SHELL_ASSETS = [
 ];
 
 const STATIC_ASSETS = [
+  '/css/core.css',
   '/css/nextgen.css',
   '/css/ios26.css',
   '/css/redesign.css',

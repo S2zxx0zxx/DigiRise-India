@@ -1,13 +1,58 @@
 <!DOCTYPE html>
 <html lang="en-IN" data-theme="dark">
 <head>
-  <link rel="apple-touch-icon" href="https://digiriseindia.tech/apple-touch-icon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Speed Checker | DigiRise Tools</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=VT323&display=swap">
-<link rel="stylesheet" href="../../css/redesign.css">
-<link rel="stylesheet" href="../css/tools.css">
+<title>Website Speed Checker Pro | DigiRise Tools</title>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=VT323&display=swap">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" id="metaThemeColor" content="#030303">
+
+<!-- Core Design System -->
+<link rel="stylesheet" href="/css/core.css">
+<link rel="stylesheet" href="/css/redesign.css">
+<link rel="stylesheet" href="/css/nextgen.css">
+<link rel="stylesheet" href="/css/ios26.css">
+<link rel="stylesheet" href="/tools/css/tools.css">
+<style>
+.tab-group { display: flex; gap: 10px; margin-bottom: 20px; }
+.tab-btn { flex: 1; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--muted); border-radius: 8px; cursor: pointer; transition: 0.2s; }
+.tab-btn.active { background: var(--card); color: var(--accent); border-color: var(--accent); }
+.score-gauges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
+.gauge { text-align: center; }
+.gauge-ring { width: 80px; height: 80px; border-radius: 50%; border: 6px solid var(--border); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 24px; font-weight: 700; }
+.gauge-ring.good { border-color: var(--green); color: var(--green); }
+.gauge-ring.warn { border-color: var(--accent); color: var(--accent); }
+.gauge-ring.poor { border-color: var(--red); color: var(--red); }
+.gauge-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 30px; }
+.metric-card { background: var(--card); padding: 15px; border-radius: 12px; border: 1px solid var(--border); }
+.metric-card .mc-label { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.metric-card .mc-val { font-size: 20px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
+.metric-card .mc-val.good { color: var(--green); }
+.metric-card .mc-val.warn { color: var(--accent); }
+.metric-card .mc-val.poor { color: var(--red); }
+.sect-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin: 30px 0 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+.opp-list { list-style: none; padding: 0; }
+.opp-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border2); font-size: 14px; }
+.opp-savings { color: var(--accent); font-weight: 600; }
+.diag-row { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+.diag-item { background: rgba(255,255,255,0.02); padding: 8px 16px; border-radius: 20px; font-size: 13px; color: var(--muted); }
+.diag-item span { color: #fff; font-weight: 600; margin-left: 6px; }
+.thumb-box { text-align: center; margin-bottom: 30px; }
+.thumb-box img { max-width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.lead-banner { background: linear-gradient(135deg, rgba(240,168,37,0.1), rgba(240,168,37,0.02)); border: 1px solid var(--accent-soft); border-radius: 12px; padding: 20px; text-align: center; margin-top: 40px; display: none; }
+.lead-banner.active { display: block; }
+.lead-banner h4 { color: var(--accent); font-family: 'Space Grotesk', sans-serif; font-size: 18px; margin-bottom: 10px; }
+.lead-banner p { color: var(--text2); font-size: 14px; margin-bottom: 15px; }
+@media (max-width: 768px) { .score-gauges { grid-template-columns: repeat(2, 1fr); } }
+</style>
 </head>
 <body class="tools-hub-mode">
 <div class="tool-page-layout">
@@ -19,7 +64,7 @@
       </a>
     </div>
     <nav class="ts-nav">
-      <a href="/tools/website-speed-checker/" class="ts-link active">⚡ Speed Checker</a>
+      <a href="/tools/website-speed-checker/" class="ts-link active">⚡ Speed Checker Pro</a>
       <a href="/tools/ad-budget-calculator/" class="ts-link">💰 Ad Budget</a>
       <a href="/tools/roi-calculator/" class="ts-link">📈 ROI Calculator</a>
       <a href="/tools/ad-copy-generator/" class="ts-link">📝 Ad Copy</a>
@@ -27,39 +72,32 @@
   </aside>
 
   <main class="tool-main-content">
-    <div class="tool-header-bread">/ TOOLS / SPEED CHECKER</div>
-    <h1 class="tool-title">Website Speed Checker</h1>
-    <p class="tool-desc">Analyze your website's performance using Google's official Core Web Vitals API. Real metrics, real insights.</p>
+    <div class="tool-header-bread">/ TOOLS / SPEED CHECKER PRO</div>
+    <h1 class="tool-title">Website Speed Checker Pro</h1>
+    <p class="tool-desc">Full Lighthouse report. 4 category scores, Core Web Vitals, real-user data, and fix opportunities.</p>
     
     <div class="tool-panel">
       <div class="tool-input-group">
         <label>Website URL</label>
         <input type="url" id="urlInput" class="tool-input-field" placeholder="https://example.com" value="">
       </div>
-      <button id="runBtn" class="tool-btn">Run Audit</button>
+      <button id="runBtn" class="tool-btn btn-primary">Run Full Audit</button>
     </div>
 
     <div class="tool-terminal" id="terminal"></div>
 
     <div class="result-block" id="resultBlock">
-      <h3 style="margin-bottom:16px;">Core Web Vitals</h3>
-      <div class="metric-grid">
-        <div class="metric-card">
-          <div class="mc-label">Performance Score</div>
-          <div class="mc-val" id="scoreVal">--</div>
-        </div>
-        <div class="metric-card">
-          <div class="mc-label">First Contentful Paint (FCP)</div>
-          <div class="mc-val" id="fcpVal">--</div>
-        </div>
-        <div class="metric-card">
-          <div class="mc-label">Largest Contentful Paint (LCP)</div>
-          <div class="mc-val" id="lcpVal">--</div>
-        </div>
-        <div class="metric-card">
-          <div class="mc-label">Cumulative Layout Shift (CLS)</div>
-          <div class="mc-val" id="clsVal">--</div>
-        </div>
+      <div class="tab-group">
+        <button class="tab-btn active" data-tab="mobile">📱 Mobile</button>
+        <button class="tab-btn" data-tab="desktop">💻 Desktop</button>
+      </div>
+
+      <div id="renderArea"></div>
+
+      <div class="lead-banner" id="leadBanner">
+        <h4>Score kam aa raha hai?</h4>
+        <p>Slow website = Lost customers. Get a complete technical SEO & Performance Audit (worth ₹3,499) for FREE.</p>
+        <a href="mailto:digiriseindia@gmail.com?subject=Free%20Website%20Audit%20Request" class="tool-btn btn-primary" style="display:inline-block; padding:10px 24px;">Request Free Audit →</a>
       </div>
     </div>
   </main>
@@ -88,6 +126,6 @@
   </a>
 </nav>
 
-<script src="js/speed.js"></script>
+<script src="/tools/js/speed.js"></script>
 </body>
 </html>

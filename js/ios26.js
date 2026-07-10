@@ -89,15 +89,25 @@ if(nav && !_isToolsHub){
 
 /* ═════════════ FIX-303: staggered reveals + 3D tilt + gyro ═════════════ */
 (function(){
-  var targets = $$('.pkg-card, .ind-card, .trust-cell, .reel-card, .proj-hero-card, .aside-card, .rtl-grid > *, .addon-grid > *, .faq-item, .blog-card');
-  targets.forEach(function(el,i){ 
-    el.classList.add('ios-reveal', 'reveal-hidden'); 
-    el.style.setProperty('--stag', ((i%4)*0.06)+'s'); 
-  });
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {rootMargin:'0px 0px 15% 0px'});
-  targets.forEach(function(el){ io.observe(el); });
+  try {
+    var targets = $('.pkg-card, .ind-card, .trust-cell, .reel-card, .proj-hero-card, .aside-card, .rtl-grid > *, .addon-grid > *, .faq-item, .blog-card');
+    targets.forEach(function(el,i){ 
+      if (el.getBoundingClientRect().top < window.innerHeight * 1.2) {
+        el.classList.add('ios-reveal', 'in');
+      } else {
+        el.classList.add('ios-reveal', 'reveal-hidden'); 
+      }
+      el.style.setProperty('--stag', ((i%4)*0.06)+'s'); 
+    });
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'600px 0px 600px 0px', threshold:0});
+    targets.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ document.querySelectorAll('.reveal-hidden:not(.in):not(.ng-in)').forEach(function(el){ el.classList.add('in','ng-in'); }); }, 1200);
+  } catch(e) {
+    document.querySelectorAll('.reveal-hidden').forEach(function(el){ el.classList.remove('reveal-hidden'); el.classList.add('in'); });
+  }
+
 
   if(RM) return;
   // pointer tilt (desktop) — throttled, transform only
