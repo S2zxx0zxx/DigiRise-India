@@ -2,6 +2,11 @@
 
 All notable changes to the DigiRise India website are documented here.
 
+## v5.9 — 2026-07-11 — Ultimate Matte Black Overhaul (Gold Nuke)
+- Design: Completely eradicated all hardcoded gold Hex and RGB color codes across 38+ HTML, JS, and CSS files.
+- Design: Replaced all legacy gold variables, inline styles, box-shadows, and SVG strokes with white/silver variants to guarantee a pure, matte glowy black experience.
+- Refactor: Deployed node-based search-and-replace scripts to recursively scan and neutralize all inline gold instances.
+
 ## v5.8 — 2026-07-11 — Dark Mode Monochromatic Overhaul (Matte Glowy White)
 - Design: Completely stripped the "Gold" accent colors from Dark Mode across `redesign.css`, `nextgen.css`, and `ios26.css`.
 - Design: Replaced all gold borders, shadows, and text highlights in Dark Mode with shades of pure White and Silver.
