@@ -22,3 +22,15 @@
 | `js/ios26.js` | Dynamic SVG gradient updated | `#f5d78a` / `#ffffff` | `#c9c9c9` / `#ffffff` |
 | `index.html` (and 20+ other HTML files) | Replaced dark-mode inline CSS variables and `.addon-card.featured` hardcoded hexes | `[data-theme="dark"]` block with `#e09d20`, etc. | Pure white and matte black palette |
 | `nuke-gold.js` | Cleaned up residual gold hexes | `--gold:#b87b0a`, etc. | `--gold:#f2f2f2`, etc. |
+
+## Bug 10: Dark Mode Flat/Washed-Out Grey Fix
+
+**Status:** Resolved
+**Issue:** Dark mode background read as a flat, slightly washed-out grey-black on OLED/AMOLED screens, lacking premium depth. Cards blended into the background without sufficient lightness separation.
+
+### What Was Fixed
+- **Deep Glass Black Base:** Updated `--bg`/`--bg2`/`--bg3`/`--card` values to true near-black with clearer lightness separation (from `#0a0a0a` to `#050505` base, `#101010` card).
+- **Gradient Wash:** Added a subtle radial gradient wash to the dark-mode body background to eliminate the "flat plastic" look.
+- **Material Grain/Noise:** Injected a barely-visible SVG noise/grain texture overlay pseudo-element to add material richness.
+- **Card Depth:** Strengthened card borders and ensured shadows (`var(--shadow)`) apply correctly to `.card`, `.pkg-card`, etc. so surfaces read as "raised".
+- **Light Mode Safety:** Confirmed light mode was completely unaffected.

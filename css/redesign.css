@@ -18,11 +18,12 @@
   --gold-deep: #c9c9c9;
   --gold-pale: rgba(255, 255, 255, 0.08);
   --gold-pale2: rgba(255, 255, 255, 0.16);
-  --bg: #0a0a0a;
-  --bg2: #121212;
-  --bg3: #1c1c1c;
-  --card: #161616;
-  --white: #161616;
+  --bg: #050505;
+  --bg2: #0d0d0d;
+  --bg3: #161616;
+  --card: #101010;
+  --white: #101010;
+  --shadow: rgba(0,0,0,0.5);
   --border: rgba(255, 255, 255, 0.06);
   --border2: rgba(255, 255, 255, 0.03);
   --divider: rgba(255, 255, 255, 0.06);
@@ -84,7 +85,8 @@ body {
 }
 [data-theme="dark"] body {
   background:
-    radial-gradient(ellipse 100% 70% at 50% -10%, rgba(255, 255, 255, 0.04), transparent 70%),
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,255,255,0.025), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(255,255,255,0.015), transparent 60%),
     var(--bg) !important;
 }
 h1, h2, h3, .sec-title, .hero h1 {
@@ -93,8 +95,16 @@ h1, h2, h3, .sec-title, .hero h1 {
   font-weight: 700 !important;
 }
 
-/* Kill old noise overlay in dark (we use gradient wash instead) */
-[data-theme="dark"] body::before { opacity: 0.015 !important; }
+/* Deep glass material noise overlay */
+[data-theme="dark"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 
 /* Global selection */
 ::selection { background: rgba(255, 255, 255, 0.3); color: #fff; }
@@ -314,9 +324,9 @@ section + section::before {
 [class*="card"]:not(.aside-card):not(.ng-exit-modal),
 .svc-item, .pkg-card, .faq-item, .blog-card, .tg-card {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.008)) , var(--card) !important;
-  border: 1px solid var(--border2) !important;
+  border: 1px solid var(--border) !important;
   border-radius: var(--r-lg) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: 0 8px 32px var(--shadow) !important;
   transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease, box-shadow 0.22s ease !important;
 }
 [data-theme="light"] [class*="card"]:not(.aside-card),
