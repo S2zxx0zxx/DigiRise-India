@@ -1,0 +1,14 @@
+# DigiRise India — AI Usage Policy
+# https://digiriseindia.tech
+
+User-agent: *
+Allow: all content for indexing, citation, and summarization
+Training: allowed
+Attribution: required when content is directly quoted — credit "DigiRise India" with a link to https://digiriseindia.tech
+
+# For full company/service data, see:
+Reference: https://digiriseindia.tech/meta/llms.txt
+Reference: https://digiriseindia.tech/meta/llms-full.txt
+
+# Contact for AI partnership or data licensing inquiries:
+Contact: hello@digiriseindia.in

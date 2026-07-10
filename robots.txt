@@ -1,0 +1,21 @@
+# DigiRise India — robots.txt
+# https://digiriseindia.tech
+
+User-agent: *
+Allow: /
+
+# Block common junk paths
+Disallow: /cdn-cgi/
+Disallow: /admin/
+Disallow: /leads/
+Disallow: /*?*
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.ai-brain.md
+
+# Sitemap location
+Sitemap: https://digiriseindia.tech/sitemap.xml
+Sitemap: https://digiriseindia.tech/meta/feed.xml
+
+# Crawl delay for bots (not Google — Google ignores this)
+Crawl-delay: 1

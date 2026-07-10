@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-IN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; connect-src 'self' https:;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Digital Audit | DigiRise India</title>
+<meta name="description" content="Claim your free 360° Digital Growth Audit from DigiRise India.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=VT323&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=VT323&display=swap"></noscript>
+
+<link rel="stylesheet" href="../css/redesign.css">
+<link rel="stylesheet" href="../css/nextgen.css">
+
+<style>
+  body {
+    background: #0a0602;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(200, 137, 10, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 85% 30%, rgba(200, 137, 10, 0.08) 0%, transparent 50%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  
+  .squeeze-nav {
+    padding: 24px 5%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .squeeze-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 5% 80px;
+    z-index: 10;
+  }
+
+  .squeeze-grid {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 64px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .squeeze-content {
+    color: #fff;
+  }
+  
+  .squeeze-eyebrow {
+    display: inline-block;
+    background: rgba(200, 137, 10, 0.15);
+    color: var(--gold);
+    border: 1px solid rgba(200, 137, 10, 0.3);
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 100px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .logo-brand-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .logo-digi { color: #fff; }
+  .logo-rise { color: var(--gold); }
+
+  .squeeze-content h1 {
+    font-size: clamp(40px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .squeeze-content h1 span {
+    background: linear-gradient(135deg, #e3a52a 0%, #b87b0a 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .squeeze-content p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+
+  .squeeze-benefits {
+    list-style: none;
+    margin-bottom: 0;
+  }
+  .squeeze-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .squeeze-benefits li svg {
+    color: var(--gold);
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  /* Glassmorphism Form */
+  .squeeze-form-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+    position: relative;
+  }
+  
+  .squeeze-form-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 25px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(200, 137, 10, 0.5), transparent 50%, rgba(255, 255, 255, 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .squeeze-form-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .squeeze-form-card p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .form-control {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+
+  .form-control:focus {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 4px rgba(200, 137, 10, 0.15);
+  }
+  
+  .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #e3a52a 0%, #b87b0a 100%);
+    color: #fff;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 12px;
+    box-shadow: 0 10px 20px rgba(200, 137, 10, 0.25);
+  }
+  
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(200, 137, 10, 0.4);
+  }
+
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+    opacity: 0.6;
+  }
+  .trust-badges img {
+    height: 24px;
+    filter: grayscale(100%) brightness(200%);
+  }
+  
+  .privacy-note {
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  @media(max-width: 992px) {
+    .squeeze-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .squeeze-content {
+      text-align: center;
+    }
+    .squeeze-content p {
+      margin: 0 auto 32px;
+    }
+    .squeeze-benefits li {
+      justify-content: center;
+    }
+  }
+  
+  @media(max-width: 480px) {
+    .squeeze-form-card {
+      padding: 32px 24px;
+    }
+    .squeeze-content h1 {
+      font-size: 36px;
+    }
+  }
+</style>
+<script>if(window.top!==window.self){window.top.location=window.self.location;}</script>
+</head>
+<body>
+
+<nav class="squeeze-nav">
+  <a class="logo-wrap" href="https://digiriseindia.tech">
+    <div class="logo-icon-wrap">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <rect width="40" height="40" rx="11" fill="#c8890a"/>
+        <path d="M8 11.5 h4.6 c5 0 8 3 8 8.5 s-3 8.5-8 8.5 H8 Z M11 14.3 v11.4 h1.6 c3.3 0 5.2-1.9 5.2-5.7 s-1.9-5.7-5.2-5.7 Z" fill="#fff"/>
+        <path d="M22.4 11.5 h5.2 c3.4 0 5.4 1.8 5.4 4.9 0 2-1 3.4-2.7 4.1 L33 28.5 h-3.4 l-2.4-7.6 H25.4 v7.6 h-3 Z M25.4 14.3 v5.8 h2.4 c1.5 0 2.4-0.8 2.4-2.9 s-0.9-2.9-2.4-2.9 Z" fill="#fff"/>
+      </svg>
+    </div>
+    <div class="logo-text-block">
+      <div class="logo-brand-name"><span class="logo-digi">DIGI</span><span class="logo-rise">RISE</span></div>
+      <div class="logo-india-row"><span class="logo-line"></span><span class="logo-india">INDIA</span><span class="logo-line"></span></div>
+    </div>
+  </a>
+</nav>
+
+<div class="squeeze-container">
+  <div class="squeeze-grid">
+    
+    <div class="squeeze-content">
+      <div class="squeeze-eyebrow">100% Free • No Obligation</div>
+      <h1>Unlock Your Business's <span>Hidden Revenue</span></h1>
+      <p>Get a comprehensive 360° digital audit. We'll analyze your website, local SEO, and ad strategy to show you exactly where you're losing customers to competitors.</p>
+      
+      <ul class="squeeze-benefits">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Complete Website Speed & Conversion Analysis
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Google My Business / Local Maps Audit
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          Actionable 30-Day Growth Roadmap
+        </li>
+      </ul>
+    </div>
+
+    <div class="squeeze-form-wrapper">
+      <div class="squeeze-form-card">
+        <h3>Claim Your Free Audit</h3>
+        <p>Takes 60 seconds. We'll email your custom report.</p>
+        
+        <form action="mailto:digiriseindia@gmail.com" method="GET" enctype="text/plain" id="auditForm">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" class="form-control" name="Name" placeholder="e.g. Rahul Sharma" maxlength="100" required>
+          </div>
+          <div class="form-group">
+            <label>Business Type & Location</label>
+            <input type="text" class="form-control" name="Business" placeholder="e.g. Dental Clinic in Kolkata" maxlength="100" required>
+          </div>
+          <div class="form-group">
+            <label>Email for Report</label>
+            <input type="email" class="form-control" name="Email" placeholder="your@email.com" maxlength="254" required>
+          </div>
+          
+          <button type="submit" class="btn-submit">Get My Free Audit →</button>
+          
+          <div class="privacy-note">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            100% Privacy Guaranteed. No spam, ever.
+          </div>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+document.getElementById('auditForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  const name = formData.get('Name');
+  const biz = formData.get('Business');
+  const email = formData.get('Email');
+  
+  // Basic validation beyond HTML5
+  if (!email || !email.includes('@') || !email.includes('.')) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+  
+  const subject = encodeURIComponent(`Free Audit Request: ${name} (${biz})`);
+  const body = encodeURIComponent(`Name: ${name}\nBusiness: ${biz}\nEmail: ${email}\n\nPlease send my free digital audit report to this email.`);
+  
+  window.location.href = `mailto:digiriseindia@gmail.com?subject=${subject}&body=${body}`;
+});
+</script>
+
+<!-- Vercel Web Analytics -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharing...</title>
+  <script>
+    // Minimal share handler for PWA share_target
+    // Reads URL params and redirects to WhatsApp
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const title = urlParams.get('title') || '';
+      const text = urlParams.get('text') || '';
+      const url = urlParams.get('url') || '';
+      
+      const combined = [title, text, url].filter(Boolean).join(" - ");
+      const waUrl = "mailto:digiriseindia@gmail.com?text=" + encodeURIComponent("Hi DigiRise! Check this out: " + combined);
+      
+      window.location.replace(waUrl);
+    });
+  </script>
+<script>if(window.top!==window.self){window.top.location=window.self.location;}</script>
+<style>
+  body {
+    background: #080604;
+    color: #f0a825;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+  <h2>Redirecting to WhatsApp...</h2>
+</body>
+</html>

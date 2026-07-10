@@ -1,0 +1,23 @@
+{
+  "industries": [
+    {
+      "slug": "sweets-and-food",
+      "name": "Sweets & Food",
+      "hasRealProof": true,
+      "client": "LAL Sweets",
+      "quote": "Brand positioning went from a local sweet shop to a premium gifting brand."
+    },
+    {
+      "slug": "jewelry",
+      "name": "Jewelry",
+      "hasRealProof": true,
+      "client": "Kirtilals",
+      "quote": "Enquiries for premium collections saw a clear jump after the new visual strategy."
+    },
+    {
+      "slug": "fashion",
+      "name": "Fashion & Apparel",
+      "hasRealProof": false
+    }
+  ]
+}

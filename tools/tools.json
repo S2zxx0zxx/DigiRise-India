@@ -1,0 +1,28 @@
+{
+  "tools": [
+    {
+      "id": "website-speed-checker",
+      "slug": "website-speed-checker",
+      "name": "Website Speed Checker",
+      "description": "Analyze your website's performance, load times, and SEO health in real-time.",
+      "status": "live",
+      "icon": "⚡"
+    },
+    {
+      "id": "ad-budget-calculator",
+      "slug": "ad-budget-calculator",
+      "name": "Ad Budget Calculator",
+      "description": "Calculate your projected ROI and recommended ad budget based on real market data.",
+      "status": "live",
+      "icon": "💰"
+    },
+    {
+      "id": "seo-audit-generator",
+      "slug": "seo-audit-generator",
+      "name": "SEO Audit Generator",
+      "description": "Comprehensive technical SEO analysis for Indian small businesses.",
+      "status": "soon",
+      "icon": "🔍"
+    }
+  ]
+}
