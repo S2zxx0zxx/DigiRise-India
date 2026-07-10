@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     logTerm('> CONNECTING TO GOOGLE PAGESPEED API...');
     
     try {
-      const api = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&strategy=mobile`;
+      const api = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&strategy=mobile&key=AIzaSyDDiTa9i6iZuMzr6d8GRVIoZefVldftkTo`;
       
       const res = await fetch(api);
       if (!res.ok) throw new Error('API Error ' + res.status);
