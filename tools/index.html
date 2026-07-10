@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-IN" data-theme="dark">
 <head>
+  <link rel="apple-touch-icon" href="https://digiriseindia.tech/apple-touch-icon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DigiRise Tools | What should we build today?</title>
@@ -46,12 +47,12 @@
         <div class="cmd-left">
           <button class="cmd-pill icon-only" title="More options" onclick="alert('Suggest a tool: digiriseindia@gmail.com\nRepo: Private')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
           
-          <select class="cmd-pill cmd-select" id="toolSelect">
+          <select class="cmd-pill cmd-select" id="toolSelect" title="Select an option">
             <option value="auto">Tool: Auto ▾</option>
             <!-- Populated from tools.json -->
           </select>
           
-          <select class="cmd-pill cmd-select" id="modeSelect">
+          <select class="cmd-pill cmd-select" id="modeSelect" title="Select an option">
             <option value="Standard">Mode: Standard ▾</option>
           </select>
 
@@ -59,7 +60,7 @@
         </div>
         
         <div class="cmd-right">
-          <select class="cmd-pill cmd-select" id="agentSelect">
+          <select class="cmd-pill cmd-select" id="agentSelect" title="Select an option">
             <option value="agent">Agent: DigiRise AI ▾</option>
             <option value="manual">Manual</option>
           </select>
