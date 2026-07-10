@@ -48,7 +48,7 @@
 }
 /* Light mode becomes the SECONDARY option — warm premium paper */
 [data-theme="light"] {
-  --gold: #b3b3b3;
+  --gold: #b87b0a;
   --gold-mid: #d4920c;
   --gold-light: #f0a825;
   --gold-deep: #8a5c06;
@@ -59,6 +59,7 @@
   --bg3: #e7ddcc;
   --card: #fdfaf4;
   --white: #ffffff;
+  --shadow: rgba(26, 26, 26, 0.08);
   --border: rgba(255, 255, 255, 0.2);
   --border2: rgba(0, 0, 0, 0.07);
   --divider: rgba(0, 0, 0, 0.07);
@@ -69,8 +70,8 @@
   --hard-border: #1a1a1a;
   --hard-shadow: rgba(26, 26, 26, 0.35);
   --hard-border-hover: #000;
-  --glow-gold: 0 12px 36px rgba(255, 255, 255, 0.12);
-  --glow-gold-strong: 0 16px 48px rgba(255, 255, 255, 0.2);
+  --glow-gold: 0 12px 36px rgba(184, 123, 10, 0.15);
+  --glow-gold-strong: 0 16px 48px rgba(184, 123, 10, 0.25);
 }
 
 /* ─────────────────────────────────────────────
@@ -339,6 +340,13 @@ section + section::before {
   transform: translateY(-5px);
   border-color: rgba(255, 255, 255, 0.4) !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), var(--glow-gold) !important;
+}
+[data-theme="light"] [class*="card"]:hover, 
+[data-theme="light"] .svc-item:hover, 
+[data-theme="light"] .pkg-card:hover, 
+[data-theme="light"] .blog-card:hover {
+  border-color: var(--gold) !important;
+  box-shadow: 0 20px 50px rgba(90, 62, 15, 0.15), var(--glow-gold) !important;
 }
 
 /* Kill old neo-brutalist hard shadows — replaced by glow language */

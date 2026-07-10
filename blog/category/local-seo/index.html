@@ -392,15 +392,16 @@
 
 <style>
 :root{
-  --gold:#b87b0a; --gold-mid: #d4920c; --gold-light: #f0a825;
-  --gold-pale: rgba(184, 123, 10, 0.08); --gold-pale2:rgba(255, 255, 255,0.13);
-  --bg:#f5f0e8; --bg2:#ede7dc; --bg3:#e6ddd0;
-  --card:#faf7f2; --white:#ffffff;
-  --border:rgba(255, 255, 255,0.18); --border2:rgba(0,0,0,0.07); --divider:rgba(0,0,0,0.06);
-  --text:#1c1510; --text2:#3a2e22; --muted:#6b5a45; --muted2:#8a7460;
+  --gold:#b87b0a; --gold-mid:#d4920c; --gold-light:#f0a825;
+  --gold-pale:rgba(184, 123, 10, 0.08); --gold-pale2:rgba(184, 123, 10, 0.14);
+  --bg:#f7f2e9; --bg2:#efe8db; --bg3:#e7ddcc;
+  --card:#fdfaf4; --white:#ffffff;
+  --shadow:rgba(26, 26, 26, 0.08);
+  --border:rgba(0, 0, 0, 0.08); --border2:rgba(0,0,0,0.05); --divider:rgba(0,0,0,0.07);
+  --text:#1a1409; --text2:#3c3020; --muted:#6f5d42; --muted2:#907d5f;
   --green:#16803c; --blue:#1d4ed8; --red:#b91c1c;
-  --hard-border:#1a1a1a; --hard-shadow:#1a1a1a; --hard-border-hover:#000;
-  --mesh1:rgba(255, 255, 255,0.22); --mesh2:rgba(255, 255, 255,0.18); --mesh3:rgba(184,80,10,0.12);
+  --hard-border:#1a1a1a; --hard-shadow:rgba(26,26,26,0.35); --hard-border-hover:#000;
+  --mesh1:rgba(0,0,0,0.03); --mesh2:rgba(0,0,0,0.02); --mesh3:rgba(184,80,10,0.12);
 }
 [data-theme="dark"]{
   --gold:#f2f2f2; --gold-mid:#ffffff; --gold-light:#ffffff;
@@ -411,8 +412,8 @@
   --border:rgba(255, 255, 255,0.06); --border2:rgba(255,255,255,0.03); --divider:rgba(255,255,255,0.06);
   --text:#ffffff; --text2:#e6e6e6; --muted:#a3a3a3; --muted2:#7a7a7a;
   --green:#22c55e; --blue:#60a5fa; --red:#f87171;
-  --hard-border:#f0ebe0; --hard-shadow:rgba(240,235,224,0.45); --hard-border-hover:#ffffff;
-  --mesh1:rgba(255, 255, 255,0.15); --mesh2:rgba(180,100,20,0.2); --mesh3:rgba(100,50,10,0.18);
+  --hard-border:#333333; --hard-shadow:rgba(0,0,0,0.45); --hard-border-hover:#ffffff;
+  --mesh1:rgba(255, 255, 255,0.08); --mesh2:rgba(200, 200, 200,0.05); --mesh3:rgba(255,255,255,0.08);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -1827,13 +1828,13 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
 .addon-badge{position:absolute;top:12px;right:12px;font-size:9px;font-weight:800;padding:3px 9px;border-radius:100px;letter-spacing:0.8px;text-transform:uppercase;border:1.5px solid rgba(0,0,0,0.2);color:#fff;box-shadow:1px 1px 0 rgba(0,0,0,0.15);}
 .addon-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:11px 16px;border-radius:100px;font-size:13px;font-weight:800;text-decoration:none;border:2px solid #1a1208;box-shadow:2px 2px 0 #1a1208;transition:all 0.2s;background:color-mix(in srgb,var(--ac,var(--gold)) 10%,transparent);color:var(--ac,var(--gold));}
 .addon-btn:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 #1a1208;text-decoration:none;}
-.addon-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:linear-gradient(135deg,#161616 0%,#1c1c1c 100%);border-color:#ffffff;box-shadow:4px 4px 0 #ffffff;}
+.addon-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:linear-gradient(135deg,#161616 0%,#1c1c1c 100%);border-color:var(--gold);box-shadow:4px 4px 0 var(--gold);}
 .addon-card.featured .addon-name{color:#fff;font-size:20px;}
 .addon-card.featured .addon-desc{color:rgba(255,255,255,0.75);}
 .addon-card.featured .addon-price{color:#ffffff;font-size:28px;}
 .addon-card.featured .addon-time{color:rgba(255,255,255,0.55);}
-.addon-card.featured .addon-btn{background:linear-gradient(135deg,#ffffff,#c9c9c9);color:#0a0a0a;border-color:#161616;}
-.addon-card.featured::before{background:linear-gradient(90deg,#ffffff,#c9c9c9,#ffffff);}
+.addon-card.featured .addon-btn{background:linear-gradient(135deg,var(--gold-mid),var(--gold));color:var(--bg);border-color:var(--card);}
+.addon-card.featured::before{background:linear-gradient(90deg,var(--gold-light),var(--gold-mid),var(--gold));}
 @keyframes pulse-ring{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ac,var(--gold)) 40%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
 .addon-card.popular-addon{animation:pulse-ring 2s infinite;}
 @media(max-width:600px){

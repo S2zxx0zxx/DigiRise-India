@@ -17,7 +17,7 @@
 }
 [data-theme="light"]{
   --island-bg: rgba(255,252,244,.82);
-  --island-border: rgba(255, 255, 255,.25);
+  --island-border: rgba(0, 0, 0, 0.1);
   --sheet-bg: #fffaf0;
 }
 
