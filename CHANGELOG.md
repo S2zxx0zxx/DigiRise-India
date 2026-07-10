@@ -2,6 +2,11 @@
 
 All notable changes to the DigiRise India website are documented here.
 
+## v5.8 — 2026-07-11 — Dark Mode Monochromatic Overhaul (Matte Glowy White)
+- Design: Completely stripped the "Gold" accent colors from Dark Mode across `redesign.css`, `nextgen.css`, and `ios26.css`.
+- Design: Replaced all gold borders, shadows, and text highlights in Dark Mode with shades of pure White and Silver.
+- Design: Preserved Light Mode perfectly intact, maintaining its original warm color palette.
+
 ## v5.7 — 2026-07-11 — Marquee Render Fix
 - Fixed: Resolved an invisible cloning bug in the trust badges marquee (`ios26.js`). Cloned elements incorrectly inherited the `.reveal-hidden` class, causing them to remain permanently invisible on scroll. 
 
