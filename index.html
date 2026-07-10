@@ -2032,17 +2032,24 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
     <li><a href="#industries">Services</a></li>
     <li><a href="#packages">Packages</a></li>
     <li><a href="#projects">Work</a></li>
-    <li><a href="#ai-tools">AI Tools</a></li>
+    <li><a href="blog/">Blog</a></li>
     <li><a href="/tools/">Free Tools</a></li>
-    <li><a href="#roi-calc">ROI Calc</a></li>
-    <li><a href="blog/" style="color:var(--gold);font-weight:700;">📝 Blog</a></li>
     <li><a href="#audit">Free Audit</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li class="nav-more-wrap">
+      <div class="ui-dropdown" data-trigger="hover">
+        <button class="ui-dropdown-trigger" type="button">More <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="ui-dropdown-menu">
+          <a href="#ai-tools" class="ui-dropdown-item">AI Tools</a>
+          <a href="#roi-calc" class="ui-dropdown-item">ROI Calculator</a>
+          <a href="#faq" class="ui-dropdown-item">FAQ</a>
+          <a href="https://digi-rise-admin-beta.vercel.app/" target="_blank" rel="noopener" class="ui-dropdown-item">Partner Login</a>
+          <a href="https://www.instagram.com/digiriseindia/" target="_blank" rel="noopener" class="ui-dropdown-item">Instagram</a>
+        </div>
+      </div>
+    </li>
   </ul>
   <!-- FIX-8 DONE -->
   <div style="display:flex; align-items:center; gap:8px;">
-    <a href="https://digi-rise-admin-beta.vercel.app/" target="_blank" rel="noopener" aria-label="Partner Login — DigiRise India Admin Panel" class="nav-cta" style="background:rgba(255,255,255,0.05);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border:1.5px solid rgba(255,255,255,0.1);color:var(--text2);box-shadow:none;padding:10px 18px;font-weight:600;"><span style="font-size:14px;margin-right:6px;opacity:0.8;">🔒</span>Partner Login</a>
-    <a href="https://www.instagram.com/digiriseindia/" target="_blank" rel="noopener" class="nav-cta" style="background:transparent;border:1.5px solid var(--border);color:var(--text2);box-shadow:none;">&#128247; Instagram</a>
     <a href="mailto:digiriseindia@gmail.com?subject=Hi%2C%20DigiRise%20se%20baat%20karni%20hai!" target="_blank" rel="noopener" class="nav-cta">Book Free Call</a>
   </div>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
@@ -2052,16 +2059,15 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
   <a href="#industries" onclick="toggleMenu()">Services</a>
   <a href="#packages" onclick="toggleMenu()">Packages</a>
   <a href="#projects" onclick="toggleMenu()">Work</a>
-  <a href="#ai-tools" onclick="toggleMenu()">AI Tools</a>
+  <a href="blog/" onclick="toggleMenu()">Blog</a>
   <a href="/tools/" onclick="toggleMenu()">Free Tools</a>
-  <a href="#roi-calc" onclick="toggleMenu()">ROI Calculator</a>
-  <a href="blog/" onclick="toggleMenu()" style="color:var(--gold);font-weight:700;">📝 Blog</a>
   <a href="#audit" onclick="toggleMenu()">Free Audit</a>
+  <a href="#ai-tools" onclick="toggleMenu()">AI Tools</a>
+  <a href="#roi-calc" onclick="toggleMenu()">ROI Calculator</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
-  <!-- FIX-8 DONE -->
-  <a href="https://www.instagram.com/digiriseindia/" target="_blank" rel="noopener" onclick="toggleMenu()">&#128247; Instagram</a>
-  <a href="mailto:digiriseindia@gmail.com" target="_blank" rel="noopener" style="color:var(--gold);">Email Us Now &#8594;</a>
-  <a href="https://digi-rise-admin-beta.vercel.app/" target="_blank" rel="noopener" aria-label="Partner Login — DigiRise India Admin Panel" onclick="toggleMenu()" style="border-top:1px solid var(--border);margin-top:12px;padding-top:16px;color:var(--text2);font-weight:600;"><span style="font-size:14px;margin-right:6px;opacity:0.8;">🔒</span>Partner Login</a>
+  <a href="https://digi-rise-admin-beta.vercel.app/" target="_blank" rel="noopener" onclick="toggleMenu()">Partner Login</a>
+  <a href="https://www.instagram.com/digiriseindia/" target="_blank" rel="noopener" onclick="toggleMenu()">Instagram</a>
+  <a href="mailto:digiriseindia@gmail.com" target="_blank" rel="noopener" class="mob-cta" onclick="toggleMenu()">Book Free Call</a>
 </div>
 
 <!-- HERO -->
@@ -5184,5 +5190,6 @@ function initReelToggle() {
 <script src="js/nextgen.js" defer></script>
 <script src="js/ios26.js" defer></script><!-- FIX-3.0: iOS Edition engine -->
 <script src="js/pwa.js" defer></script>
+<script src="/js/ui-dropdown.js" defer></script>
 </body>
 </html>

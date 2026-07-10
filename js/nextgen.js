@@ -521,12 +521,14 @@
      14 · DIRECTIONAL REVEALS on section headers
      ─────────────────────────────────────────── */
   function initReveals() {
+    var els = document.querySelectorAll('.ng-reveal, .ng-reveal-left, .ng-reveal-right');
+    els.forEach(function (el) { el.classList.add('reveal-hidden'); });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add('ng-in'); io.unobserve(en.target); }
       });
     }, { threshold: 0, rootMargin: '0px 0px 600px 0px' });
-    document.querySelectorAll('.ng-reveal, .ng-reveal-left, .ng-reveal-right').forEach(function (el) { io.observe(el); });
+    els.forEach(function (el) { io.observe(el); });
   }
 
   /* ───────────────────────────────────────────

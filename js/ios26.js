@@ -90,10 +90,13 @@ if(nav && !_isToolsHub){
 /* ═════════════ FIX-303: staggered reveals + 3D tilt + gyro ═════════════ */
 (function(){
   var targets = $$('.pkg-card, .ind-card, .trust-cell, .reel-card, .proj-hero-card, .aside-card, .rtl-grid > *, .addon-grid > *, .faq-item, .blog-card');
-  targets.forEach(function(el,i){ el.classList.add('ios-reveal'); el.style.setProperty('--stag', ((i%6)*0.06)+'s'); });
+  targets.forEach(function(el,i){ 
+    el.classList.add('ios-reveal', 'reveal-hidden'); 
+    el.style.setProperty('--stag', ((i%4)*0.06)+'s'); 
+  });
   var io = new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {rootMargin:'0px 0px -8% 0px'});
+  }, {rootMargin:'0px 0px 15% 0px'});
   targets.forEach(function(el){ io.observe(el); });
 
   if(RM) return;

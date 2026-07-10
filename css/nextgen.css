@@ -738,12 +738,11 @@ footer > *:not(.ng-footer-watermark) { position: relative; z-index: 1; }
    GLOBAL POLISH
    ───────────────────────────────────────────── */
 /* Universal reveal upgrade: directional variants */
-.ng-reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.1s var(--ng-out), transform 0.1s var(--ng-out); }
-.ng-reveal.ng-in { opacity: 1; transform: none; }
-.ng-reveal-left { opacity: 0; transform: translateX(-16px); transition: opacity 0.1s var(--ng-out), transform 0.1s var(--ng-out); }
-.ng-reveal-left.ng-in { opacity: 1; transform: none; }
-.ng-reveal-right { opacity: 0; transform: translateX(16px); transition: opacity 0.1s var(--ng-out), transform 0.1s var(--ng-out); }
-.ng-reveal-right.ng-in { opacity: 1; transform: none; }
+.ng-reveal, .ng-reveal-left, .ng-reveal-right { opacity: 1; transform: none; transition: opacity 0.1s var(--ng-out), transform 0.1s var(--ng-out); }
+.ng-reveal.reveal-hidden:not(.ng-in) { opacity: 0; transform: translateY(12px); transition: none; }
+.ng-reveal-left.reveal-hidden:not(.ng-in) { opacity: 0; transform: translateX(-16px); transition: none; }
+.ng-reveal-right.reveal-hidden:not(.ng-in) { opacity: 0; transform: translateX(16px); transition: none; }
+.ng-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .ng-reveal, .ng-reveal-left, .ng-reveal-right { opacity: 1 !important; transform: none !important; transition: none !important; }
 }

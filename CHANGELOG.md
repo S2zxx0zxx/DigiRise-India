@@ -2,6 +2,13 @@
 
 All notable changes to the DigiRise India website are documented here.
 
+## v5.6 — 2026-07-10 — Complete Structural Repair (Antigravity/Claude)
+- Fixed: Blog relative paths migrated to absolute paths (`/css/`, `/js/`).
+- Fixed: Redesigned desktop header and mobile menu; fixed empty mobile menu bug.
+- Feature: Built custom UI Dropdown component; replaced all native `<select>` tags globally.
+- Fixed: Scroll-Reveal Jank; implemented fail-visible CSS defaults and capped JS observers.
+- Feature: Overhauled Dark Mode theme to "Matte Glowy Black" with radial ambient glow.
+
 ## v5.5 — 2026-07-10 — Tools Hub v2 & Site Repairs (Antigravity/Claude)
 - Fixed: Bug 1 (Mobile menu ghost text) via `display: none` in ios26.css.
 - Fixed: Bug 2 & 3 (Mobile Tools layout + bottom tab bar) via full HTML/CSS rebuild of tools dashboard.
