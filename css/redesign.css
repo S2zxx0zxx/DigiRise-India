@@ -12,12 +12,12 @@
    1 · NEW PALETTE — dark is the DEFAULT identity
    ───────────────────────────────────────────── */
 :root, [data-theme="dark"] {
-  --gold: #f0a825;
-  --gold-mid: #ffbe3d;
-  --gold-light: #ffd76a;
-  --gold-deep: #b87b0a;
-  --gold-pale: rgba(240, 168, 37, 0.08);
-  --gold-pale2: rgba(240, 168, 37, 0.16);
+  --gold: #ffffff;
+  --gold-mid: #e5e5e5;
+  --gold-light: #f5f5f5;
+  --gold-deep: #b3b3b3;
+  --gold-pale: rgba(255, 255, 255, 0.08);
+  --gold-pale2: rgba(255, 255, 255, 0.16);
   --bg: #080604;
   --bg2: #0f0c08;
   --bg3: #1a140c;
@@ -33,17 +33,17 @@
   --green: #34d399;
   --blue: #60a5fa;
   --red: #f87171;
-  --hard-border: rgba(240, 168, 37, 0.55);
-  --hard-shadow: rgba(240, 168, 37, 0.28);
+  --hard-border: rgba(255, 255, 255, 0.25);
+  --hard-shadow: rgba(255, 255, 255, 0.15);
   --hard-border-hover: var(--gold);
-  --mesh1: rgba(240, 168, 37, 0.14);
-  --mesh2: rgba(180, 100, 20, 0.16);
+  --mesh1: rgba(255, 255, 255, 0.08);
+  --mesh2: rgba(200, 200, 200, 0.05);
   --mesh3: rgba(255, 190, 61, 0.08);
   --r-xl: 26px;
   --r-lg: 20px;
   --r-md: 14px;
-  --glow-gold: 0 0 40px rgba(240, 168, 37, 0.25);
-  --glow-gold-strong: 0 0 60px rgba(240, 168, 37, 0.45);
+  --glow-gold: 0 0 40px rgba(255, 255, 255, 0.15);
+  --glow-gold-strong: 0 0 60px rgba(255, 255, 255, 0.25);
 }
 /* Light mode becomes the SECONDARY option — warm premium paper */
 [data-theme="light"] {
@@ -68,8 +68,8 @@
   --hard-border: #1a1a1a;
   --hard-shadow: rgba(26, 26, 26, 0.35);
   --hard-border-hover: #000;
-  --glow-gold: 0 12px 36px rgba(184, 123, 10, 0.22);
-  --glow-gold-strong: 0 16px 48px rgba(184, 123, 10, 0.3);
+  --glow-gold: 0 12px 36px rgba(255, 255, 255, 0.12);
+  --glow-gold-strong: 0 16px 48px rgba(255, 255, 255, 0.2);
 }
 
 /* ─────────────────────────────────────────────
@@ -84,7 +84,7 @@ body {
 }
 [data-theme="dark"] body {
   background:
-    radial-gradient(ellipse 100% 70% at 50% -10%, rgba(240, 168, 37, 0.08), transparent 70%),
+    radial-gradient(ellipse 100% 70% at 50% -10%, rgba(255, 255, 255, 0.04), transparent 70%),
     var(--bg) !important;
 }
 h1, h2, h3, .sec-title, .hero h1 {

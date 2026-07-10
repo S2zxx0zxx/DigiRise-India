@@ -11,7 +11,7 @@
   --spring-pop: cubic-bezier(0.34, 1.56, 0.64, 1);   /* overshoot pop */
   --dur-fast: .28s; --dur-med: .5s; --dur-slow: .75s;
   --island-bg: rgba(14,11,6,.78);
-  --island-border: rgba(240,168,37,.28);
+  --island-border: rgba(255,255,255,.15);
   --glass-blur: 22px;
   --sheet-bg: #14100a;
 }
