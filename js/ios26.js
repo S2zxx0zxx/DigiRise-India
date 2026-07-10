@@ -358,7 +358,7 @@ if(nav && !_isToolsHub){
   /* shared gold gradient defs */
   var defs = document.createElementNS('http://www.w3.org/2000/svg','svg');
   defs.setAttribute('width','0'); defs.setAttribute('height','0'); defs.style.position='absolute';
-  defs.innerHTML = '<defs><linearGradient id="goldRingGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5d78a"/><stop offset="100%" stop-color="#f0a825"/></linearGradient><linearGradient id="footWaveGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#f0a825" stop-opacity="0"/><stop offset="50%" stop-color="#f0a825"/><stop offset="100%" stop-color="#f0a825" stop-opacity="0"/></linearGradient></defs>';
+  defs.innerHTML = '<defs><linearGradient id="goldRingGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5d78a"/><stop offset="100%" stop-color="#ffffff"/></linearGradient><linearGradient id="footWaveGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ffffff" stop-opacity="0"/><stop offset="50%" stop-color="#ffffff"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>';
   document.body.appendChild(defs);
 })();
 
@@ -421,7 +421,7 @@ if(nav && !_isToolsHub){
         quote: ($('.testi-text',c)||{}).textContent || '',
         name: ($('.testi-name',c)||{}).textContent || 'Client',
         role: ($('.testi-biz',c)||{}).textContent || '',
-        bg: c.style.getPropertyValue('--tc') || '#f0a825'
+        bg: c.style.getPropertyValue('--tc') || '#ffffff'
       };
     });
     var wrap = document.createElement('div'); wrap.className='tstack-wrap';
@@ -678,7 +678,7 @@ if(nav && !_isToolsHub){
   var cluster = document.createElement('div'); cluster.className='fab-cluster';
   var ACTIONS = [
     {ico:'💬', lbl:'WhatsApp', bg:'#25d366', href:'mailto:digiriseindia@gmail.com?subject=Hi%20DigiRise!%20Baat%20karni%20hai!'},
-    {ico:'📞', lbl:'Call Now', bg:'linear-gradient(145deg,#f0a825,#b87b0a)', href:'mailto:digiriseindia@gmail.com'},
+    {ico:'📞', lbl:'Call Now', bg:'linear-gradient(145deg,#ffffff,#b3b3b3)', href:'mailto:digiriseindia@gmail.com'},
     {ico:'📸', lbl:'Instagram', bg:'linear-gradient(135deg,#f09433,#dc2743,#bc1888)', href:'https://www.instagram.com/digiriseindia/'},
     {ico:'🎁', lbl:'Free Audit ₹3,499', bg:'linear-gradient(145deg,#1d4ed8,#3b82f6)', href:'#audit'}
   ];

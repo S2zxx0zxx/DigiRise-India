@@ -18,9 +18,9 @@
   --ng-shadow-1: 0 2px 8px rgba(90, 62, 15, 0.08);
   --ng-shadow-2: 0 8px 24px rgba(90, 62, 15, 0.12);
   --ng-shadow-3: 0 20px 50px rgba(90, 62, 15, 0.18);
-  --ng-shadow-gold: 0 10px 30px rgba(184, 123, 10, 0.28);
+  --ng-shadow-gold: 0 10px 30px rgba(255, 255, 255, 0.28);
   --ng-glass: rgba(255, 252, 245, 0.72);
-  --ng-glass-border: rgba(184, 123, 10, 0.18);
+  --ng-glass-border: rgba(255, 255, 255, 0.18);
 }
 [data-theme="dark"] {
   --ng-shadow-1: 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -68,7 +68,7 @@ html.ng-theme-fade body { transition: background-color 400ms ease, color 400ms e
   background: linear-gradient(90deg, var(--gold), var(--gold-light));
   transition: left var(--ng-dur-n) var(--ng-spring), width var(--ng-dur-n) var(--ng-spring), opacity 0.2s;
   pointer-events: none;
-  box-shadow: 0 0 8px rgba(184, 123, 10, 0.5);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 /* Logo scroll-progress ring */
@@ -242,7 +242,7 @@ html.ng-theme-fade body { transition: background-color 400ms ease, color 400ms e
 .marquee-item:hover {
   transform: scale(1.12);
   color: var(--gold) !important;
-  text-shadow: 0 0 18px rgba(184, 123, 10, 0.45);
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.45);
 }
 
 /* ─────────────────────────────────────────────
@@ -301,7 +301,7 @@ input[type="range"] {
 }
 input[type="range"]::-webkit-slider-thumb {
   transition: transform 0.12s var(--ng-spring), box-shadow 0.12s ease;
-  box-shadow: 0 2px 8px rgba(184, 123, 10, 0.45);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.45);
 }
 input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.25); }
 
@@ -372,7 +372,7 @@ input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.25); }
   top: 0; left: 0; right: 0;
   height: var(--fill, 0%);
   background: linear-gradient(180deg, var(--gold), var(--gold-light));
-  box-shadow: 0 0 10px rgba(184, 123, 10, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   transition: height 0.15s linear;
 }
 
@@ -423,7 +423,7 @@ input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.25); }
 }
 #ai-tools [class*="tool"]:hover {
   transform: translateY(-4px) scale(1.06);
-  filter: drop-shadow(0 6px 16px rgba(184, 123, 10, 0.35));
+  filter: drop-shadow(0 6px 16px rgba(255, 255, 255, 0.35));
 }
 
 /* ─────────────────────────────────────────────
@@ -492,7 +492,7 @@ input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.25); }
   inset: -30%;
   background:
     radial-gradient(ellipse 40% 35% at 25% 30%, var(--gold-pale2), transparent 65%),
-    radial-gradient(ellipse 35% 45% at 75% 65%, rgba(224, 157, 32, 0.12), transparent 60%);
+    radial-gradient(ellipse 35% 45% at 75% 65%, rgba(255, 255, 255, 0.12), transparent 60%);
   animation: ngAurora 16s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 0;
@@ -554,7 +554,7 @@ footer > *:not(.ng-footer-watermark) { position: relative; z-index: 1; }
   background: var(--gold);
   height: 22px;
   border-radius: 6px;
-  box-shadow: 0 0 8px rgba(184, 123, 10, 0.5);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 .ng-dot .ng-dot-label {
   position: absolute;

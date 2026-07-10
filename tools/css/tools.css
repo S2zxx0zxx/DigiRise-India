@@ -6,7 +6,7 @@
   --hub-bg: #080604;
   --hub-surface: #14100a;
   --hub-card: #1a140c;
-  --hub-gold: #f0a825;
+  --hub-gold: #ffffff;
   --hub-gold-deep: #c8890a;
   --hub-text: #f7f3ee;
   --hub-muted: #a89e8e;
@@ -35,7 +35,7 @@ body.tools-hub-mode {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  border-bottom: 1px solid rgba(240,168,37,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255,0.1);
   background: var(--hub-bg);
   flex-shrink: 0;
 }
@@ -52,7 +52,7 @@ body.tools-hub-mode {
   background: var(--hub-surface); color: var(--hub-text);
   display: flex; align-items: center; justify-content: center;
   text-decoration: none; font-size: 12px; font-weight: bold;
-  border: 1px solid rgba(240,168,37,0.2);
+  border: 1px solid rgba(255, 255, 255,0.2);
 }
 
 /* Main scrollable area */
@@ -79,11 +79,11 @@ body.tools-hub-mode {
 /* Command Card */
 .command-card {
   background: var(--hub-surface);
-  border: 1px solid rgba(240,168,37,0.18);
+  border: 1px solid rgba(255, 255, 255,0.18);
   border-radius: 24px;
   width: min(920px, 92vw);
   margin: 0 auto;
-  box-shadow: 0 20px 60px rgba(240,168,37,0.05);
+  box-shadow: 0 20px 60px rgba(255, 255, 255,0.05);
   padding: 20px;
   display: flex; flex-direction: column; gap: 16px;
 }
@@ -138,7 +138,7 @@ body.tools-hub-mode {
 .fan-card {
   width: 110px; height: 110px;
   background: var(--hub-surface);
-  border: 1px solid rgba(240,168,37,0.15);
+  border: 1px solid rgba(255, 255, 255,0.15);
   border-radius: 16px;
   position: absolute;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
@@ -149,11 +149,11 @@ body.tools-hub-mode {
   transform: translateY(-10px) rotate(0deg) scale(1.05) !important;
   border-color: var(--hub-gold);
   z-index: 10;
-  box-shadow: 0 10px 20px rgba(240,168,37,0.1);
+  box-shadow: 0 10px 20px rgba(255, 255, 255,0.1);
 }
 .tilt-left-2 { transform: translateX(-160px) rotate(-6deg); z-index: 1; }
 .tilt-left-1 { transform: translateX(-80px) rotate(-3deg); z-index: 2; }
-.tilt-center { transform: translateX(0) rotate(0deg) translateY(-5px); z-index: 3; border-color: rgba(240,168,37,0.3); }
+.tilt-center { transform: translateX(0) rotate(0deg) translateY(-5px); z-index: 3; border-color: rgba(255, 255, 255,0.3); }
 .tilt-right-1 { transform: translateX(80px) rotate(3deg); z-index: 2; }
 .tilt-right-2 { transform: translateX(160px) rotate(6deg); z-index: 1; }
 .fc-icon { font-size: 24px; }
@@ -176,7 +176,7 @@ body.tools-hub-mode {
   background: transparent; border: none; color: var(--hub-muted);
   font-size: 14px; cursor: pointer; padding: 6px 12px; border-radius: 100px;
 }
-.tab-btn.active { background: rgba(240,168,37,0.1); color: var(--hub-gold); }
+.tab-btn.active { background: rgba(255, 255, 255,0.1); color: var(--hub-gold); }
 .workspace-actions { display: flex; gap: 8px; }
 .workspace-search {
   background: var(--hub-surface); border: 1px solid rgba(255,255,255,0.1);
@@ -203,12 +203,12 @@ body.tools-hub-mode {
   display: flex; flex-direction: column; gap: 8px;
   transition: all 0.2s;
 }
-.tool-card:hover { border-color: rgba(240,168,37,0.3); transform: translateY(-2px); }
+.tool-card:hover { border-color: rgba(255, 255, 255,0.3); transform: translateY(-2px); }
 .tc-icon { font-size: 28px; }
 .tc-title { font-size: 16px; font-weight: 700; color: var(--hub-text); display: flex; align-items: center; justify-content: space-between; }
 .tc-desc { font-size: 13px; color: var(--hub-muted); line-height: 1.4; }
 .status-dot { width: 8px; height: 8px; border-radius: 50%; }
-.status-dot.live { background: var(--hub-gold); box-shadow: 0 0 8px rgba(240,168,37,0.5); }
+.status-dot.live { background: var(--hub-gold); box-shadow: 0 0 8px rgba(255, 255, 255,0.5); }
 .status-dot.soon { background: #555; }
 .tool-card.disabled { opacity: 0.6; pointer-events: none; }
 
@@ -299,7 +299,7 @@ body.tools-hub-mode {
   display: flex; align-items: center; gap: 12px; padding: 10px 12px;
   color: var(--hub-muted); text-decoration: none; border-radius: 8px; font-size: 13px; font-weight: 600;
 }
-.ts-link.active { background: rgba(240,168,37,0.1); color: var(--hub-gold); }
+.ts-link.active { background: rgba(255, 255, 255,0.1); color: var(--hub-gold); }
 .ts-link:hover:not(.active) { background: rgba(255,255,255,0.05); color: var(--hub-text); }
 .tool-main-content {
   flex: 1; overflow-y: auto; background: var(--hub-bg);

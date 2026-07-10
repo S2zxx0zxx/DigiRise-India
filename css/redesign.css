@@ -12,11 +12,11 @@
    1 · NEW PALETTE — dark is the DEFAULT identity
    ───────────────────────────────────────────── */
 :root, [data-theme="dark"] {
-  --gold: #ffffff;
+  --gold: #b87b0a;
   --gold-mid: #e5e5e5;
   --gold-light: #f5f5f5;
   --gold-deep: #b3b3b3;
-  --gold-pale: rgba(255, 255, 255, 0.08);
+  --gold-pale: rgba(184, 123, 10, 0.08);
   --gold-pale2: rgba(255, 255, 255, 0.16);
   --bg: #080604;
   --bg2: #0f0c08;
@@ -38,7 +38,7 @@
   --hard-border-hover: var(--gold);
   --mesh1: rgba(255, 255, 255, 0.08);
   --mesh2: rgba(200, 200, 200, 0.05);
-  --mesh3: rgba(255, 190, 61, 0.08);
+  --mesh3: rgba(255, 255, 255, 0.08);
   --r-xl: 26px;
   --r-lg: 20px;
   --r-md: 14px;
@@ -47,7 +47,7 @@
 }
 /* Light mode becomes the SECONDARY option — warm premium paper */
 [data-theme="light"] {
-  --gold: #b87b0a;
+  --gold: #b3b3b3;
   --gold-mid: #d4920c;
   --gold-light: #f0a825;
   --gold-deep: #8a5c06;
@@ -58,7 +58,7 @@
   --bg3: #e7ddcc;
   --card: #fdfaf4;
   --white: #ffffff;
-  --border: rgba(184, 123, 10, 0.2);
+  --border: rgba(255, 255, 255, 0.2);
   --border2: rgba(0, 0, 0, 0.07);
   --divider: rgba(0, 0, 0, 0.07);
   --text: #1a1409;
@@ -97,7 +97,7 @@ h1, h2, h3, .sec-title, .hero h1 {
 [data-theme="dark"] body::before { opacity: 0.015 !important; }
 
 /* Global selection */
-::selection { background: rgba(240, 168, 37, 0.3); color: #fff; }
+::selection { background: rgba(255, 255, 255, 0.3); color: #fff; }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
@@ -112,7 +112,7 @@ h1, h2, h3, .sec-title, .hero h1 {
   background: rgba(10, 8, 5, 0.75) !important;
   backdrop-filter: blur(22px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(22px) saturate(180%) !important;
-  border: 1px solid rgba(240, 168, 37, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }
 [data-theme="light"] #mainNav {
@@ -128,7 +128,7 @@ h1, h2, h3, .sec-title, .hero h1 {
   color: #0a0704 !important;
   border-radius: 999px !important;
   font-weight: 800 !important;
-  box-shadow: 0 4px 18px rgba(240, 168, 37, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
   border: none !important;
 }
 
@@ -138,13 +138,13 @@ h1, h2, h3, .sec-title, .hero h1 {
 .hero {
   min-height: 100svh;
   background:
-    radial-gradient(ellipse 60% 45% at 70% 12%, rgba(240, 168, 37, 0.13), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 70% 12%, rgba(255, 255, 255, 0.13), transparent 60%),
     radial-gradient(ellipse 45% 40% at 15% 85%, rgba(180, 100, 20, 0.1), transparent 55%),
     var(--bg) !important;
 }
 [data-theme="light"] .hero {
   background:
-    radial-gradient(ellipse 60% 45% at 70% 12%, rgba(184, 123, 10, 0.1), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 70% 12%, rgba(255, 255, 255, 0.1), transparent 60%),
     var(--bg) !important;
 }
 
@@ -188,8 +188,8 @@ h1, h2, h3, .sec-title, .hero h1 {
 
 /* Hero pill — glass chip */
 .hero-pill {
-  background: rgba(240, 168, 37, 0.07) !important;
-  border: 1px solid rgba(240, 168, 37, 0.25) !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
   border-radius: 999px !important;
   backdrop-filter: blur(8px);
 }
@@ -207,7 +207,7 @@ h1, h2, h3, .sec-title, .hero h1 {
 /* Aside cards — floating glass tokens */
 .aside-card {
   background: rgba(18, 14, 8, 0.65) !important;
-  border: 1px solid rgba(240, 168, 37, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 18px !important;
   backdrop-filter: blur(16px) saturate(160%) !important;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
@@ -221,8 +221,8 @@ h1, h2, h3, .sec-title, .hero h1 {
 
 /* Slots banner — urgency neon strip */
 .slots-banner {
-  background: linear-gradient(90deg, rgba(240, 168, 37, 0.12), rgba(240, 168, 37, 0.04)) !important;
-  border: 1px solid rgba(240, 168, 37, 0.3) !important;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   border-radius: 12px !important;
 }
 
@@ -254,12 +254,12 @@ h1, h2, h3, .sec-title, .hero h1 {
   font-weight: 800 !important;
   letter-spacing: 0.01em;
   padding: 16px 30px !important;
-  box-shadow: 0 8px 28px rgba(240, 168, 37, 0.38), inset 0 1.5px 0 rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 8px 28px rgba(255, 255, 255, 0.38), inset 0 1.5px 0 rgba(255, 255, 255, 0.4) !important;
   transition: transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.16s ease, filter 0.16s ease !important;
 }
 .btn-primary:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 14px 40px rgba(240, 168, 37, 0.5), inset 0 1.5px 0 rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 14px 40px rgba(255, 255, 255, 0.5), inset 0 1.5px 0 rgba(255, 255, 255, 0.4) !important;
   filter: brightness(1.06);
 }
 .btn-primary:active { transform: translateY(0) scale(0.985); }
@@ -267,7 +267,7 @@ h1, h2, h3, .sec-title, .hero h1 {
 .btn-secondary, a.btn-secondary {
   background: rgba(255, 255, 255, 0.04) !important;
   color: var(--text) !important;
-  border: 1.5px solid rgba(240, 168, 37, 0.35) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
   border-radius: 999px !important;
   font-weight: 700 !important;
   padding: 15px 28px !important;
@@ -276,7 +276,7 @@ h1, h2, h3, .sec-title, .hero h1 {
 }
 .btn-secondary:hover {
   border-color: var(--gold) !important;
-  background: rgba(240, 168, 37, 0.1) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
   color: var(--gold-light) !important;
   transform: translateY(-2px);
 }
@@ -305,7 +305,7 @@ section + section::before {
   transform: translateX(-50%);
   width: min(520px, 70%);
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(240, 168, 37, 0.35), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
 }
 
 /* ─────────────────────────────────────────────
@@ -327,7 +327,7 @@ section + section::before {
 }
 [class*="card"]:hover, .svc-item:hover, .pkg-card:hover, .blog-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(240, 168, 37, 0.4) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), var(--glow-gold) !important;
 }
 
@@ -338,7 +338,7 @@ section + section::before {
 }
 .svc-item:hover, [data-theme="dark"] .svc-item:hover {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), var(--glow-gold) !important;
-  border-color: rgba(240, 168, 37, 0.45) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
 }
 
 /* ─────────────────────────────────────────────
@@ -377,14 +377,14 @@ section + section::before {
    ───────────────────────────────────────────── */
 .faq-item { border-radius: var(--r-md) !important; margin-bottom: 10px; }
 .faq-item summary, .faq-q { font-weight: 700 !important; color: var(--text) !important; }
-.faq-item:hover { border-color: rgba(240, 168, 37, 0.35) !important; }
+.faq-item:hover { border-color: rgba(255, 255, 255, 0.35) !important; }
 
 /* ─────────────────────────────────────────────
    10 · FOOTER — deep space
    ───────────────────────────────────────────── */
 footer {
   background: linear-gradient(180deg, var(--bg), #050302) !important;
-  border-top: 1px solid rgba(240, 168, 37, 0.15) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 [data-theme="light"] footer { background: var(--bg2) !important; }
 
@@ -392,9 +392,9 @@ footer {
    11 · MARQUEE — neon strip
    ───────────────────────────────────────────── */
 .marquee-band {
-  background: linear-gradient(90deg, rgba(240,168,37,0.06), rgba(240,168,37,0.12), rgba(240,168,37,0.06)) !important;
-  border-top: 1px solid rgba(240, 168, 37, 0.2) !important;
-  border-bottom: 1px solid rgba(240, 168, 37, 0.2) !important;
+  background: linear-gradient(90deg, rgba(255, 255, 255,0.06), rgba(255, 255, 255,0.12), rgba(255, 255, 255,0.06)) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
 }
 .marquee-item { color: var(--text2) !important; font-weight: 700 !important; }
 
@@ -414,7 +414,7 @@ input[type="search"], select, textarea, .roi-select {
 }
 input:focus, select:focus, textarea:focus {
   border-color: var(--gold) !important;
-  box-shadow: 0 0 0 4px rgba(240, 168, 37, 0.14) !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.14) !important;
   outline: none !important;
 }
 
@@ -428,12 +428,12 @@ input:focus, select:focus, textarea:focus {
 /* ─────────────────────────────────────────────
    14 · NEXTGEN LAYER RETUNE (widgets on dark)
    ───────────────────────────────────────────── */
-.ng-wa-panel { background: #120e08 !important; border-color: rgba(240,168,37,0.25) !important; }
+.ng-wa-panel { background: #120e08 !important; border-color: rgba(255, 255, 255,0.25) !important; }
 [data-theme="light"] .ng-wa-panel { background: var(--card) !important; }
-.ng-exit-modal { background: #120e08 !important; border-color: rgba(240,168,37,0.3) !important; }
+.ng-exit-modal { background: #120e08 !important; border-color: rgba(255, 255, 255,0.3) !important; }
 [data-theme="light"] .ng-exit-modal { background: var(--card) !important; }
 .ng-grid-floor { opacity: 0.5; }
-.ng-footer-watermark { -webkit-text-stroke-color: rgba(240, 168, 37, 0.12) !important; }
+.ng-footer-watermark { -webkit-text-stroke-color: rgba(255, 255, 255, 0.12) !important; }
 .ng-dot.active { background: var(--gold) !important; }
 
 /* ─────────────────────────────────────────────
@@ -540,7 +540,7 @@ input:focus, select:focus, textarea:focus {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .ui-cs-trigger:hover, .ui-custom-select.open .ui-cs-trigger {
-  border-color: rgba(240, 168, 37, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 .ui-cs-arrow svg {
   transition: transform 0.25s var(--spring);
@@ -590,7 +590,7 @@ input:focus, select:focus, textarea:focus {
   background: rgba(255,255,255,0.05);
 }
 .ui-cs-item.selected {
-  background: rgba(240, 168, 37, 0.15);
+  background: rgba(255, 255, 255, 0.15);
   color: var(--gold);
   font-weight: 600;
 }
