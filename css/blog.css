@@ -223,8 +223,8 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: linear-gradient(135deg, #c8890a, #a06d06);
-  color: #fff;
+  background: linear-gradient(135deg, #ffffff, #c9c9c9);
+  color: #0a0a0a;
   font-size: 10px;
   font-weight: 700;
   padding: 3px 10px;
@@ -236,20 +236,20 @@
 
 /* ===== NEWSLETTER / CTA SECTION ===== */
 .blog-cta {
-  background: linear-gradient(135deg, #c8890a 0%, #8a5c00 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #c9c9c9 100%);
   border-radius: 20px;
   padding: 40px 32px;
   text-align: center;
   margin: 48px 0 0;
 }
 .blog-cta h3 {
-  color: #fff;
+  color: #0a0a0a;
   font-size: 20px;
   font-weight: 800;
   margin-bottom: 8px;
 }
 .blog-cta p {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(10, 10, 10, 0.85);
   font-size: 14px;
   margin-bottom: 24px;
   line-height: 1.7;
@@ -264,8 +264,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #fff;
-  color: var(--gold);
+  background: #0a0a0a;
+  color: #ffffff;
   padding: 13px 24px;
   border-radius: 12px;
   font-weight: 800;

@@ -3,13 +3,13 @@
 ─────────────────────────────────────────── */
 
 :root {
-  --hub-bg: #080604;
-  --hub-surface: #14100a;
-  --hub-card: #1a140c;
+  --hub-bg: #0a0a0a;
+  --hub-surface: #121212;
+  --hub-card: #161616;
   --hub-gold: #ffffff;
-  --hub-gold-deep: #c8890a;
-  --hub-text: #f7f3ee;
-  --hub-muted: #a89e8e;
+  --hub-gold-deep: #c9c9c9;
+  --hub-text: #ffffff;
+  --hub-muted: #a3a3a3;
   --header-h: 56px;
   --bottom-bar-h: 64px;
 }

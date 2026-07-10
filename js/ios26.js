@@ -358,7 +358,7 @@ if(nav && !_isToolsHub){
   /* shared gold gradient defs */
   var defs = document.createElementNS('http://www.w3.org/2000/svg','svg');
   defs.setAttribute('width','0'); defs.setAttribute('height','0'); defs.style.position='absolute';
-  defs.innerHTML = '<defs><linearGradient id="goldRingGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5d78a"/><stop offset="100%" stop-color="#ffffff"/></linearGradient><linearGradient id="footWaveGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ffffff" stop-opacity="0"/><stop offset="50%" stop-color="#ffffff"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>';
+  defs.innerHTML = '<defs><linearGradient id="monoRingGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c9c9c9"/><stop offset="100%" stop-color="#ffffff"/></linearGradient><linearGradient id="footWaveGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ffffff" stop-opacity="0"/><stop offset="50%" stop-color="#ffffff"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>';
   document.body.appendChild(defs);
 })();
 

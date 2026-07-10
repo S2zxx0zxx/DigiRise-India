@@ -42,17 +42,17 @@ walkDir('c:\\digiriseindia', (filePath) => {
     // We only restore the variable DEFINITIONS.
     // In CSS:
     content = content.replace(/--gold:\s*#ffffff;/g, '--gold: #b3b3b3;');
-    content = content.replace(/--gold-mid:\s*#cccccc;/g, '--gold-mid: #d4920c;');
-    content = content.replace(/--gold-light:\s*#ffffff;/g, '--gold-light: #f0a825;');
+    content = content.replace(/--gold-mid:\s*#cccccc;/g, '--gold-mid: #ffffff;');
+    content = content.replace(/--gold-light:\s*#ffffff;/g, '--gold-light: #ffffff;');
     content = content.replace(/--gold-deep:\s*#999999;/g, '--gold-deep: #8a5c06;');
-    content = content.replace(/--gold-pale:\s*rgba\(255,\s*255,\s*255,\s*0\.08\);/g, '--gold-pale: rgba(184, 123, 10, 0.08);');
-    content = content.replace(/--gold-pale2:\s*rgba\(255,\s*255,\s*255,\s*0\.14\);/g, '--gold-pale2: rgba(184, 123, 10, 0.14);');
+    content = content.replace(/--gold-pale:\s*rgba\(255,\s*255,\s*255,\s*0\.08\);/g, '--gold-pale: rgba(255, 255, 255, 0.08);');
+    content = content.replace(/--gold-pale2:\s*rgba\(255,\s*255,\s*255,\s*0\.14\);/g, '--gold-pale2: rgba(255, 255, 255, 0.16);');
     
     // In HTML inline CSS:
-    content = content.replace(/--gold:#b87b0a;/g, '--gold:#b87b0a;');
-    content = content.replace(/--gold-mid: #d4920c;/g, '--gold-mid: #d4920c;');
-    content = content.replace(/--gold-light: #f0a825;/g, '--gold-light: #f0a825;');
-    content = content.replace(/--gold-pale:rgba\(255,255,255,0\.08\);/g, '--gold-pale: rgba(184, 123, 10, 0.08);');
+    content = content.replace(/--gold:#f2f2f2;/g, '--gold:#f2f2f2;');
+    content = content.replace(/--gold-mid: #ffffff;/g, '--gold-mid: #ffffff;');
+    content = content.replace(/--gold-light: #ffffff;/g, '--gold-light: #ffffff;');
+    content = content.replace(/--gold-pale:rgba\(255,255,255,0\.08\);/g, '--gold-pale: rgba(255, 255, 255, 0.08);');
     content = content.replace(/--gold-pale2:rgba\(255,255,255,0\.13\);/g, '--gold-pale2:rgba(255, 255, 255,0.13);');
     
     // Specifically for dark mode overrides, we WANT them to be white!

@@ -309,7 +309,7 @@ section[id]{ scroll-margin-top: 92px; }
 .pkg-mini-bar .pmb-name{ font-size:12px; font-weight:800; color:var(--text2); letter-spacing:.5px; }
 .pkg-mini-bar .pmb-price{ font-size:16px; font-weight:800; color:var(--gold); white-space:nowrap; }
 .pkg-mini-bar a{
-  background:var(--gold); color:#fff; text-decoration:none; font-weight:800; font-size:13px;
+  background:var(--gold); color:#0a0a0a; text-decoration:none; font-weight:800; font-size:13px;
   padding:10px 18px; border-radius:100px; white-space:nowrap;
 }
 
@@ -362,7 +362,7 @@ section[id]{ scroll-margin-top: 92px; }
 .stat-ring svg{ transform:rotate(-90deg); width:100%; height:100%; }
 .stat-ring circle{ fill:none; stroke-width:8; stroke-linecap:round; }
 .stat-ring .sr-bg{ stroke: rgba(255, 255, 255,.14); }
-.stat-ring .sr-fg{ stroke: url(#goldRingGrad); stroke-dasharray: 251.3; stroke-dashoffset: 251.3; transition: stroke-dashoffset 1.6s var(--spring) .2s; }
+.stat-ring .sr-fg{ stroke: url(#monoRingGrad); stroke-dasharray: 251.3; stroke-dashoffset: 251.3; transition: stroke-dashoffset 1.6s var(--spring) .2s; }
 .stat-ring .sr-val{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:19px; color:var(--gold); }
 
 /* ═══════════════════════════════════════════════
@@ -592,7 +592,7 @@ footer{ position:relative; }
 .cm-chip .cm-cat{ font-size:10.5px; color:var(--text2); font-weight:700; letter-spacing:.4px; }
 .cm-tip{
   position:absolute; bottom:calc(100% + 10px); left:50%; transform:translateX(-50%) translateY(6px) scale(.92);
-  background:var(--gold); color:#fff; font-size:11px; font-weight:800; white-space:nowrap;
+  background:var(--gold); color:#0a0a0a; font-size:11px; font-weight:800; white-space:nowrap;
   padding:7px 13px; border-radius:100px; opacity:0; pointer-events:none;
   transition: opacity .25s ease, transform .3s var(--spring-pop);
   box-shadow:0 8px 22px rgba(255, 255, 255,.4); z-index:5;
@@ -623,7 +623,7 @@ footer{ position:relative; }
 .stat-item .stat-ring-wrap svg{ position:absolute; inset:0; transform:rotate(-90deg); }
 .stat-item .stat-ring-wrap circle{ fill:none; stroke-width:7; stroke-linecap:round; }
 .stat-item .stat-ring-wrap .srw-bg{ stroke: rgba(255, 255, 255,.13); }
-.stat-item .stat-ring-wrap .srw-fg{ stroke:url(#goldRingGrad); stroke-dasharray:283; stroke-dashoffset:283; transition: stroke-dashoffset 1.7s var(--spring) .25s; }
+.stat-item .stat-ring-wrap .srw-fg{ stroke:url(#monoRingGrad); stroke-dasharray:283; stroke-dashoffset:283; transition: stroke-dashoffset 1.7s var(--spring) .25s; }
 .stat-item .stat-ring-wrap .num{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
 
 /* ── FIX-322: SERVICE CARD 3D FLIP (desktop hover) ── */
@@ -779,7 +779,7 @@ footer{ position:relative; }
 .reel-view-toggle{ display:flex; gap:4px; background:rgba(150,130,90,.14); border:1px solid var(--island-border); border-radius:100px; padding:4px; }
 .rvt-btn{ border:none; background:transparent; cursor:pointer; font-family:inherit; font-weight:800; font-size:12.5px;
   padding:9px 18px; border-radius:100px; color:var(--text2); transition:background .3s var(--spring), color .3s ease; }
-.rvt-btn.active{ background:var(--gold); color:#fff; box-shadow:0 4px 14px rgba(255, 255, 255,.35); }
+.rvt-btn.active{ background:var(--gold); color:#0a0a0a; box-shadow:0 4px 14px rgba(255, 255, 255,.35); }
 .reels-grid.grid-mode{ display:grid !important; grid-template-columns:repeat(3,1fr) !important; gap:16px; overflow:visible; padding:12px 0 22px; }
 .reels-grid.grid-mode .reel-card{ scroll-snap-align:none; transform:none !important; filter:none !important; opacity:1 !important; min-width: 0 !important; }
 @media(max-width:900px){ .reels-grid.grid-mode{ grid-template-columns:repeat(2,1fr) !important; gap:12px; } }
@@ -881,6 +881,6 @@ html.pwa-standalone body {
 }
 .pwa-update-toast.show { bottom: calc(24px + env(safe-area-inset-bottom)); }
 .pwa-update-toast button {
-  background: var(--gold); color: #fff; border: none; padding: 6px 16px;
+  background: var(--gold); color: #0a0a0a; border: none; padding: 6px 16px;
   border-radius: 100px; font-weight: 700; font-size: 13px; cursor: pointer;
 }

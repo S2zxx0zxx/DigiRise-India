@@ -403,12 +403,12 @@
   --mesh1:rgba(255, 255, 255,0.22); --mesh2:rgba(255, 255, 255,0.18); --mesh3:rgba(184,80,10,0.12);
 }
 [data-theme="dark"]{
-  --gold:#e09d20; --gold-mid:#f0b030; --gold-light:#ffc840;
-  --gold-pale:rgba(255, 255, 255,0.1); --gold-pale2:rgba(255, 255, 255,0.18);
-  --bg:#0f0d0a; --bg2:#181410; --bg3:#201a12;
-  --card:#1e1912; --white:#1e1912;
-  --border:rgba(255, 255, 255,0.22); --border2:rgba(255,255,255,0.08); --divider:rgba(255,255,255,0.06);
-  --text:#f0ebe0; --text2:#d8cdb8; --muted:#8a7a60; --muted2:#6a5a40;
+  --gold:#f2f2f2; --gold-mid:#ffffff; --gold-light:#ffffff;
+  --gold-pale:rgba(255, 255, 255,0.08); --gold-pale2:rgba(255, 255, 255,0.16);
+  --bg:#0a0a0a; --bg2:#121212; --bg3:#1c1c1c;
+  --card:#161616; --white:#161616;
+  --border:rgba(255, 255, 255,0.06); --border2:rgba(255,255,255,0.03); --divider:rgba(255,255,255,0.06);
+  --text:#ffffff; --text2:#e6e6e6; --muted:#a3a3a3; --muted2:#7a7a7a;
   --green:#22c55e; --blue:#60a5fa; --red:#f87171;
   --hard-border:#f0ebe0; --hard-shadow:rgba(240,235,224,0.45); --hard-border-hover:#ffffff;
   --mesh1:rgba(255, 255, 255,0.15); --mesh2:rgba(180,100,20,0.2); --mesh3:rgba(100,50,10,0.18);
@@ -636,7 +636,7 @@ body::after{content:'';position:fixed;inset:0;background-image:repeating-linear-
 
 /* ══════ CTA CONSISTENCY ══════ */
 .btn-primary,.btn-secondary{letter-spacing:0.1px;}
-.pkg-btn.gold{background:var(--gold);color:#fff;}
+.pkg-btn.gold{background:var(--gold);color:#0a0a0a;}
 .pkg-btn.outline{background:color-mix(in srgb,var(--pc,var(--gold)) 8%,transparent);color:var(--pc,var(--gold));border:2.5px solid var(--pc,var(--gold));box-shadow:3px 3px 0 var(--pc,var(--gold));}
 .pkg-btn.outline:hover{background:var(--gold-pale);border-color:var(--gold);color:var(--gold);}
 
@@ -1192,8 +1192,8 @@ section{padding:90px 5%;}
 .pkg-feats li:last-child{border:none;}
 .pkg-feats .tk{color:var(--pc,var(--green));flex-shrink:0;font-size:12px;margin-top:2px;font-weight:700;}
 .pkg-btn{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:15px 20px;border-radius:100px;font-weight:800;font-size:14px;text-decoration:none;transition:all 0.22s;cursor:pointer;border:2.5px solid #1a1208;width:100%;letter-spacing:0.2px;}
-.pkg-btn.gold{background:linear-gradient(135deg,var(--gold) 0%,#a06d06 100%);color:#fff;border:2.5px solid #1a1208;box-shadow:3px 3px 0 #1a1208;}
-.pkg-btn.gold:hover{background:linear-gradient(135deg,#a06d06 0%,#8a5c00 100%);transform:translate(-2px,-2px);box-shadow:5px 5px 0 #1a1208;}
+.pkg-btn.gold{background:linear-gradient(135deg,var(--gold) 0%,#c9c9c9 100%);color:#0a0a0a;border:2.5px solid #1c1c1c;box-shadow:3px 3px 0 #1c1c1c;}
+.pkg-btn.gold:hover{background:linear-gradient(135deg,#c9c9c9 0%,#a3a3a3 100%);transform:translate(-2px,-2px);box-shadow:5px 5px 0 #1c1c1c;}
 .pkg-btn.outline{background:color-mix(in srgb,var(--pc,var(--gold)) 8%,transparent);color:var(--pc,var(--gold));border:2.5px solid var(--pc,var(--gold));box-shadow:3px 3px 0 var(--pc,var(--gold));}
 .pkg-btn.outline:hover{border-color:var(--pc,var(--gold));color:var(--pc,var(--gold));background:color-mix(in srgb,var(--pc,var(--gold)) 14%,transparent);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--pc,var(--gold));}
 
@@ -1826,13 +1826,13 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
 .addon-badge{position:absolute;top:12px;right:12px;font-size:9px;font-weight:800;padding:3px 9px;border-radius:100px;letter-spacing:0.8px;text-transform:uppercase;border:1.5px solid rgba(0,0,0,0.2);color:#fff;box-shadow:1px 1px 0 rgba(0,0,0,0.15);}
 .addon-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;padding:11px 16px;border-radius:100px;font-size:13px;font-weight:800;text-decoration:none;border:2px solid #1a1208;box-shadow:2px 2px 0 #1a1208;transition:all 0.2s;background:color-mix(in srgb,var(--ac,var(--gold)) 10%,transparent);color:var(--ac,var(--gold));}
 .addon-btn:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 #1a1208;text-decoration:none;}
-.addon-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:linear-gradient(135deg,#1a1208 0%,#2d1e0a 100%);border-color:#c8890a;box-shadow:4px 4px 0 #c8890a;}
+.addon-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:linear-gradient(135deg,#161616 0%,#1c1c1c 100%);border-color:#ffffff;box-shadow:4px 4px 0 #ffffff;}
 .addon-card.featured .addon-name{color:#fff;font-size:20px;}
 .addon-card.featured .addon-desc{color:rgba(255,255,255,0.75);}
-.addon-card.featured .addon-price{color:#c8890a;font-size:28px;}
+.addon-card.featured .addon-price{color:#ffffff;font-size:28px;}
 .addon-card.featured .addon-time{color:rgba(255,255,255,0.55);}
-.addon-card.featured .addon-btn{background:linear-gradient(135deg,#c8890a,#a06d06);color:#fff;border-color:#1a1208;}
-.addon-card.featured::before{background:linear-gradient(90deg,#c8890a,#e3a52a,#c8890a);}
+.addon-card.featured .addon-btn{background:linear-gradient(135deg,#ffffff,#c9c9c9);color:#0a0a0a;border-color:#161616;}
+.addon-card.featured::before{background:linear-gradient(90deg,#ffffff,#c9c9c9,#ffffff);}
 @keyframes pulse-ring{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ac,var(--gold)) 40%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
 .addon-card.popular-addon{animation:pulse-ring 2s infinite;}
 @media(max-width:600px){
@@ -3016,7 +3016,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
 @keyframes border-spin{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .blog-card-wrap{
   padding:2px;border-radius:20px;
-  background:linear-gradient(135deg,var(--card-color,#c8890a),#e7dcc9,var(--card-color,#c8890a));
+  background:linear-gradient(135deg,var(--card-color,var(--gold)),#e7dcc9,var(--card-color,var(--gold)));
   background-size:300% 300%;
   animation:border-spin 4s ease infinite;
   transition:transform 0.22s,box-shadow 0.22s;
@@ -3034,7 +3034,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
 .blog-read-btn{font-size:13px;font-weight:800;color:var(--card-color,var(--gold));display:flex;align-items:center;gap:4px;}
 .blog-view-all{
   padding:2px;border-radius:20px;
-  background:linear-gradient(135deg,#c8890a,#e3a52a,#8a5c00,#c8890a);
+  background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold-deep),var(--gold));
   background-size:300% 300%;
   animation:border-spin 3s ease infinite;
   transition:transform 0.22s,box-shadow 0.22s;
@@ -3112,14 +3112,14 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
       </div>
 
       <!-- Card 5 — Website Tips -->
-      <div class="blog-card-wrap" style="--card-color:#c8890a;">
+      <div class="blog-card-wrap" style="--card-color:#ffffff;">
         <a href="/blog/website-cost-india-2025.html" class="blog-card-inner">
-          <div class="blog-cat-pill" style="color:#c8890a;background:rgba(200,137,10,0.1);">💻 Website Tips</div>
+          <div class="blog-cat-pill" style="color:var(--gold);background:var(--gold-pale);">💻 Website Tips</div>
           <div class="blog-card-title">Website Banwane Ka Kitna Kharcha Aata Hai?</div>
           <div class="blog-card-desc">₹7,999 se ₹74,999 tak — honest pricing guide. Real data, no jargon.</div>
           <div class="blog-card-footer">
             <span class="blog-read-time">⏱ 8 min read</span>
-            <span class="blog-read-btn" style="color:#c8890a;">Padho →</span>
+            <span class="blog-read-btn" style="color:var(--gold);">Padho →</span>
           </div>
         </a>
       </div>
