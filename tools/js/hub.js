@@ -14,14 +14,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Populate Selects and grids
   tools.forEach((t, i) => {
-    // Dropdown
-    if(t.status !== 'soon') {
-      const opt = document.createElement('option');
-      opt.value = t.slug;
-      opt.textContent = `Tool: ${t.name} ${t.status === 'live' ? '🟢' : ''}`;
-      toolSelect.appendChild(opt);
-    }
-
     // Grid
     const card = document.createElement('a');
     card.href = t.status !== 'soon' ? `/tools/${t.slug}/` : '#';
@@ -41,7 +33,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (t.status !== 'soon') {
       fanCard.addEventListener('click', () => {
         toolSelect.value = t.slug;
-        updateModeSelect();
         cmdInput.focus();
       });
       fanCard.addEventListener('dblclick', () => {
@@ -50,23 +41,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     fanDeck.appendChild(fanCard);
   });
-
-  // Mode select logic
-  function updateModeSelect() {
-    modeSelect.innerHTML = '';
-    const selected = tools.find(t => t.slug === toolSelect.value);
-    if (selected && selected.modes) {
-      selected.modes.forEach(m => {
-        const opt = document.createElement('option');
-        opt.value = m;
-        opt.textContent = `Mode: ${m} ▾`;
-        modeSelect.appendChild(opt);
-      });
-    } else {
-      modeSelect.innerHTML = '<option value="Standard">Mode: Standard ▾</option>';
-    }
-  }
-  toolSelect.addEventListener('change', updateModeSelect);
 
   // Submit Logic
   cmdSubmit.addEventListener('click', () => {

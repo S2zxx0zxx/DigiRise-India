@@ -109,7 +109,8 @@ body.tools-hub-mode::before{ /* fine grain, monitor feel */
 }
 .cmd-pill:hover{border-color:rgba(240,168,37,.45);color:var(--accent,#f0a825);}
 .cmd-pill.icon-only{padding:8px 10px;}
-.cmd-select{max-width:170px;}
+.cmd-select{max-width:170px;color-scheme:dark;}
+.cmd-select option{background:#0d0d0d;color:#fff;}
 .cmd-submit{
   width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;
   display:flex;align-items:center;justify-content:center;color:var(--on-accent,#140b02);
@@ -119,6 +120,19 @@ body.tools-hub-mode::before{ /* fine grain, monitor feel */
 }
 .cmd-submit:hover{transform:translateY(-2px) scale(1.05);}
 .cmd-submit:active{transform:scale(.92);}
+
+@media(max-width: 560px){
+  .command-card{padding:12px;}
+  .cmd-input{font-size:15px;}
+  .cmd-controls-row{display:flex;flex-direction:column;align-items:stretch;gap:10px;padding-top:10px;}
+  .cmd-left{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;}
+  .cmd-right{display:grid;grid-template-columns:1fr auto;gap:8px;width:100%;align-items:center;}
+  .cmd-select{max-width:none;width:100%;}
+  .cmd-pill{font-size:12px;padding:7px 10px;}
+  .cmd-pill.cmd-select{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+  #rawViewToggle{display:none;}
+  .cmd-submit{width:40px;height:40px;}
+}
 
 /* ── Fan deck — floating quick-launch cards ───────────────────────── */
 .hub-fan-section{text-align:center;padding:34px 0 8px;}
