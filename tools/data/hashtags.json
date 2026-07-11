@@ -1,0 +1,7 @@
+{
+  "fashion": ["#ootd", "#fashionblogger", "#style", "#fashionista", "#instafashion", "#streetstyle", "#vintage", "#outfit", "#lookbook", "#fashionaddict", "#mensfashion", "#womensfashion"],
+  "tech": ["#tech", "#technology", "#coding", "#developer", "#programming", "#innovation", "#software", "#ai", "#machinelearning", "#startup", "#webdev", "#cybersecurity"],
+  "real estate": ["#realestate", "#realtor", "#property", "#home", "#investment", "#architecture", "#forsale", "#luxuryrealestate", "#househunting", "#dreamhome", "#broker", "#interiordesign"],
+  "fitness": ["#fitness", "#gym", "#workout", "#fit", "#health", "#bodybuilding", "#training", "#lifestyle", "#gymlife", "#muscle", "#fitfam", "#personaltrainer"],
+  "food": ["#food", "#foodporn", "#foodie", "#instafood", "#foodphotography", "#yummy", "#delicious", "#dinner", "#healthyfood", "#foodstagram", "#lunch", "#chef"]
+}

@@ -7,7 +7,7 @@
       "description": "Analyze website performance and core web vitals in real-time.",
       "status": "live",
       "icon": "⚡",
-      "modes": ["Quick scan", "Deep scan"],
+      "modes": ["Standard", "Pro", "Max", "Kill"],
       "guides": ["website-cost-india-2025"]
     },
     {
@@ -16,8 +16,8 @@
       "name": "Ad Budget Calculator",
       "description": "Project your ROI and budget based on real India market CPC/CVR.",
       "status": "live",
-      "icon": "🎯",
-      "modes": ["Monthly", "Campaign"],
+      "icon": "💰",
+      "modes": ["Standard", "Pro", "Max", "Kill"],
       "guides": ["meta-ads-kaise-chalayein-2026"]
     },
     {
@@ -27,18 +27,58 @@
       "description": "Calculate breakeven CPA and profitability.",
       "status": "live",
       "icon": "📈",
-      "modes": ["Standard"],
+      "modes": ["Standard", "Pro", "Max", "Kill"],
       "guides": ["digital-marketing-agency-vs-khud-2026"]
     },
     {
       "id": "ad-copy-generator",
       "slug": "ad-copy-generator",
-      "name": "Meta Ads Copy",
+      "name": "Ad Copy Gen",
       "description": "Generate high-converting ad copy templates.",
       "status": "live",
       "icon": "📝",
-      "modes": ["Professional", "Hinglish-casual", "Urgent"],
+      "modes": ["Standard", "Pro", "Max", "Kill"],
       "guides": ["canva-se-professional-posts-2026"]
+    },
+    {
+      "id": "meta-tag-analyzer",
+      "slug": "meta-tag-analyzer",
+      "name": "Meta Tag Analyzer",
+      "description": "Analyze SEO meta tags and preview Google SERP.",
+      "status": "live",
+      "icon": "🔍",
+      "modes": ["Standard", "Pro", "Max", "Kill"],
+      "guides": []
+    },
+    {
+      "id": "hashtag-generator",
+      "slug": "hashtag-generator",
+      "name": "Hashtag Generator",
+      "description": "Generate curated hashtags based on your niche.",
+      "status": "live",
+      "icon": "#️⃣",
+      "modes": ["Standard", "Pro", "Max", "Kill"],
+      "guides": []
+    },
+    {
+      "id": "whatsapp-link",
+      "slug": "whatsapp-link",
+      "name": "WhatsApp Link",
+      "description": "Generate a custom wa.me link with prefilled message.",
+      "status": "live",
+      "icon": "📱",
+      "modes": ["Standard", "Pro", "Max", "Kill"],
+      "guides": []
+    },
+    {
+      "id": "caption-length",
+      "slug": "caption-length",
+      "name": "Caption Checker",
+      "description": "Check if your caption fits social media limits.",
+      "status": "live",
+      "icon": "✍️",
+      "modes": ["Standard", "Pro", "Max", "Kill"],
+      "guides": []
     },
     {
       "id": "seo-audit-generator",
@@ -46,7 +86,7 @@
       "name": "SEO Audit",
       "description": "Comprehensive technical SEO analysis for Indian small businesses.",
       "status": "soon",
-      "icon": "🔍",
+      "icon": "🚀",
       "modes": ["Standard"],
       "guides": []
     }

@@ -378,3 +378,166 @@ select.tool-input-field{appearance:none;-webkit-appearance:none;cursor:pointer;}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none !important;transition:none !important;}
 }
+
+/* ── AI Agent Workbench Grid (Injected) ───────────────────────────── */
+.hub-main {
+  max-width: 1160px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media(max-width: 860px) {
+  .hub-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tool-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: sticky;
+  top: 86px;
+  background: rgba(8,8,8,0.4);
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid var(--panel-line);
+}
+
+.rail-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  color: var(--muted,#b0b0b0);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+  transition: all .2s;
+}
+.rail-btn:hover { background: rgba(255,255,255,0.04); color: #fff; }
+.rail-btn.active {
+  background: rgba(240,168,37,0.1);
+  color: var(--accent,#f0a825);
+  box-shadow: 0 0 20px rgba(240,168,37,0.1);
+}
+.rail-icon { font-size: 16px; }
+
+@media(max-width: 860px) {
+  .tool-rail {
+    flex-direction: row;
+    overflow-x: auto;
+    position: static;
+    padding: 12px;
+  }
+  .rail-btn { white-space: nowrap; }
+}
+
+.work-stream {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 120px; /* space for command bar */
+}
+
+.stream-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--panel-line);
+  border-radius: 18px;
+  padding: 20px;
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px);
+  animation: paneIn .4s var(--ease-ios);
+}
+
+.user-card {
+  align-self: flex-end;
+  background: rgba(240,168,37,0.08);
+  border-color: rgba(240,168,37,0.2);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+  max-width: 85%;
+}
+
+.agent-card {
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  width: 100%;
+}
+
+.system-card {
+  align-self: center;
+  border-style: dashed;
+  color: var(--muted);
+  width: 100%;
+  text-align: center;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--muted2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-header strong {
+  color: #fff;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Move command bar to bottom when active */
+.hub-workspace {
+  position: relative;
+  min-width: 0;
+}
+
+/* We override the command card to be sticky at the bottom if it's placed inside the workspace */
+.hub-main .command-card {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: calc(100% - 40px);
+  max-width: 860px;
+  margin: 0;
+  background: rgba(8,8,8,0.85);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* When empty state is shown, keep it relatively in the hero */
+.hub-hero .command-card {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  width: 100%;
+}
+
+/* Spinner */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255,255,255,0.1);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Fix the hero when grid is active */
+.hub-hero { grid-column: 1 / -1; }
+.hub-fan-section { grid-column: 1 / -1; }
+
