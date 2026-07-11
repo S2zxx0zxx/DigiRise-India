@@ -1,7 +1,7 @@
 // DigiRise India — Intelligent Service Worker (PWA MAX)
 // v11 - Strategy-per-resource caching engine
 
-const CACHE_VERSION = 21;
+const CACHE_VERSION = 22;
 const BUCKETS = {
   shell: `dr-shell-v${CACHE_VERSION}`,
   static: `dr-static-v${CACHE_VERSION}`,
@@ -140,7 +140,8 @@ self.addEventListener('fetch', (event) => {
       caches.match(event.request).then(cached => {
         const networkFetch = fetch(event.request).then(res => {
           if (res.ok) {
-            caches.open(targetBucket).then(cache => cache.put(event.request, res.clone()));
+            let resToCache = res.clone();
+            caches.open(targetBucket).then(cache => cache.put(event.request, resToCache));
           }
           return res;
         }).catch(err => console.warn('Fetch failed', err));

@@ -541,14 +541,6 @@
       document.querySelectorAll('.reveal-hidden').forEach(function(el){ el.classList.remove('reveal-hidden'); el.classList.add('ng-in'); });
     }
   }
-//);
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('ng-in'); io.unobserve(en.target); }
-      });
-    }, { threshold: 0, rootMargin: '0px 0px 600px 0px' });
-    els.forEach(function (el) { io.observe(el); });
-  }
 
   /* ───────────────────────────────────────────
      15 · THEME cross-fade enabler
