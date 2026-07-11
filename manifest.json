@@ -10,8 +10,8 @@
     "window-controls-overlay",
     "standalone"
   ],
-  "background_color": "#080604",
-  "theme_color": "#080604",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "orientation": "portrait",
   "lang": "en-IN",
   "dir": "ltr",

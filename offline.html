@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Offline — DigiRise India</title>
-  <meta name="theme-color" content="#080604">
+  <meta name="theme-color" id="metaThemeColor" content="#000000">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -33,9 +33,9 @@
     .icon {
       width: 72px; height: 72px; background: rgba(255, 255, 255,0.1); border-radius: 50%;
       display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;
-      color: #ffffff; font-size: 32px; border: 1px solid rgba(255, 255, 255,0.2);
+      color:var(--on-accent); font-size: 32px; border: 1px solid rgba(255, 255, 255,0.2);
     }
-    h1 { font-size: 24px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
+    h1 { font-size: 24px; font-weight: 800; color:var(--on-accent); margin-bottom: 12px; }
     p { color: #8a7a60; font-size: 15px; line-height: 1.6; margin-bottom: 32px; }
     .btn-group { display: flex; flex-direction: column; gap: 12px; }
     .btn {
@@ -44,13 +44,13 @@
       font-weight: 700; font-size: 15px; transition: all 0.2s; border: none; cursor: pointer;
     }
     .btn-primary { background: linear-gradient(135deg, #ffffff, #c9c9c9); color: #0a0a0a; box-shadow: 0 4px 14px rgba(255,255,255,0.3); }
-    .btn-wa { background: #128C7E; color: #fff; box-shadow: 0 4px 14px rgba(18,140,126,0.3); }
+    .btn-wa { background: #128C7E; color:var(--on-accent); box-shadow: 0 4px 14px rgba(18,140,126,0.3); }
     .btn-outline { background: transparent; color: #f0ebe0; border: 1px solid rgba(255,255,255,0.1); }
     .packages { text-align: left; background: rgba(255,255,255,0.03); border-radius: 16px; padding: 16px; margin-bottom: 24px; }
-    .packages h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #ffffff; margin-bottom: 12px; }
+    .packages h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color:var(--on-accent); margin-bottom: 12px; }
     .packages ul { list-style: none; }
     .packages li { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; color: #d8cdb8; }
-    .packages li span:last-child { font-weight: 700; color: #fff; }
+    .packages li span:last-child { font-weight: 700; color:var(--on-accent); }
   </style>
 <script>if(window.top!==window.self){window.top.location=window.self.location;}</script>
 </head>
