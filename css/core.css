@@ -398,7 +398,7 @@ nav>*{position:relative;z-index:1;}
 .steps-track{
   display:flex;gap:18px;padding:16px 70px 28px;
   overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab;-webkit-user-select:none;user-select:none;
+  scrollbar-width:none;cursor:grab;-webkit-user-select:none;user-select:none;
 }
 .steps-track:active{cursor:grabbing;}
 .steps-track::-webkit-scrollbar{display:none;}
@@ -883,7 +883,7 @@ section{padding:90px 5%;}
 .form-submit:hover{background:var(--gold-mid);transform:translateY(-1px);}
 
 /* ============ COMPARE TABLE ============ */
-.cmp-wrap{overflow-x:auto;margin-top:36px;border-radius:14px;border:1.5px solid var(--border2);-webkit-overflow-scrolling:touch;scroll-behavior:smooth;scroll-snap-type:x proximity;overscroll-behavior-x:contain;}
+.cmp-wrap{overflow-x:auto;margin-top:36px;border-radius:14px;border:1.5px solid var(--border2);scroll-behavior:smooth;scroll-snap-type:x proximity;overscroll-behavior-x:contain;}
 .cmp-table{width:100%;min-width:640px;border-collapse:collapse;font-size:12.5px;}
 .cmp-table th{scroll-snap-align:start;}
 .cmp-table th{background:var(--bg3);padding:13px 15px;text-align:left;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:700;border-bottom:1px solid var(--border2);}
@@ -1420,7 +1420,7 @@ footer::before{content:'';display:block;height:2px;background:linear-gradient(90
       padding-bottom: 20px;
       gap: 16px;
       margin-bottom: 30px;
-      -webkit-overflow-scrolling: touch;
+      
     }
     .reels-grid::-webkit-scrollbar { display: none; }
     

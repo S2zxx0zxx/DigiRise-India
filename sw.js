@@ -114,7 +114,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   // 4. CACHE-FIRST for Images/Icons with LRU Cap
-  if (url.pathname.startsWith('/assets/') || url.pathname.match(/\.(png|jpe?g|webp|svg|ico)$/)) {
+  if (url.pathname.startsWith('/assets/') || /\.(png|jpe?g|webp|svg|ico)$/.exec(url.pathname)) {
     event.respondWith(
       caches.match(event.request).then(cached => {
         return cached || fetch(event.request).then(res => {
@@ -133,8 +133,8 @@ self.addEventListener('fetch', (event) => {
   }
 
   // 5. STALE-WHILE-REVALIDATE for Content Hubs & CSS/JS
-  const isContentHub = url.pathname.match(/^\/(blog|tools|locations|industries|compare|case-studies|glossary|growth-partner-program)\//);
-  if (isContentHub || url.pathname.match(/\.(css|js)$/)) {
+  const isContentHub = /^\/(blog|tools|locations|industries|compare|case-studies|glossary|growth-partner-program)\//.exec(url.pathname);
+  if (isContentHub || /\.(css|js)$/.exec(url.pathname)) {
     const targetBucket = isContentHub ? BUCKETS.blog : BUCKETS.static;
     event.respondWith(
       caches.match(event.request).then(cached => {
@@ -155,7 +155,7 @@ self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate') {
     event.respondWith(
       new Promise((resolve, reject) => {
-        const timeoutId = setTimeout(() => reject('timeout'), 3000);
+        const timeoutId = setTimeout(() => reject(new Error('timeout')), 3000);
         fetch(event.request)
           .then(res => {
             clearTimeout(timeoutId);
@@ -170,12 +170,12 @@ self.addEventListener('fetch', (event) => {
       .catch(() => caches.match(event.request))
       .then(res => res || caches.match(OFFLINE_URL))
     );
-    return;
-  }
+    }
 });
 
 self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
+  if (event.origin !== location.origin) return;
+  if (event.data?.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });

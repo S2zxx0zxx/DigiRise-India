@@ -351,3 +351,5 @@ body.tools-hub-mode {
 .mc-val.good { color: #4ade80; }
 .mc-val.warn { color: #facc15; }
 .mc-val.poor { color: #f87171; }
+
+.lead-btn { display: inline-block; padding: 10px 24px; }
