@@ -520,26 +520,22 @@
   /* ───────────────────────────────────────────
      14 · DIRECTIONAL REVEALS on section headers
      ─────────────────────────────────────────── */
-    function initReveals() {
-    try {
-      var els = document.querySelectorAll('.ng-reveal, .ng-reveal-left, .ng-reveal-right');
-      els.forEach(function (el) { 
-        if (el.getBoundingClientRect().top < window.innerHeight * 1.2) {
-          el.classList.add('ng-in');
-        } else {
-          el.classList.add('reveal-hidden'); 
-        }
+  function initReveals() {
+    var els = document.querySelectorAll('.ng-reveal, .ng-reveal-left, .ng-reveal-right');
+    var _vh = window.innerHeight || 800;
+    els.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < _vh * 1.2 && r.bottom > -100) { el.classList.add('ng-in'); return; }
+      el.classList.add('reveal-hidden');
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('ng-in'); io.unobserve(en.target); }
       });
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) { en.target.classList.add('ng-in'); io.unobserve(en.target); }
-        });
-      }, { threshold: 0, rootMargin: '600px 0px 600px 0px' });
-      els.forEach(function (el) { io.observe(el); });
-      setTimeout(function(){ document.querySelectorAll('.reveal-hidden:not(.in):not(.ng-in)').forEach(function(el){ el.classList.add('in','ng-in'); }); }, 1200);
-    } catch(e) {
-      document.querySelectorAll('.reveal-hidden').forEach(function(el){ el.classList.remove('reveal-hidden'); el.classList.add('ng-in'); });
-    }
+    }, { threshold: 0, rootMargin: '600px 0px 600px 0px' });
+    els.forEach(function (el) { if(!el.classList.contains('ng-in')) io.observe(el); });
+    /* v7.0 watchdog */
+    setTimeout(function(){ els.forEach(function(el){ el.classList.add('ng-in'); el.classList.remove('reveal-hidden'); }); }, 1200);
   }
 
   /* ───────────────────────────────────────────
@@ -551,20 +547,20 @@
 
   /* ═══════════════ BOOT ═══════════════ */
   onReady(function () {
-    try { initNavbar(); } catch (e) {  }
-    try { initHero(); } catch (e) {  }
-    try { initVelocityMarquee(); } catch (e) {  }
-    try { initReelsCinema(); } catch (e) {  }
-    try { initTilt(); } catch (e) {  }
-    try { initTimelineDraw(); } catch (e) {  }
-    try { initFlowDot(); } catch (e) {  }
-    try { initProjectsSpotlight(); } catch (e) {  }
-    try { initFaqSearch(); } catch (e) {  }
-    try { initDotsNav(); } catch (e) {  }
-    try { initWaWidget(); } catch (e) {  }
-    try { initExitIntent(); } catch (e) {  }
-    try { initDecorations(); } catch (e) {  }
-    try { initReveals(); } catch (e) {  }
-    try { initThemeFade(); } catch (e) {  }
+    try { initNavbar(); } catch (e) { console.warn('[NG]', e); }
+    try { initHero(); } catch (e) { console.warn('[NG]', e); }
+    try { initVelocityMarquee(); } catch (e) { console.warn('[NG]', e); }
+    try { initReelsCinema(); } catch (e) { console.warn('[NG]', e); }
+    try { initTilt(); } catch (e) { console.warn('[NG]', e); }
+    try { initTimelineDraw(); } catch (e) { console.warn('[NG]', e); }
+    try { initFlowDot(); } catch (e) { console.warn('[NG]', e); }
+    try { initProjectsSpotlight(); } catch (e) { console.warn('[NG]', e); }
+    try { initFaqSearch(); } catch (e) { console.warn('[NG]', e); }
+    try { initDotsNav(); } catch (e) { console.warn('[NG]', e); }
+    try { initWaWidget(); } catch (e) { console.warn('[NG]', e); }
+    try { initExitIntent(); } catch (e) { console.warn('[NG]', e); }
+    try { initDecorations(); } catch (e) { console.warn('[NG]', e); }
+    try { initReveals(); } catch (e) { console.warn('[NG]', e); }
+    try { initThemeFade(); } catch (e) { console.warn('[NG]', e); }
   });
 })();

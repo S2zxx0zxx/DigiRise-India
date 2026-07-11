@@ -1,7 +1,7 @@
 // DigiRise India — Intelligent Service Worker (PWA MAX)
 // v11 - Strategy-per-resource caching engine
 
-const CACHE_VERSION = 22;
+const CACHE_VERSION = 19;
 const BUCKETS = {
   shell: `dr-shell-v${CACHE_VERSION}`,
   static: `dr-static-v${CACHE_VERSION}`,
@@ -26,9 +26,9 @@ const SHELL_ASSETS = [
 ];
 
 const STATIC_ASSETS = [
-  '/css/core.css',
   '/css/nextgen.css',
   '/css/ios26.css',
+  '/css/core.css',
   '/css/redesign.css',
   '/js/nextgen.js',
   '/js/ios26.js',
@@ -114,7 +114,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   // 4. CACHE-FIRST for Images/Icons with LRU Cap
-  if (url.pathname.startsWith('/assets/') || /\.(png|jpe?g|webp|svg|ico)$/.exec(url.pathname)) {
+  if (url.pathname.startsWith('/assets/') || url.pathname.match(/\.(png|jpe?g|webp|svg|ico)$/)) {
     event.respondWith(
       caches.match(event.request).then(cached => {
         return cached || fetch(event.request).then(res => {
@@ -133,15 +133,14 @@ self.addEventListener('fetch', (event) => {
   }
 
   // 5. STALE-WHILE-REVALIDATE for Content Hubs & CSS/JS
-  const isContentHub = /^\/(blog|tools|locations|industries|compare|case-studies|glossary|growth-partner-program)\//.exec(url.pathname);
-  if (isContentHub || /\.(css|js)$/.exec(url.pathname)) {
+  const isContentHub = url.pathname.match(/^\/(blog|tools|locations|industries|compare|case-studies|glossary|growth-partner-program)\//);
+  if (isContentHub || url.pathname.match(/\.(css|js)$/)) {
     const targetBucket = isContentHub ? BUCKETS.blog : BUCKETS.static;
     event.respondWith(
       caches.match(event.request).then(cached => {
         const networkFetch = fetch(event.request).then(res => {
           if (res.ok) {
-            let resToCache = res.clone();
-            caches.open(targetBucket).then(cache => cache.put(event.request, resToCache));
+            caches.open(targetBucket).then(cache => cache.put(event.request, res.clone()));
           }
           return res;
         }).catch(err => console.warn('Fetch failed', err));
@@ -155,7 +154,7 @@ self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate') {
     event.respondWith(
       new Promise((resolve, reject) => {
-        const timeoutId = setTimeout(() => reject(new Error('timeout')), 3000);
+        const timeoutId = setTimeout(() => reject('timeout'), 3000);
         fetch(event.request)
           .then(res => {
             clearTimeout(timeoutId);
@@ -170,12 +169,12 @@ self.addEventListener('fetch', (event) => {
       .catch(() => caches.match(event.request))
       .then(res => res || caches.match(OFFLINE_URL))
     );
-    }
+    return;
+  }
 });
 
 self.addEventListener('message', (event) => {
-  if (event.origin !== location.origin) return;
-  if (event.data?.type === 'SKIP_WAITING') {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });

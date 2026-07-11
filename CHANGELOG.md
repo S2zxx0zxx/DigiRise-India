@@ -168,5 +168,3 @@ All notable changes to the DigiRise India website are documented here.
 - **Major finding: removed entirely fabricated case study** — "Urban Homes" (+185% leads, +320% revenue) and 4 other fake client names (Flex Fitness, Glam Studio, Wellcare Clinic, Success Academy, Shoppers World) with invented testimonials, replaced across index.html, llms.txt, llms-full.txt, and blog/digirise-india-8-software-1-agency-2026.html with real client roster (LAL Sweets, Kirtilals, TradeScribe, FarmFres, Murzban, The Liquid Lounge)
 - Hero stats reframed to verifiable facts: 12+ industries, 8 software, 3 countries, 100% deliverables guarantee
 - Trust badges reframed as tools (Google Ads & GA4) instead of vague "verified" claims
-# # #   B u g   1 1 :   R e s t o r e d   G l o w   a n d   P o l i s h   f o r   B o t h   T h e m e s  
- 

@@ -1,0 +1,184 @@
+/* ═════════════════════════════════════════════════════════════════════
+   XAI-STYLE THEME OVERRIDE · css/xai-theme.css  · v1.1
+   Scope: index.html (home) + /tools/ dashboard ONLY.
+   Reference: x.ai — PURE BLACK bg, CRISP WHITE text (no dull grey),
+   pill buttons, gold reduced to a whisper (badges / active only).
+   Loads LAST → wins the cascade.
+   ═════════════════════════════════════════════════════════════════════ */
+
+:root, [data-theme="dark"] {
+  --bg: #000000;
+  --bg2: #030303;
+  --bg3: #070707;
+  --card: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.10);
+  --border2: rgba(255,255,255,0.06);
+  --divider: rgba(255,255,255,0.08);
+
+  --text: #ffffff;
+  --text2: #f2f2f2;
+  --muted: #c7c7c7;
+  --muted2: #a3a3a3;
+
+  --accent: #d9a441;
+  --accent-deep: #b6842a;
+  --accent-light: #e8bd6c;
+  --accent-glow: rgba(217,164,65,0.14);
+  --gold: var(--accent);
+  --gold-mid: var(--accent);
+  --gold-light: var(--accent-light);
+  --gold-deep: var(--accent-deep);
+  --gold-pale: rgba(217,164,65,0.07);
+  --gold-pale2: rgba(217,164,65,0.11);
+  --hard-border: rgba(255,255,255,0.16);
+  --hard-shadow: rgba(0,0,0,0.4);
+  --hard-border-hover: rgba(255,255,255,0.32);
+  --on-accent: #0a0a0a;
+}
+
+/* ═══ NAV BAR — force BLACK (was cream rgba(245,240,232) relic) ═══ */
+nav#mainNav, nav {
+  background: rgba(0,0,0,0.82) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.4) !important;
+  backdrop-filter: blur(24px) saturate(1.4) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05) !important;
+}
+nav a, nav .nav-links a { color: #f2f2f2 !important; }
+nav a:hover { color: #fff !important; }
+
+/* ═══ Body / hero text: crisp, readable — kill the fade ═══ */
+.hero-sub, .hub-hero p, .tool-desc, .section-sub, .muted, .text-muted {
+  color: #d8d8d8 !important;
+}
+.hero-sub span, .hero p span { color: #cfcfcf !important; }
+
+/* ═══ Pill buttons ═══ */
+.btn-primary, .nav-cta, .ffc-btn-primary, .pkg-btn, .form-submit,
+.sticky-cta-btn, .mob-call, .ai-run-btn, .roi-cta, .tool-btn,
+.cmd-submit, .avatar-btn, .btn-secondary, .outline {
+  border-radius: 100px !important;
+}
+
+.btn-primary, .ffc-btn-primary, .nav-cta, .form-submit, .sticky-cta-btn,
+.roi-cta, .ai-run-btn, .tool-btn {
+  background: #ffffff !important;
+  color: #0a0a0a !important;
+  border: none !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45) !important;
+  transition: transform .18s cubic-bezier(.2,.8,.2,1), background .18s !important;
+}
+.btn-primary:hover, .ffc-btn-primary:hover, .nav-cta:hover, .form-submit:hover,
+.sticky-cta-btn:hover, .roi-cta:hover, .ai-run-btn:hover, .tool-btn:hover {
+  background: #ededed !important;
+  transform: translateY(-1px);
+}
+.btn-primary *, .ffc-btn-primary *, .nav-cta *, .form-submit *,
+.sticky-cta-btn *, .roi-cta *, .ai-run-btn *, .tool-btn * {
+  color: #0a0a0a !important;
+  opacity: 1 !important;
+}
+
+.btn-secondary, .outline, .cmd-pill, .whats-new-btn, .view-toggle,
+.tool-sidebar a, .ts-link {
+  background: transparent !important;
+  color: #f2f2f2 !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  box-shadow: none !important;
+}
+.btn-secondary *, .outline * { color: #f2f2f2 !important; opacity: 1 !important; }
+.btn-secondary:hover, .outline:hover, .cmd-pill:hover, .whats-new-btn:hover,
+.tool-sidebar a:hover, .ts-link:hover {
+  border-color: rgba(255,255,255,0.36) !important;
+  color: #fff !important;
+}
+
+.tab-btn.active, .ts-link.active {
+  background: #ffffff !important;
+  color: #0a0a0a !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4) !important;
+}
+
+/* ═══ PRICING PACKAGES — kill the fade ═══ */
+.pkg-card, .package-card, .pricing-card {
+  background: rgba(255,255,255,0.03) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  box-shadow: 0 16px 34px rgba(0,0,0,0.55) !important;
+  opacity: 1 !important;
+}
+.pkg-card *, .package-card *, .pricing-card * { opacity: 1 !important; }
+.pkg-card .pkg-name, .pkg-price, .pkg-card h3, .pkg-card h4 { color: #ffffff !important; }
+.pkg-card li, .pkg-card p, .pkg-feature { color: #d8d8d8 !important; }
+.pkg-topbar { background: rgba(255,255,255,0.5) !important; }
+.pkg-card.featured, .pkg-card.popular {
+  border-color: rgba(255,255,255,0.28) !important;
+  box-shadow: 0 20px 44px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06) !important;
+}
+.pkg-badge, .popular-badge { background: var(--accent) !important; color: #140b02 !important; }
+
+/* ═══ Hero headline: white→light-grey gradient ═══ */
+.hero-title, .hub-headline, h1.hero, .hero h1 {
+  background: linear-gradient(180deg, #ffffff 62%, #cfcfcf) !important;
+  -webkit-background-clip: text !important; background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.hero-title .accent-word, .hero-gold, .text-gold {
+  -webkit-text-fill-color: initial !important;
+  color: var(--accent-light) !important;
+  background: none !important;
+}
+
+/* ═══ Gold restricted to: badge, active, links ═══ */
+.hub-beta, .badge-new { background: var(--accent) !important; color: #140b02 !important; }
+a:not(.btn-primary):not(.nav-cta):not(.tool-btn):not(.pkg-btn):hover { color: var(--accent-light) !important; }
+.tsc-num, .roi-result-big { color: #fff !important; text-shadow: none !important; }
+
+.fab-call {
+  background: #111 !important; color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.4), 0 8px 20px rgba(0,0,0,0.5) !important;
+}
+
+/* ═══ Cards: flatten gold glows ═══ */
+.trust-stat-card, .fan-card, .tool-card, .command-card, .tool-panel, .metric-card {
+  box-shadow: 0 14px 30px rgba(0,0,0,0.55) !important;
+}
+.trust-stat-card::before { background: rgba(255,255,255,0.5) !important; opacity: .5 !important; }
+.trust-stat-card:hover, .fan-card:hover, .tool-card:hover {
+  border-color: rgba(255,255,255,0.22) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6) !important;
+}
+.command-card:focus-within {
+  border-color: rgba(255,255,255,0.28) !important;
+  box-shadow: 0 30px 70px rgba(0,0,0,.6), 0 0 24px rgba(255,255,255,0.06) !important;
+}
+.tool-input-field:focus {
+  border-color: rgba(255,255,255,0.28) !important;
+  box-shadow: inset 0 3px 10px rgba(0,0,0,.8), 0 0 16px rgba(255,255,255,0.05) !important;
+}
+.avatar-btn {
+  background: #fff !important; color: #0a0a0a !important;
+  box-shadow: 0 2px 0 rgba(0,0,0,.3), 0 6px 14px rgba(0,0,0,.4) !important;
+}
+
+/* ═══ Exact pricing classes (verified from markup) ═══ */
+.pkg-card { background: rgba(255,255,255,0.03) !important; border:1px solid rgba(255,255,255,0.12) !important; box-shadow:0 16px 34px rgba(0,0,0,0.55) !important; }
+.pkg-card * { opacity:1 !important; }
+.pkg-tier, .pkg-price, .pkg-emoji { color:#ffffff !important; }
+.pkg-tagline, .pkg-feats li, .pkg-feats { color:#d8d8d8 !important; }
+.pkg-old { color:#8f8f8f !important; text-decoration:line-through; }
+.pkg-best { background: var(--accent) !important; color:#140b02 !important; }
+.pkg-card.popular { border-color: rgba(255,255,255,0.28) !important; box-shadow:0 20px 44px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06) !important; }
+.pkg-topbar { background: rgba(255,255,255,0.55) !important; }
+/* popular pkg-btn (had 'gold' class) -> white pill; outline -> bordered */
+.pkg-btn.gold { background:#ffffff !important; color:#0a0a0a !important; border:none !important; }
+.pkg-btn.gold * { color:#0a0a0a !important; }
+.pkg-btn.outline { background:transparent !important; color:#f2f2f2 !important; border:1px solid rgba(255,255,255,0.22) !important; box-shadow:none !important; }
+.pkg-btn.outline * { color:#f2f2f2 !important; }
+
+/* Hero gold word ".acc" (Brands People Stop Scrolling For) -> subtle gold, readable */
+h1 .acc, .acc {
+  -webkit-text-fill-color: initial !important;
+  color: var(--accent-light) !important;
+  background: none !important;
+}

@@ -1,231 +1,154 @@
+/* DigiRise Speed Checker PRO — full Lighthouse surface (v7.0)
+   4 category scores · 6 lab metrics · CrUX real-user data ·
+   fix opportunities · diagnostics · mobile/desktop tabs */
 document.addEventListener('DOMContentLoaded', () => {
-  const urlInput = document.getElementById('urlInput');
-  const runBtn = document.getElementById('runBtn');
-  const term = document.getElementById('terminal');
-  const resultBlock = document.getElementById('resultBlock');
-  const renderArea = document.getElementById('renderArea');
-  const leadBanner = document.getElementById('leadBanner');
-  const tabs = document.querySelectorAll('.tab-btn');
+  const $ = id => document.getElementById(id);
+  const urlInput = $('urlInput'), runBtn = $('runBtn'),
+        term = $('terminal'), resultBlock = $('resultBlock');
 
-  let cache = { mobile: null, desktop: null };
+  const cache = {};           // {url|strategy : data}
   let currentStrategy = 'mobile';
-  let isFetching = false;
+  let currentUrl = '';
 
-  const params = new URLSearchParams(window.location.search);
-  if (params.has('url')) urlInput.value = params.get('url');
-  if (params.get('autorun') === '1' && urlInput.value) {
-    runAuditFull();
-  }
-
-  runBtn.addEventListener('click', runAuditFull);
-  urlInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') runAuditFull();
-  });
-
-  tabs.forEach(t => {
-    t.addEventListener('click', () => {
-      if (isFetching) return;
-      tabs.forEach(btn => btn.classList.remove('active'));
-      t.classList.add('active');
-      currentStrategy = t.dataset.tab;
-      if (cache[currentStrategy]) {
-        renderData(cache[currentStrategy]);
-      } else {
-        fetchStrategy(currentStrategy);
-      }
+  // Strategy tabs
+  document.querySelectorAll('#strategyTabs .tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#strategyTabs .tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentStrategy = btn.dataset.strategy;
+      if (currentUrl) runAudit(true);
     });
   });
 
-  async function runAuditFull() {
+  // Auto-run via ?url=&autorun=1
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('url')) urlInput.value = params.get('url');
+  if (params.get('autorun') === '1' && urlInput.value) runAudit();
+
+  runBtn.addEventListener('click', () => runAudit());
+  urlInput.addEventListener('keypress', e => { if (e.key === 'Enter') runAudit(); });
+
+  async function runAudit(fromTab) {
     let url = urlInput.value.trim();
     if (!url) return alert('Enter a URL');
     if (!url.startsWith('http')) url = 'https://' + url;
-    
-    cache = { mobile: null, desktop: null }; // clear cache
-    currentStrategy = 'mobile';
-    tabs.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.tab === 'mobile');
-    });
+    currentUrl = url;
 
+    const key = url + '|' + currentStrategy;
     term.classList.add('active');
-    resultBlock.classList.remove('active');
-    leadBanner.classList.remove('active');
+    if (!fromTab) resultBlock.classList.remove('active');
     term.innerHTML = '';
-    
-    await fetchStrategy('mobile', url);
-  }
+    logTerm(`> INIT ${currentStrategy.toUpperCase()} AUDIT: ${url}`);
 
-  async function fetchStrategy(strategy, overrideUrl = null) {
-    let url = overrideUrl || urlInput.value.trim();
-    if (!url.startsWith('http')) url = 'https://' + url;
-
-    isFetching = true;
-    term.classList.add('active');
-    if(!cache.mobile && !cache.desktop) resultBlock.classList.remove('active'); // only hide completely on first run
-    renderArea.innerHTML = '<div style="text-align:center; padding: 40px; color:var(--accent);">Loading ' + strategy + ' metrics...</div>';
-    
-    logTerm(`> INIT FULL AUDIT: ${url} [${strategy.toUpperCase()}]`);
-    logTerm('> CONNECTING TO GOOGLE PAGESPEED API...');
-
-    try {
-      // categories
-      const cats = '&category=performance&category=accessibility&category=best-practices&category=seo';
-      const api = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&strategy=${strategy}${cats}&key=AIzaSyDDiTa9i6iZuMzr6d8GRVIoZefVldftkTo`;
-      
-      const res = await fetch(api);
-      if (res.status === 429 || res.status === 500) {
-        throw new Error('Google API busy hai — 1 min baad try karo (Error ' + res.status + ')');
+    let data = cache[key];
+    if (!data) {
+      logTerm('> CONNECTING TO GOOGLE LIGHTHOUSE API...');
+      logTerm('> Running full audit (perf + a11y + best-practices + seo)…');
+      try {
+        const api = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&strategy=${currentStrategy}` +
+                    `&category=performance&category=accessibility&category=best-practices&category=seo`;
+        const res = await fetch(api);
+        if (!res.ok) throw new Error('API ' + res.status);
+        data = await res.json();
+        cache[key] = data;
+      } catch (err) {
+        const msg = /429|500|quota/i.test(err.message)
+          ? 'Google API busy hai — 1 min baad try karo.'
+          : err.message + ' — check URL is publicly accessible.';
+        logTerm(`<span class="term-err">> ERROR: ${msg}</span>`);
+        return;
       }
-      if (!res.ok) throw new Error('API Error ' + res.status);
-      const data = await res.json();
-      
-      logTerm('> PARSING FULL METRICS...');
-      
-      cache[strategy] = data;
-      renderData(data);
-      
-      setTimeout(() => {
-        term.classList.remove('active');
-        resultBlock.classList.add('active');
-      }, 500);
-
-    } catch(err) {
-      renderArea.innerHTML = '';
-      logTerm(`<span class="term-err">> ERROR: ${err.message}</span>`);
-      const btnHtml = `<button onclick="document.getElementById('runBtn').click()" class="tool-btn btn-primary" style="margin-top:15px">Retry</button>`;
-      term.innerHTML += btnHtml;
-    } finally {
-      isFetching = false;
-    }
-  }
-
-  function renderData(data) {
-    const lh = data.lighthouseResult;
-    if(!lh || !lh.categories) return;
-
-    const perf = Math.round((lh.categories.performance?.score || 0) * 100);
-    const acc = Math.round((lh.categories.accessibility?.score || 0) * 100);
-    const bp = Math.round((lh.categories['best-practices']?.score || 0) * 100);
-    const seo = Math.round((lh.categories.seo?.score || 0) * 100);
-
-    // Show Lead CTA if performance < 70
-    if (perf < 70) {
-      leadBanner.classList.add('active');
     } else {
-      leadBanner.classList.remove('active');
+      logTerm('> CACHED RESULT LOADED.');
     }
 
-    const getScoreClass = (s) => s >= 90 ? 'good' : s >= 50 ? 'warn' : 'poor';
+    logTerm('> PARSING FULL REPORT...');
+    render(data);
+    setTimeout(() => { term.classList.remove('active'); resultBlock.classList.add('active'); }, 700);
+  }
 
-    let html = `
-      <div class="score-gauges">
-        <div class="gauge">
-          <div class="gauge-ring ${getScoreClass(perf)}">${perf}</div>
-          <div class="gauge-label">Performance</div>
-        </div>
-        <div class="gauge">
-          <div class="gauge-ring ${getScoreClass(acc)}">${acc}</div>
-          <div class="gauge-label">Accessibility</div>
-        </div>
-        <div class="gauge">
-          <div class="gauge-ring ${getScoreClass(bp)}">${bp}</div>
-          <div class="gauge-label">Best Practices</div>
-        </div>
-        <div class="gauge">
-          <div class="gauge-ring ${getScoreClass(seo)}">${seo}</div>
-          <div class="gauge-label">SEO</div>
-        </div>
-      </div>
-    `;
+  function scoreClass(s) { return s >= 90 ? 'good' : s >= 50 ? 'warn' : 'poor'; }
+  function setScore(id, cat) {
+    const el = $(id); if (!el) return;
+    if (!cat || cat.score == null) { el.textContent = '—'; el.className = 'mc-val'; return; }
+    const s = Math.round(cat.score * 100);
+    el.textContent = s;
+    el.className = 'mc-val ' + scoreClass(s);
+  }
+  function setAudit(id, audit) {
+    const el = $(id); if (!el) return;
+    el.textContent = audit ? audit.displayValue || '—' : '—';
+    el.className = 'mc-val ' + (audit && audit.score != null ? scoreClass(audit.score * 100) : '');
+  }
 
-    // Lab Metrics Grid
-    const audits = lh.audits;
-    const labMetrics = [
-      { id: 'first-contentful-paint', label: 'First Contentful Paint (FCP)' },
-      { id: 'largest-contentful-paint', label: 'Largest Contentful Paint (LCP)' },
-      { id: 'cumulative-layout-shift', label: 'Cumulative Layout Shift (CLS)' },
-      { id: 'total-blocking-time', label: 'Total Blocking Time (TBT)' },
-      { id: 'speed-index', label: 'Speed Index' },
-      { id: 'interactive', label: 'Time to Interactive (TTI)' }
-    ];
+  function render(data) {
+    const lh = data.lighthouseResult || {};
+    const cats = lh.categories || {};
+    const a = lh.audits || {};
 
-    html += `<div class="sect-title">Lab Metrics</div><div class="metrics-grid">`;
-    labMetrics.forEach(m => {
-      const a = audits[m.id];
-      if (a) {
-        const valClass = getScoreClass(a.score * 100);
-        html += `
-          <div class="metric-card">
-            <div class="mc-label">${m.label}</div>
-            <div class="mc-val ${valClass}">${a.displayValue}</div>
-          </div>
-        `;
-      }
-    });
-    html += `</div>`;
+    // Category scores
+    setScore('scoreVal', cats.performance);
+    setScore('a11yVal', cats.accessibility);
+    setScore('bpVal', cats['best-practices']);
+    setScore('seoVal', cats.seo);
 
-    // Real User Data (CrUX)
-    if (data.loadingExperience && data.loadingExperience.metrics) {
-      const crux = data.loadingExperience.metrics;
-      html += `<div class="sect-title">Real Users (28 days) — ${data.loadingExperience.overall_category}</div><div class="metrics-grid">`;
-      const cruxMap = {
-        'FIRST_CONTENTFUL_PAINT_MS': 'FCP',
-        'LARGEST_CONTENTFUL_PAINT_MS': 'LCP',
-        'CUMULATIVE_LAYOUT_SHIFT_SCORE': 'CLS',
-        'INTERACTION_TO_NEXT_PAINT': 'INP'
-      };
-      Object.keys(cruxMap).forEach(k => {
-        if (crux[k]) {
-          const val = crux[k];
-          let display = val.percentile;
-          if (k === 'CUMULATIVE_LAYOUT_SHIFT_SCORE') display = (val.percentile / 100).toFixed(2);
-          else if (k === 'FIRST_CONTENTFUL_PAINT_MS' || k === 'LARGEST_CONTENTFUL_PAINT_MS') display = (val.percentile / 1000).toFixed(1) + ' s';
-          else if (k === 'INTERACTION_TO_NEXT_PAINT') display = val.percentile + ' ms';
+    // Lab metrics
+    setAudit('fcpVal', a['first-contentful-paint']);
+    setAudit('lcpVal', a['largest-contentful-paint']);
+    setAudit('clsVal', a['cumulative-layout-shift']);
+    setAudit('tbtVal', a['total-blocking-time']);
+    setAudit('siVal',  a['speed-index']);
+    setAudit('ttiVal', a['interactive']);
 
-          html += `
-            <div class="metric-card">
-              <div class="mc-label">${cruxMap[k]}</div>
-              <div class="mc-val ${val.category === 'FAST' ? 'good' : val.category === 'AVERAGE' ? 'warn' : 'poor'}">${display}</div>
-            </div>
-          `;
-        }
-      });
-      html += `</div>`;
-    }
-
-    // Diagnostics
-    html += `<div class="sect-title">Diagnostics</div><div class="diag-row">`;
-    if (audits['total-byte-weight']) html += `<div class="diag-item">Total Size: <span>${audits['total-byte-weight'].displayValue}</span></div>`;
-    if (audits['dom-size']) html += `<div class="diag-item">DOM Elements: <span>${audits['dom-size'].displayValue}</span></div>`;
-    if (audits['network-requests']) html += `<div class="diag-item">Requests: <span>${audits['network-requests'].details?.items?.length || 0}</span></div>`;
-    if (audits['mainthread-work-breakdown']) html += `<div class="diag-item">Main-thread: <span>${audits['mainthread-work-breakdown'].displayValue}</span></div>`;
-    html += `</div>`;
+    // CrUX field data
+    const fx = (data.loadingExperience && data.loadingExperience.metrics) || null;
+    const crux = $('cruxBlock');
+    if (fx && Object.keys(fx).length) {
+      const ms = v => v >= 1000 ? (v/1000).toFixed(1)+' s' : v+' ms';
+      const put = (id, m, fmt) => { const el=$(id); if(!el) return;
+        if (!m) { el.textContent='—'; el.className='mc-val'; return; }
+        el.textContent = fmt(m.percentile);
+        el.className = 'mc-val ' + (m.category==='FAST'?'good':m.category==='AVERAGE'?'warn':'poor'); };
+      put('cruxFcp', fx.FIRST_CONTENTFUL_PAINT_MS, ms);
+      put('cruxLcp', fx.LARGEST_CONTENTFUL_PAINT_MS, ms);
+      put('cruxInp', fx.INTERACTION_TO_NEXT_PAINT, v => v+' ms');
+      put('cruxCls', fx.CUMULATIVE_LAYOUT_SHIFT_SCORE, v => (v/100).toFixed(2));
+      crux.style.display = 'block';
+      logTerm('> REAL-USER (CrUX) DATA FOUND ✓');
+    } else { crux.style.display = 'none'; logTerm('> No CrUX field data for this URL.'); }
 
     // Opportunities
-    const opps = Object.values(audits)
-      .filter(a => a.details && a.details.type === 'opportunity' && a.details.overallSavingsMs > 0)
-      .sort((a, b) => b.details.overallSavingsMs - a.details.overallSavingsMs)
+    const opps = Object.values(a)
+      .filter(x => x.details && x.details.type === 'opportunity' && (x.details.overallSavingsMs||0) > 0)
+      .sort((x,y) => y.details.overallSavingsMs - x.details.overallSavingsMs)
       .slice(0, 6);
+    const oppList = $('oppList'), oppBlock = $('oppBlock');
+    if (opps.length) {
+      oppList.innerHTML = opps.map(o => {
+        const s = o.details.overallSavingsMs;
+        const kb = o.details.overallSavingsBytes ? ' · ~' + Math.round(o.details.overallSavingsBytes/1024) + ' KB bachao' : '';
+        return `<div style="display:flex;justify-content:space-between;gap:12px;align-items:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:11px 14px;">
+          <span style="font-size:12.5px;font-weight:700;color:#fff;">${o.title}</span>
+          <span style="font-size:11px;font-weight:800;color:var(--accent,#f0a825);white-space:nowrap;">~${(s/1000).toFixed(1)} s bachao${kb}</span>
+        </div>`;
+      }).join('');
+      oppBlock.style.display = 'block';
+    } else oppBlock.style.display = 'none';
 
-    if (opps.length > 0) {
-      html += `<div class="sect-title">Top Opportunities</div><ul class="opp-list">`;
-      opps.forEach(o => {
-        const d = o.details;
-        let savings = [];
-        if (d.overallSavingsMs > 0) savings.push((d.overallSavingsMs / 1000).toFixed(1) + 's bachao');
-        if (d.overallSavingsBytes > 0) savings.push((d.overallSavingsBytes / 1024).toFixed(0) + ' KB bachao');
-        html += `<li class="opp-item"><span>${o.title}</span><span class="opp-savings">${savings.join(' / ')}</span></li>`;
-      });
-      html += `</ul>`;
-    }
+    // Diagnostics
+    const dg = $('diagRow');
+    const w = a['total-byte-weight'], dom = a['dom-size'], req = a['network-requests'], mt = a['mainthread-work-breakdown'];
+    $('diagWeight').textContent = w && w.numericValue ? (w.numericValue/1048576).toFixed(1)+' MB' : '—';
+    $('diagDom').textContent    = dom && dom.numericValue ? Math.round(dom.numericValue).toLocaleString('en-IN') : '—';
+    $('diagReq').textContent    = req && req.details && req.details.items ? req.details.items.length : '—';
+    $('diagMain').textContent   = mt ? (mt.displayValue||'—') : '—';
+    dg.style.display = 'grid';
 
-    // Screenshot
-    if (audits['final-screenshot'] && audits['final-screenshot'].details) {
-      const src = audits['final-screenshot'].details.data;
-      html = `<div class="thumb-box"><img src="${src}" alt="Final Screenshot"></div>` + html;
-    }
+    // Lead CTA if perf < 70
+    const perf = cats.performance ? Math.round(cats.performance.score*100) : 100;
+    $('auditCta').style.display = perf < 70 ? 'block' : 'none';
 
-    renderArea.innerHTML = html;
+    logTerm('> REPORT READY ✓');
   }
 
   function logTerm(msg) {

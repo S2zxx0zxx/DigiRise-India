@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <link rel="apple-touch-icon" href="https://digiriseindia.tech/apple-touch-icon.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/core.css">
   <title>Sharing...</title>
   <script>
     // Minimal share handler for PWA share_target
@@ -15,7 +15,7 @@
       const url = urlParams.get('url') || '';
       
       const combined = [title, text, url].filter(Boolean).join(" - ");
-      const waUrl = "mailto:digiriseindia@gmail.com?text=" + encodeURIComponent("Hi DigiRise! Check this out: " + combined);
+      const waUrl = "mailto:digiriseindia@gmail.com?subject=" + encodeURIComponent("Shared via DigiRise") + "&body=" + encodeURIComponent("Hi DigiRise! Check this out: " + combined);
       
       window.location.replace(waUrl);
     });
@@ -24,7 +24,7 @@
 <style>
   body {
     background: #080604;
-    color:var(--on-accent);
+    color: #ffffff;
     font-family: sans-serif;
     display: flex;
     align-items: center;

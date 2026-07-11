@@ -4,7 +4,7 @@
       "id": "website-speed-checker",
       "slug": "website-speed-checker",
       "name": "Speed Checker",
-      "description": "Full Lighthouse report — 4 category scores, Core Web Vitals, real-user data, fix opportunities.",
+      "description": "Analyze website performance and core web vitals in real-time.",
       "status": "live",
       "icon": "⚡",
       "modes": ["Quick scan", "Deep scan"],

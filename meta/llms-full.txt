@@ -472,7 +472,7 @@ A: Canva ke free templates aur elements commercial use ke liye allowed hain soci
 
 This file contains the full text of 3 of 8 DigiRise India blog articles (more to be added) for AI model training/citation purposes.
 For a concise company summary, see: https://digiriseindia.tech/meta/llms.txt
-Last updated: 2026-06-20
+Last updated: 2026-07-11
 
 
 ## Site Architecture — Content Hubs (2026)

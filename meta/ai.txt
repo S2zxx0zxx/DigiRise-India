@@ -11,4 +11,4 @@ Reference: https://digiriseindia.tech/meta/llms.txt
 Reference: https://digiriseindia.tech/meta/llms-full.txt
 
 # Contact for AI partnership or data licensing inquiries:
-Contact: hello@digiriseindia.in
+Contact: digiriseindia@gmail.com

@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-IN" data-theme="dark">
 <head>
-  <link rel="apple-touch-icon" href="https://digiriseindia.tech/apple-touch-icon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <title>DigiRise Tools | What should we build today?</title>
 <meta name="description" content="Free SEO auditor, ad budget calculators, and digital marketing tools by DigiRise India.">
 <link rel="canonical" href="https://digiriseindia.tech/tools/">
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" id="metaThemeColor" content="#000000">
+<meta name="theme-color" content="#080604">
 
 <!-- Preload core styles -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
-
-
-
-
-<!-- Core Design System -->
 <link rel="stylesheet" href="/css/core.css">
 <link rel="stylesheet" href="/css/redesign.css">
-<link rel="stylesheet" href="/css/nextgen.css">
-<link rel="stylesheet" href="/css/ios26.css">
 <link rel="stylesheet" href="/tools/css/tools.css">
+
+<link rel="stylesheet" href="/css/xai-theme.css">
 </head>
 <body class="tools-hub-mode">
 
@@ -54,12 +53,12 @@
         <div class="cmd-left">
           <button class="cmd-pill icon-only" title="More options" onclick="alert('Suggest a tool: digiriseindia@gmail.com\nRepo: Private')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
           
-          <select class="cmd-pill cmd-select" id="toolSelect" title="Select an option">
+          <select class="cmd-pill cmd-select" id="toolSelect">
             <option value="auto">Tool: Auto ▾</option>
             <!-- Populated from tools.json -->
           </select>
           
-          <select class="cmd-pill cmd-select" id="modeSelect" title="Select an option">
+          <select class="cmd-pill cmd-select" id="modeSelect">
             <option value="Standard">Mode: Standard ▾</option>
           </select>
 
@@ -67,7 +66,7 @@
         </div>
         
         <div class="cmd-right">
-          <select class="cmd-pill cmd-select" id="agentSelect" title="Select an option">
+          <select class="cmd-pill cmd-select" id="agentSelect">
             <option value="agent">Agent: DigiRise AI ▾</option>
             <option value="manual">Manual</option>
           </select>
@@ -165,8 +164,8 @@
   </a>
 </nav>
 
-<script src="js/router.js"></script>
-<script src="js/hub.js"></script>
+<script src="/tools/js/router.js"></script>
+<script src="/tools/js/hub.js"></script>
 <script src="/js/ui-dropdown.js" defer></script>
 </body>
 </html>

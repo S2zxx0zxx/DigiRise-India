@@ -89,25 +89,20 @@ if(nav && !_isToolsHub){
 
 /* ═════════════ FIX-303: staggered reveals + 3D tilt + gyro ═════════════ */
 (function(){
-  try {
-    var targets = $('.pkg-card, .ind-card, .trust-cell, .reel-card, .proj-hero-card, .aside-card, .rtl-grid > *, .addon-grid > *, .faq-item, .blog-card');
-    targets.forEach(function(el,i){ 
-      if (el.getBoundingClientRect().top < window.innerHeight * 1.2) {
-        el.classList.add('ios-reveal', 'in');
-      } else {
-        el.classList.add('ios-reveal', 'reveal-hidden'); 
-      }
-      el.style.setProperty('--stag', ((i%4)*0.06)+'s'); 
-    });
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {rootMargin:'600px 0px 600px 0px', threshold:0});
-    targets.forEach(function(el){ io.observe(el); });
-    setTimeout(function(){ document.querySelectorAll('.reveal-hidden:not(.in):not(.ng-in)').forEach(function(el){ el.classList.add('in','ng-in'); }); }, 1200);
-  } catch(e) {
-    document.querySelectorAll('.reveal-hidden').forEach(function(el){ el.classList.remove('reveal-hidden'); el.classList.add('in'); });
-  }
-
+  var targets = $$('.pkg-card, .ind-card, .trust-cell, .reel-card, .proj-hero-card, .aside-card, .rtl-grid > *, .addon-grid > *, .faq-item, .blog-card');
+  var _vh = window.innerHeight || 800;
+  targets.forEach(function(el,i){ 
+    el.style.setProperty('--stag', ((i%4)*0.06)+'s');
+    var r = el.getBoundingClientRect();
+    if(r.top < _vh * 1.2 && r.bottom > -100){ el.classList.add('ios-reveal','in'); return; }
+    el.classList.add('ios-reveal', 'reveal-hidden'); 
+  });
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {rootMargin:'600px 0px 600px 0px', threshold:0});
+  targets.forEach(function(el){ if(!el.classList.contains('in')) io.observe(el); });
+  /* v7.0 watchdog: nothing may stay hidden >1.2s no matter what */
+  setTimeout(function(){ targets.forEach(function(el){ el.classList.add('in'); }); }, 1200);
 
   if(RM) return;
   // pointer tilt (desktop) — throttled, transform only
@@ -368,7 +363,7 @@ if(nav && !_isToolsHub){
   /* shared gold gradient defs */
   var defs = document.createElementNS('http://www.w3.org/2000/svg','svg');
   defs.setAttribute('width','0'); defs.setAttribute('height','0'); defs.style.position='absolute';
-  defs.innerHTML = '<defs><linearGradient id="monoRingGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="var(--gold-mid)"/><stop offset="100%" stop-color="var(--gold)"/></linearGradient><linearGradient id="footWaveGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="var(--gold-pale2)" stop-opacity="0"/><stop offset="50%" stop-color="var(--gold-pale2)"/><stop offset="100%" stop-color="var(--gold-pale2)" stop-opacity="0"/></linearGradient></defs>';
+  defs.innerHTML = '<defs><linearGradient id="monoRingGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c9c9c9"/><stop offset="100%" stop-color="#ffffff"/></linearGradient><linearGradient id="footWaveGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ffffff" stop-opacity="0"/><stop offset="50%" stop-color="#ffffff"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>';
   document.body.appendChild(defs);
 })();
 

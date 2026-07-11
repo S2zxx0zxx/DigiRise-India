@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html data-theme="dark" lang="hi-IN">
+<html lang="hi-IN" data-theme="dark">
 <head>
-<style id="failsafe">
-:root{--bg: #000000;--text:#fff;--muted:#a3a3a3;--accent:#f0a825}
-body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif}
-a{color:var(--accent)}
+<meta charset="UTF-8">
+<style id="critical-failsafe">
+:root{--bg:#000;--text:#fff;--muted:#b0b0b0;--accent:#f0a825;--accent-light:#ffbf47;}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',-apple-system,sans-serif;margin:0;}
+a{color:var(--accent);}
 </style>
 
-  <link rel="apple-touch-icon" href="https://digiriseindia.tech/apple-touch-icon.png">
-<meta charset="UTF-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; connect-src 'self' https:;">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -179,9 +178,10 @@ a{color:var(--accent)}
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
 
-
-
-
+<link rel="stylesheet" href="/css/core.css">
+<link rel="stylesheet" href="/css/redesign.css">
+<link rel="stylesheet" href="/css/ios26.css">
+<link rel="stylesheet" href="/css/blog.css">
 
 
 <!-- Vercel Web Analytics -->
@@ -224,16 +224,6 @@ a{color:var(--accent)}
 </script>
 
 <script>if(window.top!==window.self){window.top.location=window.self.location;}</script>
-
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"></noscript>
-
-<!-- Core Design System -->
-<link rel="stylesheet" href="/css/core.css">
-<link rel="stylesheet" href="/css/redesign.css">
-<link rel="stylesheet" href="/css/nextgen.css">
-<link rel="stylesheet" href="/css/ios26.css">
-<link rel="stylesheet" href="/css/blog.css">
 </head>
 
 <body>

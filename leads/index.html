@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-IN" data-theme="dark">
 <head>
-  <link rel="apple-touch-icon" href="https://digiriseindia.tech/apple-touch-icon.png">
 <meta charset="UTF-8">
+<style id="critical-failsafe">
+:root{--bg:#000;--text:#fff;--muted:#b0b0b0;--accent:#f0a825;--accent-light:#ffbf47;}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',-apple-system,sans-serif;margin:0;}
+a{color:var(--accent);}
+</style>
+
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; connect-src 'self' https:;">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Digital Audit | DigiRise India</title>
@@ -16,8 +21,9 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=VT323&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=VT323&display=swap"></noscript>
 
-
-
+<link rel="stylesheet" href="/css/core.css">
+<link rel="stylesheet" href="/css/redesign.css">
+<link rel="stylesheet" href="/css/nextgen.css">
 
 <style>
   body {
@@ -58,7 +64,7 @@
   }
 
   .squeeze-content {
-    color:var(--on-accent);
+    color: #fff;
   }
   
   .squeeze-eyebrow {
@@ -83,7 +89,7 @@
     line-height: 1;
     margin-bottom: 2px;
   }
-  .logo-digi { color:var(--on-accent); }
+  .logo-digi { color: #fff; }
   .logo-rise { color: var(--gold); }
 
   .squeeze-content h1 {
@@ -121,7 +127,7 @@
     margin-bottom: 16px;
     font-size: 16px;
     font-weight: 600;
-    color:var(--on-accent);
+    color: #fff;
   }
   .squeeze-benefits li svg {
     color: var(--gold);
@@ -159,7 +165,7 @@
   .squeeze-form-card h3 {
     font-size: 24px;
     font-weight: 800;
-    color:var(--on-accent);
+    color: #fff;
     margin-bottom: 8px;
     text-align: center;
   }
@@ -189,7 +195,7 @@
     width: 100%;
     background: rgba(0, 0, 0, 0.3);
     border: 1.5px solid rgba(255, 255, 255, 0.1);
-    color:var(--on-accent);
+    color: #fff;
     font-family: inherit;
     font-size: 16px;
     padding: 16px;
@@ -211,7 +217,7 @@
   .btn-submit {
     width: 100%;
     background: linear-gradient(135deg, #e3a52a 0%, #b3b3b3 100%);
-    color:var(--on-accent);
+    color: #fff;
     border: none;
     padding: 18px;
     border-radius: 12px;
@@ -278,13 +284,50 @@
   }
 </style>
 <script>if(window.top!==window.self){window.top.location=window.self.location;}</script>
+<style id="v7-patch">
+/* ═══ v7.0 PATCH LAYER — component rebuilds (loads last, wins cascade) ═══ */
 
-<!-- Core Design System -->
-<link rel="stylesheet" href="/css/core.css">
-<link rel="stylesheet" href="/css/redesign.css">
-<link rel="stylesheet" href="/css/nextgen.css">
-<link rel="stylesheet" href="/css/ios26.css">
+/* — Trust stat cards (Image 6 rebuild): glass + per-card accent — */
+.trust-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 0;}
+@media(min-width:900px){.trust-stat-grid{grid-template-columns:repeat(4,1fr);}}
+.trust-stat-card{position:relative;overflow:hidden;background:var(--card);backdrop-filter:blur(20px) saturate(130%);-webkit-backdrop-filter:blur(20px) saturate(130%);border:1px solid var(--border);border-radius:18px;padding:20px 14px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s;}
+.trust-stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--sa,var(--accent));opacity:.9;}
+.trust-stat-card::after{content:'';position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -20%, color-mix(in srgb, var(--sa,var(--accent)) 12%, transparent), transparent 60%);pointer-events:none;}
+.trust-stat-card:hover{transform:translateY(-4px);border-color:color-mix(in srgb, var(--sa,var(--accent)) 55%, transparent);box-shadow:0 14px 30px rgba(0,0,0,0.5), 0 0 22px color-mix(in srgb, var(--sa,var(--accent)) 25%, transparent);}
+.trust-stat-card .stat-icon{font-size:26px;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));}
+.tsc-num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;letter-spacing:-1px;line-height:1.1;color:var(--sa,var(--accent));}
+.tsc-plus{font-size:17px;}
+.tsc-small{font-size:20px;letter-spacing:-0.5px;display:flex;flex-direction:column;line-height:1.15;}
+.tsc-sub{font-size:12px;color:var(--muted);font-weight:700;}
+.tsc-lbl{font-size:10.5px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:1.2px;}
 
+/* — ROI monitor chart (Image 5): dashboard screen, not glossy pills — */
+.roi-result-card{background:#000 !important;border:1px solid var(--border) !important;box-shadow:0 0 0 1px rgba(240,168,37,0.10), 0 24px 50px rgba(0,0,0,0.6) !important;}
+.roi-result-card::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,0.014) 3px 4px);pointer-events:none;border-radius:inherit;}
+.roi-result-big{color:var(--accent) !important;text-shadow:0 0 22px var(--accent-glow);}
+.roi-compare-track{background:#000 !important;border:1px solid rgba(255,255,255,0.12);border-radius:8px !important;box-shadow:inset 0 4px 12px rgba(0,0,0,0.9) !important;height:26px !important;}
+.roi-compare-track::before{background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(255,255,255,0.05) 22px 23px) !important;inset:0 !important;border-radius:8px !important;}
+.roi-compare-fill{border-radius:6px !important;}
+.roi-compare-fill.cur{background:linear-gradient(180deg,#39404d,#242933) !important;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.07) !important;}
+.roi-compare-fill.cur::before,.roi-compare-fill.cur::after{content:none !important;}
+.roi-compare-fill.proj{background:linear-gradient(180deg,var(--gold-light),var(--gold) 55%,var(--gold-deep)) !important;box-shadow:0 0 16px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,0.35) !important;}
+.roi-compare-fill.proj::after{content:none !important;}
+.roi-compare-tip{background:var(--accent) !important;box-shadow:0 0 12px var(--accent) !important;}
+
+/* — Tools & Platforms chips (Image 3): always-visible accent border — */
+.ts-logo{border:2px solid rgba(240,168,37,0.45) !important;box-shadow:0 4px 14px rgba(0,0,0,0.4), 0 0 10px rgba(240,168,37,0.10) !important;background:var(--card) !important;}
+.ts-logo:hover{border-color:var(--accent) !important;box-shadow:0 8px 20px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow) !important;}
+
+/* — Add-ons grid (Image 1): guaranteed separation on mobile — */
+@media(max-width:480px){.addon-grid{gap:18px !important;}}
+.addon-card{background:var(--card) !important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);}
+
+/* — Service strip: items must never wrap internally (Image 7-era fix) — */
+.hero-service-strip .hss-track span{white-space:nowrap;}
+
+/* — Scroll progress: accent, not white — */
+#scroll-progress{background:linear-gradient(90deg,var(--accent-deep),var(--accent),var(--accent-light)) !important;box-shadow:0 0 8px var(--accent-glow) !important;}
+</style>
 </head>
 <body>
 
