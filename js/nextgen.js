@@ -559,20 +559,20 @@
 
   /* ═══════════════ BOOT ═══════════════ */
   onReady(function () {
-    try { initNavbar(); } catch (e) { console.warn('[NG]', e); }
-    try { initHero(); } catch (e) { console.warn('[NG]', e); }
-    try { initVelocityMarquee(); } catch (e) { console.warn('[NG]', e); }
-    try { initReelsCinema(); } catch (e) { console.warn('[NG]', e); }
-    try { initTilt(); } catch (e) { console.warn('[NG]', e); }
-    try { initTimelineDraw(); } catch (e) { console.warn('[NG]', e); }
-    try { initFlowDot(); } catch (e) { console.warn('[NG]', e); }
-    try { initProjectsSpotlight(); } catch (e) { console.warn('[NG]', e); }
-    try { initFaqSearch(); } catch (e) { console.warn('[NG]', e); }
-    try { initDotsNav(); } catch (e) { console.warn('[NG]', e); }
-    try { initWaWidget(); } catch (e) { console.warn('[NG]', e); }
-    try { initExitIntent(); } catch (e) { console.warn('[NG]', e); }
-    try { initDecorations(); } catch (e) { console.warn('[NG]', e); }
-    try { initReveals(); } catch (e) { console.warn('[NG]', e); }
-    try { initThemeFade(); } catch (e) { console.warn('[NG]', e); }
+    try { initNavbar(); } catch (e) {  }
+    try { initHero(); } catch (e) {  }
+    try { initVelocityMarquee(); } catch (e) {  }
+    try { initReelsCinema(); } catch (e) {  }
+    try { initTilt(); } catch (e) {  }
+    try { initTimelineDraw(); } catch (e) {  }
+    try { initFlowDot(); } catch (e) {  }
+    try { initProjectsSpotlight(); } catch (e) {  }
+    try { initFaqSearch(); } catch (e) {  }
+    try { initDotsNav(); } catch (e) {  }
+    try { initWaWidget(); } catch (e) {  }
+    try { initExitIntent(); } catch (e) {  }
+    try { initDecorations(); } catch (e) {  }
+    try { initReveals(); } catch (e) {  }
+    try { initThemeFade(); } catch (e) {  }
   });
 })();

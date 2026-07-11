@@ -11,7 +11,7 @@
     // Request persistent storage if standalone
     if (navigator.storage && navigator.storage.persist) {
       navigator.storage.persist().then(granted => {
-        if (granted) console.log('[PWA] Storage persisted');
+        if (granted) 
       });
     }
   }
