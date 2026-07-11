@@ -1,0 +1,37 @@
+{
+  "name": "DigiRise India",
+  "description": "Digital Marketing Agency — Meta Ads, SEO, Website Design, Branding & Lead Generation. Serving India, UK, US & UAE from Kolkata.",
+  "version": "1.0",
+  "homepage": "https://digiriseindia.tech/",
+  "contact": {
+    "email": "digiriseindia@gmail.com",
+    "whatsapp": "mailto:digiriseindia@gmail.com"
+  },
+  "resources": [
+    {
+      "name": "company_summary",
+      "description": "Concise company identity, services, and pricing summary",
+      "url": "https://digiriseindia.tech/meta/llms.txt",
+      "type": "text/plain"
+    },
+    {
+      "name": "full_blog_content",
+      "description": "Full text of published blog articles (partial coverage — see file note for current count)",
+      "url": "https://digiriseindia.tech/meta/llms-full.txt",
+      "type": "text/plain"
+    },
+    {
+      "name": "blog_feed",
+      "description": "RSS feed of latest blog posts",
+      "url": "https://digiriseindia.tech/meta/feed.xml",
+      "type": "application/rss+xml"
+    },
+    {
+      "name": "site_structure",
+      "description": "Full sitemap of all pages",
+      "url": "https://digiriseindia.tech/sitemap.xml",
+      "type": "application/xml"
+    }
+  ],
+  "note": "This is a static informational manifest, not a live MCP server with executable tools. It exists to help AI agents discover and correctly cite DigiRise India's structured data sources."
+}

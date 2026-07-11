@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: DigiRise India Team
+Site: https://digiriseindia.tech
+Location: India
+
+/* SITE */
+Last update: 2026-07-10
+Language: English, Hindi
+Doctype: HTML5
+IDE: VS Code, Antigravity AI

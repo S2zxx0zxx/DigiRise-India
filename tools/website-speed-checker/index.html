@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-IN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#000000">
+
+<title>Website Speed Checker | DigiRise Tools</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=VT323&display=swap">
+<link rel="stylesheet" href="/css/core.css">
+<link rel="stylesheet" href="/css/redesign.css">
+<link rel="stylesheet" href="/tools/css/tools.css">
+<link rel="stylesheet" href="/css/xai-theme.css">
+</head>
+<body class="tools-hub-mode">
+<div class="tool-page-layout">
+  <aside class="tool-sidebar">
+    <div class="ts-header">
+      <a href="/tools/" class="hub-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        <span class="hub-wordmark">Tools</span>
+      </a>
+    </div>
+    <nav class="ts-nav">
+      <a href="/tools/website-speed-checker/" class="ts-link active">⚡ Speed Checker</a>
+      <a href="/tools/ad-budget-calculator/" class="ts-link">💰 Ad Budget</a>
+      <a href="/tools/roi-calculator/" class="ts-link">📈 ROI Calculator</a>
+      <a href="/tools/ad-copy-generator/" class="ts-link">📝 Ad Copy</a>
+    </nav>
+  </aside>
+
+  <main class="tool-main-content">
+    <div class="tool-header-bread">/ TOOLS / SPEED CHECKER</div>
+    <h1 class="tool-title">Website Speed Checker</h1>
+    <p class="tool-desc">Analyze your website's performance using Google's official Core Web Vitals API. Real metrics, real insights.</p>
+    
+    <div class="tool-panel">
+      <div class="tool-input-group">
+        <label>Website URL</label>
+        <input type="url" id="urlInput" class="tool-input-field" placeholder="https://example.com" value="">
+      </div>
+      <button id="runBtn" class="tool-btn">Run Audit</button>
+    </div>
+
+    <div class="tool-terminal" id="terminal"></div>
+
+    <div class="result-block" id="resultBlock">
+      <div id="strategyTabs" style="display:flex;gap:6px;margin-bottom:16px;">
+        <button class="tab-btn active" data-strategy="mobile" type="button">📱 Mobile</button>
+        <button class="tab-btn" data-strategy="desktop" type="button">🖥️ Desktop</button>
+      </div>
+
+      <h3 style="margin:0 0 12px;">Category Scores</h3>
+      <div class="metric-grid" style="margin-bottom:22px;">
+        <div class="metric-card"><div class="mc-label">Performance</div><div class="mc-val" id="scoreVal">--</div></div>
+        <div class="metric-card"><div class="mc-label">Accessibility</div><div class="mc-val" id="a11yVal">--</div></div>
+        <div class="metric-card"><div class="mc-label">Best Practices</div><div class="mc-val" id="bpVal">--</div></div>
+        <div class="metric-card"><div class="mc-label">SEO</div><div class="mc-val" id="seoVal">--</div></div>
+      </div>
+
+      <h3 style="margin:0 0 12px;">Lab Metrics (Lighthouse)</h3>
+      <div class="metric-grid" style="margin-bottom:22px;">
+        <div class="metric-card"><div class="mc-label">FCP</div><div class="mc-val" id="fcpVal">--</div></div>
+        <div class="metric-card"><div class="mc-label">LCP</div><div class="mc-val" id="lcpVal">--</div></div>
+        <div class="metric-card"><div class="mc-label">CLS</div><div class="mc-val" id="clsVal">--</div></div>
+        <div class="metric-card"><div class="mc-label">TBT</div><div class="mc-val" id="tbtVal">--</div></div>
+        <div class="metric-card"><div class="mc-label">Speed Index</div><div class="mc-val" id="siVal">--</div></div>
+        <div class="metric-card"><div class="mc-label">TTI</div><div class="mc-val" id="ttiVal">--</div></div>
+      </div>
+
+      <div id="cruxBlock" style="display:none;">
+        <h3 style="margin:0 0 12px;">Real Users — Last 28 Days (Google CrUX)</h3>
+        <div class="metric-grid" style="margin-bottom:22px;">
+          <div class="metric-card"><div class="mc-label">FCP (p75)</div><div class="mc-val" id="cruxFcp">--</div></div>
+          <div class="metric-card"><div class="mc-label">LCP (p75)</div><div class="mc-val" id="cruxLcp">--</div></div>
+          <div class="metric-card"><div class="mc-label">INP (p75)</div><div class="mc-val" id="cruxInp">--</div></div>
+          <div class="metric-card"><div class="mc-label">CLS (p75)</div><div class="mc-val" id="cruxCls">--</div></div>
+        </div>
+      </div>
+
+      <div id="oppBlock" style="display:none;">
+        <h3 style="margin:0 0 12px;">Top Fix Opportunities</h3>
+        <div id="oppList" style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px;"></div>
+      </div>
+
+      <div id="diagRow" class="metric-grid" style="margin-bottom:22px;display:none;">
+        <div class="metric-card"><div class="mc-label">Page Weight</div><div class="mc-val" id="diagWeight" style="font-size:18px;">--</div></div>
+        <div class="metric-card"><div class="mc-label">DOM Nodes</div><div class="mc-val" id="diagDom" style="font-size:18px;">--</div></div>
+        <div class="metric-card"><div class="mc-label">Requests</div><div class="mc-val" id="diagReq" style="font-size:18px;">--</div></div>
+        <div class="metric-card"><div class="mc-label">Main Thread</div><div class="mc-val" id="diagMain" style="font-size:18px;">--</div></div>
+      </div>
+
+      <div id="auditCta" style="display:none;background:linear-gradient(135deg,rgba(240,168,37,0.14),rgba(240,168,37,0.05));border:1px solid rgba(240,168,37,0.4);border-radius:16px;padding:16px 18px;font-size:13px;font-weight:700;color:#fff;">
+        ⚡ Score kam aa raha hai? <a href="mailto:digiriseindia@gmail.com?subject=Free%20Website%20Audit%20chahiye%20(Speed%20Checker%20se%20aaya)" style="color:var(--accent,#f0a825);text-decoration:underline;">Free Website Audit lo (worth ₹3,499) →</a>
+      </div>
+    </div>
+    </div>
+  </main>
+</div>
+
+<nav class="hub-bottom-bar">
+  <a href="/tools/" class="bar-item">
+    <span class="bar-icon">⊞</span>
+    <span class="bar-label">Hub</span>
+  </a>
+  <a href="/tools/website-speed-checker/" class="bar-item active">
+    <span class="bar-icon">⚡</span>
+    <span class="bar-label">Speed</span>
+  </a>
+  <a href="/tools/ad-budget-calculator/" class="bar-item">
+    <span class="bar-icon">💰</span>
+    <span class="bar-label">Budget</span>
+  </a>
+  <a href="/tools/roi-calculator/" class="bar-item">
+    <span class="bar-icon">📈</span>
+    <span class="bar-label">ROI</span>
+  </a>
+  <a href="/tools/ad-copy-generator/" class="bar-item">
+    <span class="bar-icon">📝</span>
+    <span class="bar-label">Copy</span>
+  </a>
+</nav>
+
+<script src="/tools/js/speed.js"></script>
+</body>
+</html>

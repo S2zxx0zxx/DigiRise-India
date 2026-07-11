@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-IN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<title>DigiRise Tools | What should we build today?</title>
+<meta name="description" content="Free SEO auditor, ad budget calculators, and digital marketing tools by DigiRise India.">
+<link rel="canonical" href="https://digiriseindia.tech/tools/">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#080604">
+
+<!-- Preload core styles -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/css/core.css">
+<link rel="stylesheet" href="/css/redesign.css">
+<link rel="stylesheet" href="/tools/css/tools.css">
+
+<link rel="stylesheet" href="/css/xai-theme.css">
+</head>
+<body class="tools-hub-mode">
+
+<!-- App Shell Top Bar -->
+<header class="hub-topbar">
+  <div class="topbar-left">
+    <a href="/" class="hub-logo" aria-label="Go home">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      <span class="hub-wordmark">DigiRise Tools</span>
+      <span class="hub-beta">Beta</span>
+    </a>
+  </div>
+  <div class="topbar-right">
+    <button class="whats-new-btn" id="whatsNewBtn">What's new</button>
+    <a href="/#contact" class="avatar-btn">DR</a>
+  </div>
+</header>
+
+<main class="hub-main">
+  <!-- Hero -->
+  <section class="hub-hero">
+    <h1 class="hub-headline">What should we build today?</h1>
+    
+    <!-- Command Card -->
+    <div class="command-card">
+      <div class="cmd-input-row">
+        <input type="text" id="cmdInput" class="cmd-input" placeholder="Check my website speed..." autocomplete="off">
+      </div>
+      <div class="cmd-controls-row">
+        <div class="cmd-left">
+          <button class="cmd-pill icon-only" title="More options" onclick="alert('Suggest a tool: digiriseindia@gmail.com\nRepo: Private')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+          
+          <select class="cmd-pill cmd-select" id="toolSelect">
+            <option value="auto">Tool: Auto ▾</option>
+            <!-- Populated from tools.json -->
+          </select>
+          
+          <select class="cmd-pill cmd-select" id="modeSelect">
+            <option value="Standard">Mode: Standard ▾</option>
+          </select>
+
+          <button class="cmd-pill icon-only" id="rawViewToggle" title="Toggle Raw Results"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></button>
+        </div>
+        
+        <div class="cmd-right">
+          <select class="cmd-pill cmd-select" id="agentSelect">
+            <option value="agent">Agent: DigiRise AI ▾</option>
+            <option value="manual">Manual</option>
+          </select>
+          <button class="cmd-submit" id="cmdSubmit" aria-label="Run command">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fanned Deck -->
+  <section class="hub-fan-section">
+    <div class="fan-label">Start with a tool...</div>
+    <div class="fan-deck" id="fanDeck">
+      <!-- Populated dynamically -->
+    </div>
+    <a href="#workspace" class="scroll-link">...or explore all tools &rarr;</a>
+  </section>
+
+  <!-- Workspace Tabs -->
+  <section class="hub-workspace" id="workspace">
+    <div class="workspace-header">
+      <div class="tab-row">
+        <button class="tab-btn active" data-tab="all-tools">All Tools</button>
+        <button class="tab-btn" data-tab="recent">Recent</button>
+        <button class="tab-btn" data-tab="guides">Guides</button>
+      </div>
+      <div class="workspace-actions">
+        <input type="text" id="hubSearchInput" class="workspace-search" placeholder="Search tools...">
+        <button class="view-toggle" id="viewToggle" aria-label="Toggle view">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        </button>
+      </div>
+    </div>
+    
+    <div class="workspace-content">
+      <div class="tab-pane active" id="pane-all-tools">
+        <div class="tool-grid" id="allToolsGrid"></div>
+      </div>
+      <div class="tab-pane" id="pane-recent">
+        <div class="recent-list" id="recentList">
+          <div class="empty-state">Your recent tool runs will appear here.</div>
+        </div>
+      </div>
+      <div class="tab-pane" id="pane-guides">
+        <div class="tool-grid" id="guidesGrid"></div>
+      </div>
+    </div>
+
+    <div class="tour-row">
+      <button class="tour-btn" id="tourBtn">Learn about DigiRise Tools — Quick tour</button>
+    </div>
+  </section>
+
+</main>
+
+<div class="starburst-badge">
+  <a href="/#audit">
+    <svg viewBox="0 0 100 100" class="star-svg">
+      <path d="M50 0 L60 35 L100 25 L75 55 L95 90 L60 75 L45 100 L35 70 L0 85 L25 50 L5 15 L40 25 Z" fill="var(--gold)" />
+    </svg>
+    <div class="star-text">
+      <strong>Get your FREE audit!</strong>
+      <span>worth ₹3,499<br>24h delivery</span>
+    </div>
+  </a>
+</div>
+
+<footer class="hub-footer">
+  &copy; DigiRise India &middot; <a href="/">digiriseindia.tech</a> &middot; <a href="/#contact">Privacy</a>
+</footer>
+
+<!-- Mobile Bottom Bar -->
+<nav class="hub-bottom-bar">
+  <a href="/tools/" class="bar-item active">
+    <span class="bar-icon">⊞</span>
+    <span class="bar-label">Hub</span>
+  </a>
+  <a href="/tools/website-speed-checker/" class="bar-item">
+    <span class="bar-icon">⚡</span>
+    <span class="bar-label">Speed</span>
+  </a>
+  <a href="/tools/ad-budget-calculator/" class="bar-item">
+    <span class="bar-icon">💰</span>
+    <span class="bar-label">Budget</span>
+  </a>
+  <a href="/tools/roi-calculator/" class="bar-item">
+    <span class="bar-icon">📈</span>
+    <span class="bar-label">ROI</span>
+  </a>
+  <a href="/tools/ad-copy-generator/" class="bar-item">
+    <span class="bar-icon">📝</span>
+    <span class="bar-label">Copy</span>
+  </a>
+</nav>
+
+<script src="/tools/js/router.js"></script>
+<script src="/tools/js/hub.js"></script>
+<script src="/js/ui-dropdown.js" defer></script>
+</body>
+</html>

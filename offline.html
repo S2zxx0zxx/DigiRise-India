@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en-IN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+<style id="critical-failsafe">
+:root{--bg:#000;--text:#fff;--muted:#b0b0b0;--accent:#f0a825;--accent-light:#ffbf47;}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',-apple-system,sans-serif;margin:0;}
+a{color:var(--accent);}
+</style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Offline — DigiRise India</title>
+  <meta name="theme-color" content="#080604">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/core.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      background: #080604;
+      color: #f0ebe0;
+      padding: env(safe-area-inset-top) 24px env(safe-area-inset-bottom);
+      text-align: center;
+    }
+    .card {
+      max-width: 460px;
+      width: 100%;
+      background: #110e0a;
+      border: 1px solid rgba(255, 255, 255,0.15);
+      border-radius: 24px;
+      padding: 48px 32px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .icon {
+      width: 72px; height: 72px; background: rgba(255, 255, 255,0.1); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;
+      color: #ffffff; font-size: 32px; border: 1px solid var(--accent-glow);
+    }
+    h1 { font-size: 24px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
+    p { color: #8a7a60; font-size: 15px; line-height: 1.6; margin-bottom: 32px; }
+    .btn-group { display: flex; flex-direction: column; gap: 12px; }
+    .btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      text-decoration: none; padding: 14px; border-radius: 14px;
+      font-weight: 700; font-size: 15px; transition: all 0.2s; border: none; cursor: pointer;
+    }
+    .btn-primary { background: linear-gradient(135deg, #ffffff, #c9c9c9); color: #0a0a0a; box-shadow: 0 4px 14px rgba(255,255,255,0.3); }
+    .btn-wa { background: #128C7E; color: #fff; box-shadow: 0 4px 14px rgba(18,140,126,0.3); }
+    .btn-outline { background: transparent; color: #f0ebe0; border: 1px solid rgba(255,255,255,0.1); }
+    .packages { text-align: left; background: rgba(255,255,255,0.03); border-radius: 16px; padding: 16px; margin-bottom: 24px; }
+    .packages h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #ffffff; margin-bottom: 12px; }
+    .packages ul { list-style: none; }
+    .packages li { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; color: #d8cdb8; }
+    .packages li span:last-child { font-weight: 700; color: #fff; }
+  </style>
+<script>if(window.top!==window.self){window.top.location=window.self.location;}</script>
+<style id="v7-patch">
+/* ═══ v7.0 PATCH LAYER — component rebuilds (loads last, wins cascade) ═══ */
+
+/* — Trust stat cards (Image 6 rebuild): glass + per-card accent — */
+.trust-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 0;}
+@media(min-width:900px){.trust-stat-grid{grid-template-columns:repeat(4,1fr);}}
+.trust-stat-card{position:relative;overflow:hidden;background:var(--card);backdrop-filter:blur(20px) saturate(130%);-webkit-backdrop-filter:blur(20px) saturate(130%);border:1px solid var(--border);border-radius:18px;padding:20px 14px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s;}
+.trust-stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--sa,var(--accent));opacity:.9;}
+.trust-stat-card::after{content:'';position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -20%, color-mix(in srgb, var(--sa,var(--accent)) 12%, transparent), transparent 60%);pointer-events:none;}
+.trust-stat-card:hover{transform:translateY(-4px);border-color:color-mix(in srgb, var(--sa,var(--accent)) 55%, transparent);box-shadow:0 14px 30px rgba(0,0,0,0.5), 0 0 22px color-mix(in srgb, var(--sa,var(--accent)) 25%, transparent);}
+.trust-stat-card .stat-icon{font-size:26px;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5));}
+.tsc-num{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;letter-spacing:-1px;line-height:1.1;color:var(--sa,var(--accent));}
+.tsc-plus{font-size:17px;}
+.tsc-small{font-size:20px;letter-spacing:-0.5px;display:flex;flex-direction:column;line-height:1.15;}
+.tsc-sub{font-size:12px;color:var(--muted);font-weight:700;}
+.tsc-lbl{font-size:10.5px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:1.2px;}
+
+/* — ROI monitor chart (Image 5): dashboard screen, not glossy pills — */
+.roi-result-card{background:#000 !important;border:1px solid var(--border) !important;box-shadow:0 0 0 1px rgba(240,168,37,0.10), 0 24px 50px rgba(0,0,0,0.6) !important;}
+.roi-result-card::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,0.014) 3px 4px);pointer-events:none;border-radius:inherit;}
+.roi-result-big{color:var(--accent) !important;text-shadow:0 0 22px var(--accent-glow);}
+.roi-compare-track{background:#000 !important;border:1px solid rgba(255,255,255,0.12);border-radius:8px !important;box-shadow:inset 0 4px 12px rgba(0,0,0,0.9) !important;height:26px !important;}
+.roi-compare-track::before{background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(255,255,255,0.05) 22px 23px) !important;inset:0 !important;border-radius:8px !important;}
+.roi-compare-fill{border-radius:6px !important;}
+.roi-compare-fill.cur{background:linear-gradient(180deg,#39404d,#242933) !important;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.07) !important;}
+.roi-compare-fill.cur::before,.roi-compare-fill.cur::after{content:none !important;}
+.roi-compare-fill.proj{background:linear-gradient(180deg,var(--gold-light),var(--gold) 55%,var(--gold-deep)) !important;box-shadow:0 0 16px var(--accent-glow), inset 0 1px 0 rgba(255,255,255,0.35) !important;}
+.roi-compare-fill.proj::after{content:none !important;}
+.roi-compare-tip{background:var(--accent) !important;box-shadow:0 0 12px var(--accent) !important;}
+
+/* — Tools & Platforms chips (Image 3): always-visible accent border — */
+.ts-logo{border:2px solid rgba(240,168,37,0.45) !important;box-shadow:0 4px 14px rgba(0,0,0,0.4), 0 0 10px rgba(240,168,37,0.10) !important;background:var(--card) !important;}
+.ts-logo:hover{border-color:var(--accent) !important;box-shadow:0 8px 20px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow) !important;}
+
+/* — Add-ons grid (Image 1): guaranteed separation on mobile — */
+@media(max-width:480px){.addon-grid{gap:18px !important;}}
+.addon-card{background:var(--card) !important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);}
+
+/* — Service strip: items must never wrap internally (Image 7-era fix) — */
+.hero-service-strip .hss-track span{white-space:nowrap;}
+
+/* — Scroll progress: accent, not white — */
+#scroll-progress{background:linear-gradient(90deg,var(--accent-deep),var(--accent),var(--accent-light)) !important;box-shadow:0 0 8px var(--accent-glow) !important;}
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="icon">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c3.18 0 6.17 1.34 8.37 3.53M17.44 16.1A6 6 0 0 0 18 13c0-1.65-.67-3.15-1.76-4.24M1.11 1.11l21.78 21.78M5 12a10 10 0 0 0-3.41 1.76M8.56 12.65a6 6 0 0 0-1.8 1.11M12 20h.01"/></svg>
+    </div>
+    <h1>Aap offline hain!</h1>
+    <p>Lekin hum yahin hain. Jaise hi internet wapas aayega, page automatically reload ho jayega.</p>
+    
+    <div class="packages">
+      <h3>Quick Pricing</h3>
+      <ul>
+        <li><span>Starter</span><span>₹7,999</span></li>
+        <li><span>Growth</span><span>₹24,999</span></li>
+        <li><span>Authority</span><span>₹34,999</span></li>
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="window.location.reload()">🔄 Retry Connection</button>
+      <a href="mailto:digiriseindia@gmail.com" class="btn btn-outline">📞 Call Us Direct</a>
+    </div>
+  </main>
+  <script>
+    window.addEventListener('online', () => { window.location.reload(); });
+  </script>
+</body>
+</html>

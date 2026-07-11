@@ -1,0 +1,26 @@
+{
+  "industries": [
+    {"name": "Food & Sweets", "cpc_range": [8, 15], "cvr_range": [3.0, 5.5]},
+    {"name": "Jewellery", "cpc_range": [15, 35], "cvr_range": [1.5, 2.5]},
+    {"name": "SaaS / Tech", "cpc_range": [25, 60], "cvr_range": [2.0, 4.0]},
+    {"name": "Real Estate", "cpc_range": [30, 80], "cvr_range": [1.0, 2.0]},
+    {"name": "Fashion", "cpc_range": [5, 12], "cvr_range": [2.5, 4.5]},
+    {"name": "E-commerce", "cpc_range": [10, 20], "cvr_range": [2.0, 4.0]},
+    {"name": "Healthcare", "cpc_range": [20, 50], "cvr_range": [3.0, 6.0]},
+    {"name": "Education", "cpc_range": [15, 40], "cvr_range": [4.0, 7.0]},
+    {"name": "Finance", "cpc_range": [25, 70], "cvr_range": [1.5, 3.5]},
+    {"name": "Automotive", "cpc_range": [20, 45], "cvr_range": [2.0, 4.0]},
+    {"name": "Fitness", "cpc_range": [12, 25], "cvr_range": [3.5, 6.5]},
+    {"name": "Others", "cpc_range": [10, 30], "cvr_range": [2.0, 4.0]}
+  ],
+  "tier_multipliers": {
+    "Metro": {"cpc": 1.2, "cvr": 1.0},
+    "Tier-2": {"cpc": 0.8, "cvr": 1.1},
+    "Tier-3": {"cpc": 0.6, "cvr": 1.2}
+  },
+  "goals": {
+    "Leads": {"cpc_multiplier": 1.5, "cvr_multiplier": 1.0},
+    "Sales": {"cpc_multiplier": 1.8, "cvr_multiplier": 0.8},
+    "Awareness": {"cpc_multiplier": 0.6, "cvr_multiplier": 0.3}
+  }
+}

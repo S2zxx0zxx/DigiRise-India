@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-IN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#000000">
+
+<title>Ad Copy Generator | DigiRise Tools</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=VT323&display=swap">
+<link rel="stylesheet" href="/css/core.css">
+<link rel="stylesheet" href="/css/redesign.css">
+<link rel="stylesheet" href="/tools/css/tools.css">
+<link rel="stylesheet" href="/css/xai-theme.css">
+</head>
+<body class="tools-hub-mode">
+<div class="tool-page-layout">
+  <aside class="tool-sidebar">
+    <div class="ts-header">
+      <a href="/tools/" class="hub-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        <span class="hub-wordmark">Tools</span>
+      </a>
+    </div>
+    <nav class="ts-nav">
+      <a href="/tools/website-speed-checker/" class="ts-link">⚡ Speed Checker</a>
+      <a href="/tools/ad-budget-calculator/" class="ts-link">💰 Ad Budget</a>
+      <a href="/tools/roi-calculator/" class="ts-link">📈 ROI Calculator</a>
+      <a href="/tools/ad-copy-generator/" class="ts-link active">📝 Ad Copy</a>
+    </nav>
+  </aside>
+
+  <main class="tool-main-content">
+    <div class="tool-header-bread">/ TOOLS / AD COPY GENERATOR</div>
+    <h1 class="tool-title">Meta Ads Copy Generator</h1>
+    <p class="tool-desc">Generate high-converting Hindi/English ad copy templates instantly based on your industry and offer.</p>
+    
+    <div class="tool-panel">
+      <div class="tool-input-group">
+        <label>Your Industry (e.g. Real Estate, Sweets)</label>
+        <input type="text" id="industryInput" class="tool-input-field" placeholder="e.g. Sweets and Food" value="">
+      </div>
+      <div class="tool-input-group">
+        <label>City (e.g. Kolkata)</label>
+        <input type="text" id="cityInput" class="tool-input-field" placeholder="e.g. Kolkata" value="Kolkata">
+      </div>
+      <div class="tool-input-group">
+        <label>Offer / Value Prop</label>
+        <input type="text" id="offerInput" class="tool-input-field" placeholder="e.g. 20% off on first order" value="">
+      </div>
+      <div class="tool-input-group">
+        <label>Tone</label>
+        <select id="toneSelect" class="tool-input-field">
+          <option value="Professional">Professional</option>
+          <option value="Hinglish-casual">Hinglish-casual</option>
+          <option value="Urgent">Urgent (FOMO)</option>
+        </select>
+      </div>
+      <button id="runBtn" class="tool-btn">Generate Copy</button>
+    </div>
+
+    <div class="tool-terminal" id="terminal"></div>
+
+    <div class="result-block" id="resultBlock">
+      <h3 style="margin-bottom:16px;">Generated Ad Copy (Click to copy)</h3>
+      <div class="metric-grid" style="grid-template-columns: 1fr; gap: 12px;" id="copyList">
+      </div>
+    </div>
+  </main>
+</div>
+
+<nav class="hub-bottom-bar">
+  <a href="/tools/" class="bar-item">
+    <span class="bar-icon">⊞</span>
+    <span class="bar-label">Hub</span>
+  </a>
+  <a href="/tools/website-speed-checker/" class="bar-item">
+    <span class="bar-icon">⚡</span>
+    <span class="bar-label">Speed</span>
+  </a>
+  <a href="/tools/ad-budget-calculator/" class="bar-item">
+    <span class="bar-icon">💰</span>
+    <span class="bar-label">Budget</span>
+  </a>
+  <a href="/tools/roi-calculator/" class="bar-item">
+    <span class="bar-icon">📈</span>
+    <span class="bar-label">ROI</span>
+  </a>
+  <a href="/tools/ad-copy-generator/" class="bar-item active">
+    <span class="bar-icon">📝</span>
+    <span class="bar-label">Copy</span>
+  </a>
+</nav>
+
+<script src="/tools/js/copy.js"></script>
+<script src="/js/ui-dropdown.js" defer></script>
+</body>
+</html>

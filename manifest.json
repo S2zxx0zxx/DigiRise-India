@@ -1,0 +1,149 @@
+{
+  "name": "DigiRise India — Digital Growth Partner",
+  "short_name": "DigiRise",
+  "description": "DigiRise India — Digital Marketing Agency serving India, UAE & UK. Meta Ads, SEO, Website Design & Lead Generation.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone"
+  ],
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": [
+    "business",
+    "marketing",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Free Audit",
+      "short_name": "Audit",
+      "description": "Get free digital audit worth ₹3,499",
+      "url": "/?shortcut=audit#audit",
+      "icons": [
+        {
+          "src": "/assets/shortcuts/audit.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Packages",
+      "short_name": "Packages",
+      "description": "View our pricing packages",
+      "url": "/?shortcut=packages#packages",
+      "icons": [
+        {
+          "src": "/assets/shortcuts/packages.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Contact Team",
+      "short_name": "Contact",
+      "description": "Baat karein — free strategy call",
+      "url": "/?shortcut=contact#audit",
+      "icons": [
+        {
+          "src": "/assets/shortcuts/contact.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "Read our latest growth guides",
+      "url": "/blog/",
+      "icons": [
+        {
+          "src": "/assets/shortcuts/blog.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Tools Hub",
+      "short_name": "Tools",
+      "description": "Free marketing calculators and tools",
+      "url": "/tools/",
+      "icons": [
+        {
+          "src": "/assets/shortcuts/tools.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/share.html",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/mobile-1.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "DigiRise India — services overview"
+    },
+    {
+      "src": "/assets/screenshots/mobile-2.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Real clients, tools and guides"
+    },
+    {
+      "src": "/assets/screenshots/desktop-1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "DigiRise India — digital growth partner"
+    }
+  ]
+}
