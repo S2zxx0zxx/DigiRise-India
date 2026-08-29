@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://digiriseindia.tech/sitemap.xml
+Host: https://digiriseindia.tech

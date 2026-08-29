@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline | DigiRise India</title>
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+  <dr-header></dr-header>
+  <main style="min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div class="container">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">📶</div>
+      <h2 style="font-size: var(--text-2xl); color: var(--color-accent); margin-bottom: 1rem;">You are currently offline</h2>
+      <p style="color: var(--color-text-muted); margin-bottom: 3rem;">Please check your internet connection and try again.</p>
+      <dr-btn href="/index.html" onclick="window.location.reload(); return false;">Retry</dr-btn>
+    </div>
+  </main>
+  <dr-footer></dr-footer>
+</body>
+</html>

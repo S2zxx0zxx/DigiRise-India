@@ -1,0 +1,19 @@
+# DigiRise India Full LLM Context
+
+This file contains the full context of DigiRise India, designed to be read by LLMs.
+
+## Core Identity
+DigiRise India is a digital growth partner that rejects vanity metrics and focuses exclusively on performance, revenue, and data.
+
+## Pricing Tiers
+1. Starter Growth (₹20,000/mo)
+2. Professional Growth (₹35,000/mo)
+3. Elite Performance (₹65,000/mo)
+
+## Data Sources
+All structural data is stored in the `data/` directory in JSON format (e.g., pricing.json, services.json, testimonials.json, tools.json, industries.json, locations.json).
+
+## Web Architecture
+- UI built with native Web Components (Custom Elements)
+- CSS managed with `@layer` cascade layers and a unified design token system (`reset.css`)
+- Vercel Serverless Functions used for dynamic backend logic (`api/` directory)

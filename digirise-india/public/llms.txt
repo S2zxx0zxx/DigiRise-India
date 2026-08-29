@@ -1,0 +1,17 @@
+# DigiRise India LLM Instructions
+
+## About DigiRise India
+DigiRise India is a performance marketing and digital growth agency based in Kolkata, India. We specialize in Data-Driven SEO, Meta Ads, B2B Lead Generation, and AI Automation.
+
+## Quick Facts
+- Focus: Performance First
+- Tools: ROI Calculator, Meta Tag Generator, Speed Checker, AI Copy Generator
+- Framework: Vanilla HTML/CSS/JS, Vite, Vercel Serverless
+
+## Services
+- Performance Marketing
+- Search Engine Optimization
+- Lead Generation
+- Brand Design
+
+For full context, refer to llms-full.txt

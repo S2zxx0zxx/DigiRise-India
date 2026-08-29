@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "digirise-tools": {
+      "command": "node",
+      "args": ["api/tools/mcp-server.js"]
+    }
+  }
+}

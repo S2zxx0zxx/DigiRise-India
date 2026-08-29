@@ -1,27 +1,56 @@
 [
   {
-    "id": "real-estate",
-    "name": "Real Estate",
-    "description": "Lead generation for properties, plot sales, and luxury apartments."
-  },
-  {
     "id": "ecommerce",
     "name": "E-Commerce",
-    "description": "Scaling DTC brands through high-ROAS Meta Ads and CRO."
+    "description": "Scaling DTC brands through high-ROAS Meta Ads and Conversion Rate Optimization.",
+    "icon": "shopping-cart"
+  },
+  {
+    "id": "real-estate",
+    "name": "Real Estate",
+    "description": "Lead generation for properties, plot sales, and luxury apartments with high intent buyers.",
+    "icon": "building"
   },
   {
     "id": "healthcare",
     "name": "Healthcare",
-    "description": "Patient acquisition for clinics, hospitals, and wellness centers."
+    "description": "Patient acquisition for clinics, hospitals, and wellness centers using local SEO and targeted ads.",
+    "icon": "heartbeat"
   },
   {
     "id": "education",
     "name": "Education",
-    "description": "Student enrollment campaigns for colleges and ed-tech platforms."
+    "description": "Student enrollment campaigns for colleges and ed-tech platforms.",
+    "icon": "graduation-cap"
   },
   {
-    "id": "b2b",
-    "name": "B2B Services",
-    "description": "High-ticket lead generation and LinkedIn outreach."
+    "id": "saas",
+    "name": "SaaS",
+    "description": "B2B lead generation, trial signups, and customer acquisition strategies for software companies.",
+    "icon": "cloud"
+  },
+  {
+    "id": "finance",
+    "name": "Finance",
+    "description": "Lead generation for loans, insurance, and financial advisors.",
+    "icon": "money-bill-wave"
+  },
+  {
+    "id": "hospitality",
+    "name": "Hospitality",
+    "description": "Driving direct bookings and brand awareness for hotels, resorts, and restaurants.",
+    "icon": "utensils"
+  },
+  {
+    "id": "travel",
+    "name": "Travel",
+    "description": "Customer acquisition for tour operators, travel agencies, and booking platforms.",
+    "icon": "plane"
+  },
+  {
+    "id": "local-business",
+    "name": "Local Business",
+    "description": "Hyper-local SEO and footfall generation for salons, gyms, and retail stores.",
+    "icon": "store"
   }
 ]

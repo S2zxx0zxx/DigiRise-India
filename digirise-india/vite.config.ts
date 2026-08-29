@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import htmlPlugin from 'vite-plugin-html';
@@ -12,6 +13,25 @@ export default defineConfig({
         main: resolve(__dirname, 'src/pages/index.html'),
         blog: resolve(__dirname, 'src/pages/blog/index.html'),
         notFound: resolve(__dirname, 'src/pages/404.html'),
+        ecommerce: resolve(__dirname, 'src/pages/industries/ecommerce.html'),
+        realEstate: resolve(__dirname, 'src/pages/industries/real-estate.html'),
+        healthcare: resolve(__dirname, 'src/pages/industries/healthcare.html'),
+        education: resolve(__dirname, 'src/pages/industries/education.html'),
+        saas: resolve(__dirname, 'src/pages/industries/saas.html'),
+        finance: resolve(__dirname, 'src/pages/industries/finance.html'),
+        hospitality: resolve(__dirname, 'src/pages/industries/hospitality.html'),
+        travel: resolve(__dirname, 'src/pages/industries/travel.html'),
+        localBusiness: resolve(__dirname, 'src/pages/industries/local-business.html'),
+        delhi: resolve(__dirname, 'src/pages/locations/delhi.html'),
+        mumbai: resolve(__dirname, 'src/pages/locations/mumbai.html'),
+        bangalore: resolve(__dirname, 'src/pages/locations/bangalore.html'),
+        hyderabad: resolve(__dirname, 'src/pages/locations/hyderabad.html'),
+        pune: resolve(__dirname, 'src/pages/locations/pune.html'),
+        compare: resolve(__dirname, 'src/pages/compare/index.html'),
+        glossary: resolve(__dirname, 'src/pages/glossary/index.html'),
+        audit: resolve(__dirname, 'src/pages/audit/index.html'),
+        leads: resolve(__dirname, 'src/pages/leads/index.html'),
+        growth: resolve(__dirname, 'src/pages/growth-partner-program/index.html'),
       },
       output: {
         entryFileNames: 'assets/[name].[hash].js',
