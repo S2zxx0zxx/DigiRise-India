@@ -1,0 +1,80 @@
+@layer components {
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3) var(--spacing-6);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 2px;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-primary);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-accent-gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -2px var(--color-accent-gold-glow);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-accent-gold);
+    background-color: rgba(240, 168, 37, 0.05);
+  }
+
+  /* Cards */
+  .card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-6);
+    transition: all var(--transition-normal);
+  }
+
+  .card:hover {
+    border-color: var(--color-border-hover);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Glass effect */
+  .glass {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+  }
+  
+  /* Badges */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(240, 168, 37, 0.1);
+    color: var(--color-accent-gold);
+    border: 1px solid rgba(240, 168, 37, 0.2);
+  }
+}

@@ -1,0 +1,73 @@
+@layer base {
+  :root {
+    /* Midnight Gold Palette */
+    --color-bg-primary: #080604;
+    --color-bg-secondary: #12100e;
+    --color-bg-elevated: #1c1a18;
+    
+    --color-text-primary: #f5f3f0;
+    --color-text-secondary: #a39f98;
+    --color-text-muted: #6b665f;
+    
+    --color-accent-gold: #f0a825;
+    --color-accent-gold-hover: #f5bc51;
+    --color-accent-gold-glow: rgba(240, 168, 37, 0.2);
+    
+    --color-border: #2a2622;
+    --color-border-hover: #403b35;
+
+    /* Semantic */
+    --color-success: #2ecc71;
+    --color-error: #e74c3c;
+    --color-warning: #f1c40f;
+
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-display: 'Outfit', var(--font-sans);
+    
+    /* Spacing */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+    --spacing-24: 6rem;
+
+    /* Border Radius (iOS style) */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* Shadows & Effects */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 20px var(--color-accent-gold-glow);
+    
+    --glass-bg: rgba(18, 16, 14, 0.6);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.05);
+    --glass-blur: blur(12px);
+
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* Z-index */
+    --z-negative: -1;
+    --z-elevated: 10;
+    --z-header: 100;
+    --z-dropdown: 200;
+    --z-modal: 300;
+    --z-toast: 400;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-primary);
+  }
+}

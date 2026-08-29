@@ -1,0 +1,35 @@
+{
+  "lastUpdated": "2026-08-30T00:00:00Z",
+  "caseStudies": [
+    {
+      "slug": "lal-sweets",
+      "clientName": "LAL Sweets",
+      "industry": "Food & Beverage",
+      "image": "/assets/cases/lal-sweets.webp",
+      "metrics": [
+        { "label": "Online Orders", "value": "+300%" },
+        { "label": "ROAS", "value": "4.5x" }
+      ]
+    },
+    {
+      "slug": "kirtilals",
+      "clientName": "Kirtilals",
+      "industry": "Jewelry",
+      "image": "/assets/cases/kirtilals.webp",
+      "metrics": [
+        { "label": "Store Walk-ins", "value": "+120%" },
+        { "label": "CPL", "value": "-45%" }
+      ]
+    },
+    {
+      "slug": "tradescribe",
+      "clientName": "TradeScribe",
+      "industry": "B2B SaaS",
+      "image": "/assets/cases/tradescribe.webp",
+      "metrics": [
+        { "label": "Demo Requests", "value": "+250%" },
+        { "label": "User Acquisition", "value": "+85%" }
+      ]
+    }
+  ]
+}

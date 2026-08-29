@@ -1,0 +1,27 @@
+[
+  {
+    "id": "real-estate",
+    "name": "Real Estate",
+    "description": "Lead generation for properties, plot sales, and luxury apartments."
+  },
+  {
+    "id": "ecommerce",
+    "name": "E-Commerce",
+    "description": "Scaling DTC brands through high-ROAS Meta Ads and CRO."
+  },
+  {
+    "id": "healthcare",
+    "name": "Healthcare",
+    "description": "Patient acquisition for clinics, hospitals, and wellness centers."
+  },
+  {
+    "id": "education",
+    "name": "Education",
+    "description": "Student enrollment campaigns for colleges and ed-tech platforms."
+  },
+  {
+    "id": "b2b",
+    "name": "B2B Services",
+    "description": "High-ticket lead generation and LinkedIn outreach."
+  }
+]

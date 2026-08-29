@@ -1,0 +1,51 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "devCommand": "vercel dev",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-DNS-Prefetch-Control", "value": "on" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Service-Worker-Allowed", "value": "/" }
+      ]
+    },
+    {
+      "source": "/manifest.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/manifest+json" }
+      ]
+    }
+  ],
+  "redirects": [
+    { "source": "/case-studies/farm-fresh", "destination": "/case-studies/farmfresh", "permanent": true },
+    { "source": "/admin", "destination": "/admin/login", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/opensearch.xml", "destination": "/api/opensearch" },
+    { "source": "/feed.xml", "destination": "/api/feed" }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/daily-summary",
+      "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/cron/weekly-report",
+      "schedule": "0 10 * * 1"
+    }
+  ]
+}

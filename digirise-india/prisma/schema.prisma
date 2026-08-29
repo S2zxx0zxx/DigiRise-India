@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  type      String   // e.g., "Audit", "Contact", "Package"
+  message   String?
+  source    String?  // e.g., "Homepage", "Blog", "PWA"
+  status    String   @default("NEW") // "NEW", "CONTACTED", "CONVERTED", "LOST"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Slot {
+  id        String   @id @default(cuid())
+  packageId String   @unique // e.g., "starter", "growth", "pro", "elite"
+  total     Int
+  available Int
+  updatedAt DateTime @updatedAt
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+}

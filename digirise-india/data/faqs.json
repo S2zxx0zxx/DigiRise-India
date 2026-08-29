@@ -1,0 +1,22 @@
+[
+  {
+    "id": "faq-1",
+    "question": "What services do you offer?",
+    "answer": "We specialize in Performance Meta Ads, Custom Web Design, SEO, and AI Automation to help businesses scale online."
+  },
+  {
+    "id": "faq-2",
+    "question": "Do you guarantee results?",
+    "answer": "We do not guarantee specific ROI numbers because marketing depends on many variables (product, offer, market). We guarantee transparent reporting, best-practice execution, and relentless optimization."
+  },
+  {
+    "id": "faq-3",
+    "question": "How do you charge?",
+    "answer": "We offer monthly retainers for ongoing services like Meta Ads and SEO, and fixed project fees for Web Design. See our Pricing section for starter details."
+  },
+  {
+    "id": "faq-4",
+    "question": "Who do you work with?",
+    "answer": "We partner with local businesses, e-commerce stores, real estate agencies, and B2B service providers who are ready to invest in growth."
+  }
+]

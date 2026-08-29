@@ -1,0 +1,49 @@
+[
+  {
+    "id": "starter",
+    "name": "Starter Boost",
+    "price": "₹14,999",
+    "period": "/month",
+    "popular": false,
+    "description": "Ideal for local businesses starting their digital journey.",
+    "features": [
+      "Social Media Management (15 Posts/mo)",
+      "Basic Meta Ads Setup (Ad spend extra)",
+      "Google My Business Optimization",
+      "Monthly Performance Report"
+    ],
+    "cta": "Start Growing"
+  },
+  {
+    "id": "growth",
+    "name": "Growth Engine",
+    "price": "₹29,999",
+    "period": "/month",
+    "popular": true,
+    "description": "For scaling businesses wanting serious ROI.",
+    "features": [
+      "Advanced Meta & Google Ads",
+      "Conversion Rate Optimization (CRO)",
+      "Basic SEO Setup",
+      "Priority WhatsApp Support",
+      "Bi-Weekly Strategy Calls"
+    ],
+    "cta": "Scale Now"
+  },
+  {
+    "id": "pro",
+    "name": "Pro Automation",
+    "price": "Custom",
+    "period": "",
+    "popular": false,
+    "description": "Full-stack marketing & AI automation.",
+    "features": [
+      "Omnichannel Marketing Strategy",
+      "Custom Web App / E-commerce Dev",
+      "AI Chatbot & Lead Automation",
+      "Dedicated Account Manager",
+      "Real-time Dashboard Access"
+    ],
+    "cta": "Get a Quote"
+  }
+]

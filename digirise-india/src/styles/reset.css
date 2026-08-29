@@ -1,0 +1,70 @@
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    color-scheme: dark;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    border: none;
+    background: none;
+    color: inherit;
+  }
+
+  button, [role="button"] {
+    cursor: pointer;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+
+  /* Accessible focus ring */
+  *:focus-visible {
+    outline: 2px solid var(--color-accent-gold);
+    outline-offset: 2px;
+  }
+  
+  /* Disable animation for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

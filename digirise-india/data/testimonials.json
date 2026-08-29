@@ -1,0 +1,23 @@
+[
+  {
+    "id": "t1",
+    "client": "Local Retailer",
+    "industry": "Retail",
+    "quote": "Awaiting authentic client review from Satyam's portfolio.",
+    "rating": 5
+  },
+  {
+    "id": "t2",
+    "client": "B2B Services",
+    "industry": "Consulting",
+    "quote": "Awaiting authentic client review from Satyam's portfolio.",
+    "rating": 5
+  },
+  {
+    "id": "t3",
+    "client": "E-commerce Startup",
+    "industry": "E-commerce",
+    "quote": "Awaiting authentic client review from Satyam's portfolio.",
+    "rating": 4
+  }
+]

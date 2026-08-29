@@ -1,0 +1,30 @@
+[
+  {
+    "id": "meta-ads",
+    "title": "Performance Meta Ads",
+    "icon": "target",
+    "description": "Data-driven ad campaigns on Facebook & Instagram designed to generate high-quality leads and maximize ROI.",
+    "details": ["Audience Targeting", "A/B Testing", "Retargeting", "Conversion Tracking"]
+  },
+  {
+    "id": "web-dev",
+    "title": "High-Converting Web Design",
+    "icon": "monitor-smartphone",
+    "description": "Fast, accessible, and stunning websites built with modern technologies to turn visitors into customers.",
+    "details": ["Responsive Design", "SEO Optimized", "Performance Tuned", "Custom UI/UX"]
+  },
+  {
+    "id": "seo",
+    "title": "Search Engine Optimization",
+    "icon": "search",
+    "description": "Dominate local and national search rankings with white-hat SEO strategies and technical audits.",
+    "details": ["Keyword Research", "On-Page SEO", "Technical SEO", "Link Building"]
+  },
+  {
+    "id": "ai-automation",
+    "title": "AI & Automation",
+    "icon": "bot",
+    "description": "Streamline your business operations with intelligent chatbots and automated lead nurturing workflows.",
+    "details": ["Chatbots", "CRM Integration", "Workflow Automation", "Lead Scoring"]
+  }
+]

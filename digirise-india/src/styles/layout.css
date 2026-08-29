@@ -1,0 +1,63 @@
+@layer base {
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--spacing-4);
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-inline: var(--spacing-8);
+    }
+  }
+
+  .section {
+    padding-block: var(--spacing-16);
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding-block: var(--spacing-24);
+    }
+  }
+
+  /* Utility Layouts */
+  .flex { display: flex; }
+  .grid { display: grid; }
+  
+  .flex-col { flex-direction: column; }
+  .items-center { align-items: center; }
+  .justify-between { justify-content: space-between; }
+  .justify-center { justify-content: center; }
+  
+  .gap-2 { gap: var(--spacing-2); }
+  .gap-4 { gap: var(--spacing-4); }
+  .gap-6 { gap: var(--spacing-6); }
+  .gap-8 { gap: var(--spacing-8); }
+
+  .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  
+  @media (min-width: 768px) {
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+
+  .text-center { text-align: center; }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
