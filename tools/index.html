@@ -51,9 +51,9 @@
       </div>
       <div class="cmd-controls-row">
         <div class="cmd-left">
-          <button class="cmd-pill icon-only" title="More options" onclick="alert('Suggest a tool: digiriseindia@gmail.com\nRepo: Private')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+          <button class="cmd-pill icon-only" title="More options" aria-label="More Options" onclick="alert('Suggest a tool: digiriseindia@gmail.com\nRepo: Private')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
           
-          <select class="cmd-pill cmd-select" id="toolSelect">
+          <select class="cmd-pill cmd-select" id="toolSelect" title="Select Tool">
             <option value="auto" selected>Tool: Auto ▾</option>
             <option value="website-speed-checker">Speed Checker</option>
             <option value="ad-budget-calculator">Ad Budget Calculator</option>
@@ -66,18 +66,18 @@
             <option value="seo-audit" disabled>SEO Audit (soon)</option>
           </select>
           
-          <select class="cmd-pill cmd-select" id="modeSelect">
+          <select class="cmd-pill cmd-select" id="modeSelect" title="Select Mode">
             <option value="standard" selected>Mode: Standard ▾</option>
             <option value="pro">Pro · 5×</option>
             <option value="max">Max · 20×</option>
             <option value="kill">Kill · 100×</option>
           </select>
 
-          <button class="cmd-pill icon-only" id="rawViewToggle" title="Toggle Raw Results"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></button>
+          <button class="cmd-pill icon-only" id="rawViewToggle" title="Toggle Raw Results" aria-label="Toggle Raw Results"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></button>
         </div>
         
         <div class="cmd-right">
-          <select class="cmd-pill cmd-select" id="agentSelect">
+          <select class="cmd-pill cmd-select" id="agentSelect" title="Select Agent">
             <option value="opus-48" selected>Agent: Claude Opus 4.8 ▾</option>
             <option value="digirise-easy">DigiRise AI · Easy Task</option>
             <option value="digirise-pro">DigiRise AI · Pro</option>

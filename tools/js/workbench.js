@@ -12,6 +12,7 @@ window.DigiRiseWorkbench = {
     this.cacheDOM();
     this.bindEvents();
     this.renderRail();
+    this.loadHubUI(); // Replaces hub.js
     
     // Parse URL for deep links
     const params = new URLSearchParams(window.location.search);
@@ -164,6 +165,130 @@ window.DigiRiseWorkbench = {
     };
   },
 
+  async loadHubUI() {
+    const fanDeck = document.getElementById('fanDeck');
+    const allToolsGrid = document.getElementById('allToolsGrid');
+    if (!fanDeck || !allToolsGrid) return;
+    
+    try {
+      const res = await fetch('/tools/tools.json');
+      const data = await res.json();
+      
+      data.tools.forEach((t, i) => {
+        // Grid
+        const card = document.createElement('a');
+        card.href = t.status !== 'soon' ? `/tools/${t.slug}/` : '#';
+        card.className = `tool-card ${t.status === 'soon' ? 'disabled' : ''}`;
+        card.innerHTML = `
+          <div class="tc-icon">${t.icon}</div>
+          <div class="tc-title">${t.name} <span class="status-dot ${t.status}"></span></div>
+          <div class="tc-desc">${t.description}</div>
+        `;
+        allToolsGrid.appendChild(card);
+
+        // Fan Deck
+        const tiltClasses = ['tilt-left-2', 'tilt-left-1', 'tilt-center', 'tilt-right-1', 'tilt-right-2'];
+        const tiltClass = tiltClasses[i] || 'tilt-right-2';
+        const fanCard = document.createElement('div');
+        fanCard.className = `fan-card ${tiltClass} ${t.status === 'soon' ? 'soon' : ''}`;
+        fanCard.innerHTML = `<div class="fc-icon">${t.icon}</div><div class="fc-label">${t.name}</div>`;
+        if (t.status !== 'soon') {
+          fanCard.addEventListener('click', () => {
+            this.toolSelect.value = t.slug;
+            this.cmdInput.focus();
+          });
+          fanCard.addEventListener('dblclick', () => {
+            window.location.href = `/tools/${t.slug}/`;
+          });
+        }
+        fanDeck.appendChild(fanCard);
+      });
+    } catch(e) { console.warn('Tools.json failed to load', e); }
+
+    // Typewriter placeholders
+    const placeholders = ["Check my website speed...", "Plan my ad budget...", "Calculate ROI for 5000 spend...", "Write ad copy for fashion brand..."];
+    let phIdx = 0;
+    setInterval(() => {
+      phIdx = (phIdx + 1) % placeholders.length;
+      if (this.cmdInput) this.cmdInput.placeholder = placeholders[phIdx];
+    }, 3000);
+
+    // Tabs
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanes.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        const pane = document.getElementById('pane-' + btn.dataset.tab);
+        if (pane) pane.classList.add('active');
+        if (btn.dataset.tab === 'recent') this.loadRecent();
+      });
+    });
+
+    // Search
+    const searchInput = document.getElementById('hubSearchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase();
+        const cards = allToolsGrid.querySelectorAll('.tool-card');
+        cards.forEach(c => {
+          c.style.display = c.textContent.toLowerCase().includes(q) ? 'flex' : 'none';
+        });
+      });
+    }
+
+    // View toggle
+    const viewToggle = document.getElementById('viewToggle');
+    if (viewToggle) {
+      viewToggle.addEventListener('click', () => allToolsGrid.classList.toggle('list-view'));
+    }
+  },
+
+  loadRecent() {
+    const list = document.getElementById('recentList');
+    if (!list) return;
+    try {
+      const history = JSON.parse(localStorage.getItem('dr_tools_history') || '[]');
+      if (history.length === 0) return;
+      list.innerHTML = '';
+      history.forEach(h => {
+        const item = document.createElement('div');
+        item.className = 'recent-item';
+        const d = new Date(h.timestamp);
+        item.innerHTML = `
+          <div class="ri-details">
+            <div class="ri-title">${h.tool}</div>
+            <div class="ri-query">"${h.inputSummary}"</div>
+            <div class="ri-time">${d.toLocaleDateString()} ${d.toLocaleTimeString()}</div>
+          </div>
+          <button class="tool-btn secondary" onclick="window.location.href='/tools/${h.tool}/'">Run in tab</button>
+          <button class="tool-btn secondary" onclick="document.getElementById('cmdInput').value='${h.inputSummary.replace(/'/g, "\\'")}'; document.getElementById('toolSelect').value='${h.tool}'; document.getElementById('cmdSubmit').click();">Run inline</button>
+        `;
+        list.appendChild(item);
+      });
+    } catch(e) {
+      console.warn("Failed to load recent tools:", e);
+    }
+  },
+
+  saveToHistory(inputSummary, toolId) {
+    try {
+      let history = JSON.parse(localStorage.getItem('dr_tools_history') || '[]');
+      history.unshift({
+        tool: toolId,
+        inputSummary: inputSummary,
+        timestamp: new Date().toISOString(),
+        resultSummary: 'Run via AI Workbench'
+      });
+      history = history.slice(0, 10);
+      localStorage.setItem('dr_tools_history', JSON.stringify(history));
+    } catch(e) {
+      console.warn("Failed to save tool history:", e);
+    }
+  },
+
   async handleCommand() {
     let toolId = this.toolSelect.value;
     const inputStr = this.cmdInput.value.trim();
@@ -172,12 +297,16 @@ window.DigiRiseWorkbench = {
       if (toolId === 'auto') {
         toolId = this.detectTool(inputStr);
       } else {
-        return; // manual needs a selected tool
+        const tId = this.detectTool(inputStr);
+        window.location.href = `/tools/${tId}/?autorun=1&q=` + encodeURIComponent(inputStr);
+        return;
       }
     }
 
     const engine = this.engines[toolId];
     if (!engine) return;
+    
+    this.saveToHistory(inputStr, toolId);
 
     if (this.state.activeToolId !== toolId) {
       this.toolSelect.value = toolId;

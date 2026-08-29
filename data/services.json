@@ -1,0 +1,62 @@
+[
+  {
+    "id": "meta-ads",
+    "name": "Meta Ads Management",
+    "description": "Facebook and Instagram advertising campaigns that convert scrollers into paying customers."
+  },
+  {
+    "id": "seo",
+    "name": "SEO & Google Ranking",
+    "description": "Rank on Google page 1 with organic SEO strategies tailored for Indian businesses."
+  },
+  {
+    "id": "web-design",
+    "name": "Website Design & Development",
+    "description": "Professional websites that load fast, look stunning and generate real leads."
+  },
+  {
+    "id": "brand-identity",
+    "name": "Brand Identity Design",
+    "description": "Logo, color palette, and brand guidelines that make your business instantly recognizable."
+  },
+  {
+    "id": "lead-gen",
+    "name": "Lead Generation",
+    "description": "Qualified leads on autopilot — warm contacts who actually want to buy from you."
+  },
+  {
+    "id": "google-ads",
+    "name": "Google Ads Management",
+    "description": "Search and Display ads that reach buyers the moment they search for your product."
+  },
+  {
+    "id": "whatsapp-marketing",
+    "name": "WhatsApp Marketing",
+    "description": "Direct WhatsApp campaigns to reach thousands of potential customers instantly."
+  },
+  {
+    "id": "instagram-growth",
+    "name": "Instagram Growth",
+    "description": "Organic Instagram growth strategy, Reels, content calendar and follower acquisition."
+  },
+  {
+    "id": "ai-automation",
+    "name": "AI Automation",
+    "description": "AI-powered business automation — chatbots, content pipelines, and workflow automation."
+  },
+  {
+    "id": "ecommerce",
+    "name": "E-commerce Solutions",
+    "description": "End-to-end e-commerce setup, product listings, ads, and conversion optimization."
+  },
+  {
+    "id": "content-creation",
+    "name": "Content Creation",
+    "description": "Professional content — graphics, videos, captions, blogs — optimized for engagement."
+  },
+  {
+    "id": "personal-branding",
+    "name": "Personal Branding",
+    "description": "Build your personal brand on Instagram, LinkedIn, and YouTube as an industry authority."
+  }
+]

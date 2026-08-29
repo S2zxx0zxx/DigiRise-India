@@ -20,13 +20,13 @@ window.DigiRiseEngines['meta-tag-analyzer'] = {
     let url = "";
     
     // If it looks like a URL, fetch it
-    if (q.startsWith('http') || q.match(/^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix)) {
+    if (q.startsWith('http') || q.match(/^[a-z\d]+([-.][a-z\d]+)*\.[a-z]{2,5}(:\d{1,5})?(\/.*)?$/i)) {
       url = q.startsWith('http') ? q : 'https://' + q;
       try {
         const res = await fetch(url);
         htmlStr = await res.text();
       } catch(e) {
-        throw new Error("Could not fetch URL due to CORS or network error. Please paste the HTML source code instead.");
+        throw new Error("Could not fetch URL due to CORS or network error. Please paste the HTML source code instead.", { cause: e });
       }
     }
     

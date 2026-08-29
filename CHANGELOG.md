@@ -2,6 +2,12 @@
 
 All notable changes to the DigiRise India website are documented here.
 
+## v6.0 — 2026-08-29 — Master Rebuild & Polish
+- SEO: Extensive JSON-LD schema overhaul; injected complete service catalogs and localized founder schema.
+- Performance: Core images converted to WebP with explicit width/height dimensions. `aria-label` enhancements for screen readers.
+- Security: Migrated mass inline `onclick` handlers across `index.html` to centralized event delegation via `js/events.js` to strictly enforce CSP `unsafe-inline` requirements.
+- Analytics: Canonical links mapped precisely for semantic clustering across all localized funnels.
+
 ## v5.9 — 2026-07-11 — Ultimate Matte Black Overhaul (Gold Nuke)
 - Design: Completely eradicated all hardcoded gold Hex and RGB color codes across 38+ HTML, JS, and CSS files.
 - Design: Replaced all legacy gold variables, inline styles, box-shadows, and SVG strokes with white/silver variants to guarantee a pure, matte glowy black experience.

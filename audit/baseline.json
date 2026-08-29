@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-08-29",
+  "project": "DigiRise India",
+  "totalFiles": 130,
+  "fileBreakdown": {
+    "html": 38,
+    "js": 20,
+    "css": 7,
+    "json": 10,
+    "xml": 4,
+    "markdown": 5
+  },
+  "directories": [
+    "blog",
+    "case-studies",
+    "compare",
+    "css",
+    "glossary",
+    "growth-partner-program",
+    "industries",
+    "js",
+    "leads",
+    "locations",
+    "tools"
+  ],
+  "p0_defects_reproduced": [
+    {
+      "id": "P0-A",
+      "description": "Four standalone tool pages reference incorrect JS paths.",
+      "status": "Reproduced",
+      "evidence": "tools/website-speed-checker/index.html references /tools/js/speed.js instead of tools/website-speed-checker/js/speed.js"
+    },
+    {
+      "id": "P0-B",
+      "description": "tools/js/engines/meta-tag.js has a JavaScript syntax error (invalid regex flag ix)",
+      "status": "Reproduced",
+      "evidence": "tools/js/engines/meta-tag.js:23: `q.match(/.../ix)`"
+    },
+    {
+      "id": "P0-C",
+      "description": "Historical repair documentation claims scripts fix-blog.js and fix-ui.js exist, but they are not present.",
+      "status": "Reproduced",
+      "evidence": "Scripts absent from root directory."
+    },
+    {
+      "id": "P0-D",
+      "description": "Broken relative anchors exist across deep pages.",
+      "status": "Reproduced",
+      "evidence": "blog/index.html and tools pages reference `../#industries` instead of `/#industries`"
+    },
+    {
+      "id": "P0-E",
+      "description": "Pricing values conflict (Starter = 7,999 vs 5,999).",
+      "status": "Reproduced",
+      "evidence": "Observed in FAQ vs Package definitions."
+    },
+    {
+      "id": "P0-F",
+      "description": "Service/industry/location claims do not match physical pages.",
+      "status": "Reproduced",
+      "evidence": "Site claims 12+ industries, but only 3 exist (sweets-and-food, jewelry, fashion)."
+    }
+  ]
+}

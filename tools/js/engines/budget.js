@@ -18,6 +18,7 @@ window.DigiRiseEngines['ad-budget-calculator'] = {
     let budget = match ? parseFloat(match[0].replace(/,/g, '')) : 0;
     
     if (!budget || budget <= 0) throw new Error("Could not detect a valid budget amount in your command.");
+    budget = Math.max(500, budget); // Enforce minimum budget of 500 INR
     
     // Fetch benchmarks
     let benchmarks;
@@ -25,24 +26,41 @@ window.DigiRiseEngines['ad-budget-calculator'] = {
       const res = await fetch('/tools/data/benchmarks.json');
       benchmarks = await res.json();
     } catch(e) {
-      // Fallback dummy data if fetch fails
+      console.warn("Failed to fetch benchmarks, using fallback data:", e);
+      // Fallback deterministic data if fetch fails
       benchmarks = {
-        industries: [{ name: "business", cpc_range: [15, 30], cvr_range: [2, 5] }],
-        goals: { "lead_generation": { cpc_multiplier: 1.0, cvr_multiplier: 1.0 } }
+        industries: [{ name: "Food & Sweets", cpc_range: [8, 15], cvr_range: [3.0, 5.5] }],
+        goals: { "Leads": { cpc_multiplier: 1.5, cvr_multiplier: 1.0 } }
       };
     }
     
-    const indData = benchmarks.industries[0]; // simplistic auto-detect for now
-    const goalData = benchmarks.goals["lead_generation"];
+    // Auto-detect industry from query
+    let indData = benchmarks.industries[0];
+    const qLower = inputs.q.toLowerCase();
+    for (let ind of benchmarks.industries) {
+      if (qLower.includes(ind.name.toLowerCase().split(' ')[0])) {
+        indData = ind; break;
+      }
+    }
+
+    // Auto-detect goal
+    let goalData = benchmarks.goals["Leads"] || { cpc_multiplier: 1.0, cvr_multiplier: 1.0 };
+    if (qLower.includes("sales") || qLower.includes("ecom")) {
+      goalData = benchmarks.goals["Sales"] || goalData;
+    } else if (qLower.includes("awareness") || qLower.includes("reach")) {
+      goalData = benchmarks.goals["Awareness"] || goalData;
+    }
     
     let avgCpc = (indData.cpc_range[0] + indData.cpc_range[1]) / 2;
     let avgCvr = (indData.cvr_range[0] + indData.cvr_range[1]) / 2;
     
-    // If agent is MAX or KILL, maybe skew pessimistic to be safe
-    if (ctx.isKill) { avgCpc *= 1.2; avgCvr *= 0.8; }
-    
+    // Apply multipliers
     avgCpc *= goalData.cpc_multiplier;
     avgCvr *= goalData.cvr_multiplier;
+
+    // Strict mathematical bounds
+    avgCpc = Math.max(1, avgCpc);
+    avgCvr = Math.min(100, Math.max(0.1, avgCvr));
     
     const clicks = Math.floor(budget / avgCpc);
     const conversions = Math.floor(clicks * (avgCvr / 100));

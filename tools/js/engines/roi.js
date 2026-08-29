@@ -14,33 +14,44 @@ window.DigiRiseEngines['roi-calculator'] = {
   async run(inputs, ctx) {
     const q = inputs.q.toLowerCase();
     
-    // Naive parsing
+    // Naive parsing -> strict numeric extraction
     const extract = (regex, fallback) => {
       const match = q.match(regex);
       return match ? parseFloat(match[1]) : fallback;
     };
     
-    const spend = extract(/(?:spend|budget)[\s:=-]*(\d+)/, 0);
-    const cpc = extract(/cpc[\s:=-]*(\d+(?:\.\d+)?)/, 0);
-    const cvr = extract(/cvr[\s:=-]*(\d+(?:\.\d+)?)/, 0);
-    const aov = extract(/aov[\s:=-]*(\d+)/, 0);
+    let spend = extract(/(?:spend|budget)[\s:=-]*(\d+)/, 0);
+    let cpc = extract(/cpc[\s:=-]*(\d+(?:\.\d+)?)/, 0);
+    let cvr = extract(/cvr[\s:=-]*(\d+(?:\.\d+)?)/, 0);
+    let aov = extract(/aov[\s:=-]*(\d+)/, 0);
     
     if (!spend || !cpc || !cvr || !aov) {
-      throw new Error("Missing parameters. Please specify Spend, CPC, CVR, and AOV.");
+      throw new Error("Missing parameters. Please specify Spend, CPC, CVR, and AOV (e.g. 'Spend 50000, CPC 15, CVR 2%, AOV 1500').");
     }
+    
+    // Mathematical constraints to prevent impossible scenarios
+    spend = Math.max(100, spend); // Minimum spend 100
+    cpc = Math.max(1, cpc); // Floor CPC at 1 (avoid infinity clicks)
+    cvr = Math.min(100, Math.max(0.1, cvr)); // Cap CVR between 0.1% and 100%
+    aov = Math.max(1, aov); // Floor AOV to 1
     
     const clicks = spend / cpc;
     const conversions = clicks * (cvr / 100);
     const revenue = conversions * aov;
     const roas = revenue / spend;
-    const cpa = spend / conversions;
-    const breakeven = aov;
+    const cpa = conversions > 0 ? (spend / conversions) : 0;
+    const breakeven = aov; // Breakeven CPA = AOV
     
     return { spend, cpc, cvr, aov, clicks, conversions, revenue, roas, cpa, breakeven };
   },
   
   renderResult(container, data, ctx) {
-    let roasClass = data.roas >= 3 ? 'color:#4ade80' : data.roas >= 1.5 ? 'color:#f0a825' : 'color:#ff5c5c';
+    let roasClass = 'color:#ff5c5c';
+    if (data.roas >= 3) {
+      roasClass = 'color:#4ade80';
+    } else if (data.roas >= 1.5) {
+      roasClass = 'color:#f0a825';
+    }
     
     let html = `
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:15px;">

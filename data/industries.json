@@ -1,0 +1,20 @@
+[
+  {
+    "id": "fashion",
+    "name": "Fashion & Apparel",
+    "slug": "/industries/fashion",
+    "verified": true
+  },
+  {
+    "id": "jewelry",
+    "name": "Jewelry",
+    "slug": "/industries/jewelry",
+    "verified": true
+  },
+  {
+    "id": "sweets-and-food",
+    "name": "Sweets & Food",
+    "slug": "/industries/sweets-and-food",
+    "verified": true
+  }
+]

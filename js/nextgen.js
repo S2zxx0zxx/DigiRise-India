@@ -547,20 +547,26 @@
 
   /* ═══════════════ BOOT ═══════════════ */
   onReady(function () {
+    var mode = document.body.dataset.pageMode || (document.body.classList.contains('tools-hub-mode') ? 'tools' : 'marketing-home');
+    
+    // Global features
     try { initNavbar(); } catch (e) { console.warn('[NG]', e); }
-    try { initHero(); } catch (e) { console.warn('[NG]', e); }
-    try { initVelocityMarquee(); } catch (e) { console.warn('[NG]', e); }
-    try { initReelsCinema(); } catch (e) { console.warn('[NG]', e); }
-    try { initTilt(); } catch (e) { console.warn('[NG]', e); }
-    try { initTimelineDraw(); } catch (e) { console.warn('[NG]', e); }
-    try { initFlowDot(); } catch (e) { console.warn('[NG]', e); }
-    try { initProjectsSpotlight(); } catch (e) { console.warn('[NG]', e); }
-    try { initFaqSearch(); } catch (e) { console.warn('[NG]', e); }
-    try { initDotsNav(); } catch (e) { console.warn('[NG]', e); }
-    try { initWaWidget(); } catch (e) { console.warn('[NG]', e); }
-    try { initExitIntent(); } catch (e) { console.warn('[NG]', e); }
-    try { initDecorations(); } catch (e) { console.warn('[NG]', e); }
-    try { initReveals(); } catch (e) { console.warn('[NG]', e); }
     try { initThemeFade(); } catch (e) { console.warn('[NG]', e); }
+    try { initWaWidget(); } catch (e) { console.warn('[NG]', e); }
+    
+    if (mode === 'marketing-home') {
+      try { initHero(); } catch (e) { console.warn('[NG]', e); }
+      try { initVelocityMarquee(); } catch (e) { console.warn('[NG]', e); }
+      try { initReelsCinema(); } catch (e) { console.warn('[NG]', e); }
+      try { initTilt(); } catch (e) { console.warn('[NG]', e); }
+      try { initTimelineDraw(); } catch (e) { console.warn('[NG]', e); }
+      try { initFlowDot(); } catch (e) { console.warn('[NG]', e); }
+      try { initProjectsSpotlight(); } catch (e) { console.warn('[NG]', e); }
+      try { initFaqSearch(); } catch (e) { console.warn('[NG]', e); }
+      try { initDotsNav(); } catch (e) { console.warn('[NG]', e); }
+      try { initExitIntent(); } catch (e) { console.warn('[NG]', e); }
+      try { initDecorations(); } catch (e) { console.warn('[NG]', e); }
+      try { initReveals(); } catch (e) { console.warn('[NG]', e); }
+    }
   });
 })();

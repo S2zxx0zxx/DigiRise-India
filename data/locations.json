@@ -1,0 +1,32 @@
+[
+  {
+    "id": "kolkata",
+    "name": "Kolkata",
+    "country": "India",
+    "slug": "/locations/kolkata"
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi",
+    "country": "India",
+    "slug": "/locations/delhi"
+  },
+  {
+    "id": "mumbai",
+    "name": "Mumbai",
+    "country": "India",
+    "slug": "/locations/mumbai"
+  },
+  {
+    "id": "dubai",
+    "name": "Dubai",
+    "country": "UAE",
+    "slug": "/locations/dubai"
+  },
+  {
+    "id": "london",
+    "name": "London",
+    "country": "UK",
+    "slug": "/locations/london"
+  }
+]

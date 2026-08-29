@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cyberleeks",
+    "name": "Cyberleeks Updates",
+    "description": "Technology, cyber, tech tips, tech-world updates, dark/surface web news",
+    "relationship": "A DigiRise India Media Property"
+  },
+  {
+    "id": "moviesmyhem",
+    "name": "MoviesMyHem",
+    "description": "Entertainment/movie content",
+    "relationship": "A DigiRise India Media Property"
+  },
+  {
+    "id": "hanumanansh",
+    "name": "HanumanAnsh Moments",
+    "description": "Spiritual movie reviews, updates, viral moments",
+    "relationship": "A DigiRise India Media Property"
+  },
+  {
+    "id": "reddyanna",
+    "name": "Reddyanna",
+    "description": "Cricket/sports and promotional content",
+    "relationship": "A DigiRise India Media Property"
+  },
+  {
+    "id": "aashi",
+    "name": "Aashi Lifestyle",
+    "description": "Lifestyle property",
+    "relationship": "A DigiRise India Media Property"
+  }
+]

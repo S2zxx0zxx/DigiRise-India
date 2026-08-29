@@ -1,0 +1,18 @@
+[
+  {
+    "id": "c-001",
+    "wording": "3+ Industries Served",
+    "source": "Filesystem verification of industry landing pages",
+    "verified": true,
+    "lastVerified": "2026-08-29",
+    "placements": ["index.html", "hero", "FAQ"]
+  },
+  {
+    "id": "c-002",
+    "wording": "Starter package at ₹7,999",
+    "source": "Standardized pricing registry",
+    "verified": true,
+    "lastVerified": "2026-08-29",
+    "placements": ["Pricing Tables", "JSON-LD"]
+  }
+]

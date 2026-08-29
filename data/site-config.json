@@ -1,0 +1,20 @@
+{
+  "companyName": "DigiRise India",
+  "legalName": "DigiRise India",
+  "canonicalOrigin": "https://digiriseindia.tech",
+  "contact": {
+    "email": "digiriseindia@gmail.com",
+    "whatsapp": "digiriseindia@gmail.com"
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/digiriseindia/",
+    "twitter": "https://x.com/satzzxzxx"
+  },
+  "supportedLocales": ["en-IN", "hi-IN", "en-GB", "en-US"],
+  "currencyDefaults": {
+    "IN": "INR",
+    "GB": "GBP",
+    "AE": "AED",
+    "US": "USD"
+  }
+}

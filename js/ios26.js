@@ -11,6 +11,8 @@ var raf = window.requestAnimationFrame.bind(window);
 function $(s,c){return (c||document).querySelector(s);}
 function $$(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));}
 
+var _drPageMode = document.body.dataset.pageMode || (document.body.classList.contains('tools-hub-mode') ? 'tools' : 'marketing-home');
+
 /* ═════════════ FIX-P1: theme-color + manifest sync ═════════════ */
 var THEME_COLORS = { dark:'#080604', light:'#f7f2e9' };
 function syncThemeColor(){
@@ -145,6 +147,7 @@ if(nav && !_isToolsHub){
 
 /* ═════════════ FIX-315: hero aurora + shimmer + ripple ═════════════ */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var hero = $('.hero');
   if(hero && !$('.hero-aurora', hero)){
     var a = document.createElement('div'); a.className='hero-aurora';
@@ -170,6 +173,7 @@ if(nav && !_isToolsHub){
 
 /* ═════════════ FIX-307: client logo/tools marquee ═════════════ */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var grid = $('#trust-badges .trust-grid');
   if(!grid || grid.children.length < 3) return;
   var wrap = document.createElement('div'); wrap.className='marquee-wrap';
@@ -187,6 +191,7 @@ if(nav && !_isToolsHub){
 
 /* ═════════════ FIX-305: PRICING 3.0 ═════════════ */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var sec = $('#packages'); if(!sec) return;
   var grid = $('#pkgGrid'); if(!grid) return;
 
@@ -369,6 +374,7 @@ if(nav && !_isToolsHub){
 
 /* ═════════════ FIX-309: scroll-driven timeline fill ═════════════ */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var g = $('#results-timeline .rtl-grid'); if(!g) return;
   var line = document.createElement('div'); line.className='rtl-line'; line.innerHTML='<i></i>';
   g.insertBefore(line, g.firstChild);
@@ -386,6 +392,7 @@ if(nav && !_isToolsHub){
 
 /* ═════════════ FIX-310: reels center-snap carousel ═════════════ */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var grid = $('.reels-grid'); if(!grid) return;
   var cards = $$('.reel-card', grid); if(!cards.length) return;
   function activate(){
@@ -415,6 +422,7 @@ if(nav && !_isToolsHub){
 
 /* ═════════════ FIX-311: testimonial swipe stack (reads rendered DOM) ═════════════ */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var tries = 0;
   var wait = setInterval(function(){
     var grid = $('#testiGrid');
@@ -504,6 +512,7 @@ if(nav && !_isToolsHub){
 
 /* ═════════════ FIX-317: service card flip ═════════════ */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   $$('.ind-card').forEach(function(card){
     var name = ($('.inm',card)||{}).textContent||'';
     /* keep the existing showInd click; add long-press flip as bonus on desktop hover */
@@ -516,6 +525,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-320: client logo dual-row marquee + tooltips (v3.7: tap-toggle) ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var CLIENTS = [
     {name:'LAL Sweets', cat:'Sweets & FMCG', tip:'Social system + Meta Ads creatives'},
     {name:'Kirtilals', cat:'Luxury Jewellery', tip:'3D Blender visuals + ad creatives'},
@@ -556,6 +566,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-370: Trust-chip marquee (replaces static trust-badges grid) ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var TRUST = [
     {icon:'\u2705', label:'On-Time Delivery', sub:'Guaranteed'},
     {icon:'\uD83D\uDEE0', label:'8 Pro Software', sub:'In-house, zero outsourcing'},
@@ -587,6 +598,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-321: activity rings on stats (Apple Watch style) ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var stats = $$('.stat-item');
   if(!stats.length) return;
   var PCT = [1, .98, .75, .9]; /* 200+ brands, 4.9★, 3x ROI, extra */
@@ -613,6 +625,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-322: service card flip backs (desktop hover) ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var IND = {"restaurant": {"name": "Restaurants & Cafés", "color": "#ef4444", "pain": "Customers don't find you on Google Maps or Swiggy", "svc": ["Google Maps listing & ranking", "Swiggy/Zomato profile optimization", "Instagram food photography strategy"]}, "salon": {"name": "Salons & Spas", "color": "#ec4899", "pain": "Booking slots empty, competitors getting all the clients", "svc": ["Instagram Reels for salon showcases", "Before/after transformation posts", "Google Business with booking link"]}, "gym": {"name": "Gyms & Fitness Studios", "color": "#f97316", "pain": "Member retention poor, can't attract new members consistently", "svc": ["Transformation result posts", "Free trial campaign ads", "Google Maps gym category ranking"]}, "clinic": {"name": "Clinics & Healthcare", "color": "#06b6d4", "pain": "Patients can't find you online, Practo losing you leads", "svc": ["Practo & Justdial profile optimization", "Google Search Ads for symptoms/treatments", "Patient review management"]}, "coaching": {"name": "Coaching & Education", "color": "#8b5cf6", "pain": "Seats empty, students don't know you exist", "svc": ["Lead generation landing pages", "Facebook Ads for student targeting", "YouTube channel setup & strategy"]}, "retail": {"name": "Retail & Local Shops", "color": "#10b981", "pain": "Footfall declining, online competition killing you", "svc": ["Google Shopping Ads setup", "WhatsApp catalog for products", "Instagram product showcases"]}, "ecom": {"name": "E-Commerce & D2C Brands", "color": "#f59e0b", "pain": "Low conversions, high CAC, poor ROAS on ads", "svc": ["Full Shopify/WooCommerce store", "Meta Ads retargeting campaigns", "Google Shopping optimization"]}, "hotel": {"name": "Hotels & Travel", "color": "#0ea5e9", "pain": "Booking.com commission eating profits, direct bookings near zero", "svc": ["Direct booking website with payment", "Google Hotel Ads setup", "TripAdvisor & Google review strategy"]}, "realestate": {"name": "Real Estate & Properties", "color": "#64748b", "pain": "Expensive portals like 99acres eating budget, low quality leads", "svc": ["Property listing landing pages", "Facebook Lead Ads for buyers", "Google Ads for \"flats near me\""]}, "jewellery": {"name": "Jewellery & Luxury", "color": "#d97706", "pain": "Footfall only during festivals, no year-round digital presence", "svc": ["Luxury product photography strategy", "Instagram Reels for jewellery", "Festive season campaigns"]}, "b2b": {"name": "B2B & Professional Services", "color": "#1d4ed8", "pain": "No LinkedIn presence, leads coming only through referrals", "svc": ["LinkedIn company page optimization", "B2B Google Search Ads", "Case study content creation"]}, "fashion": {"name": "Fashion & Clothing Brands", "color": "#7c3aed", "pain": "Instagram looks amateur, brand not standing out", "svc": ["Brand identity & style guide", "Lookbook content strategy", "Shopify fashion store"]}};
   if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
   var tries=0, wait=setInterval(function(){
@@ -637,6 +650,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-323: process steps light-up + progress ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var track = $('#stepsTrack'); if(!track) return;
   var cards = $$('.scard', track); if(!cards.length) return;
   var prog = document.createElement('div'); prog.className='steps-progress'; prog.innerHTML='<i></i>';
@@ -662,6 +676,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-324: reel sound toggle (functional) ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   $$('.reel-sound-btn').forEach(function(btn){
     btn.innerHTML = '🔇 <span>Sound On</span>';
     btn.addEventListener('click', function(e){
@@ -679,6 +694,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-325: radial FAB menu ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var scrim = document.createElement('div'); scrim.className='fab-scrim';
   var cluster = document.createElement('div'); cluster.className='fab-cluster';
   var ACTIONS = [
@@ -741,6 +757,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-327: compare mode morph ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var grid = $('#pkgGrid'); if(!grid) return;
   var cmpWrap = $('.cmp-wrap'); if(!cmpWrap) return;
   var btn = document.createElement('button');
@@ -764,6 +781,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-328: magnetic hero CTA ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   if(RM || !matchMedia('(hover:hover) and (pointer:fine)').matches) return;
   $$('.hero .btn-primary, .hero .nav-cta').forEach(function(b){
     b.classList.add('magnetic');
@@ -783,6 +801,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-329: real trust chips + scarcity bar animate ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var CHIP_MAP = {
     'STARTER': '✓ Trusted by <b>FarmFres</b>',
     'GROWTH': '✓ Used by <b>LAL Sweets</b>',
@@ -816,6 +835,7 @@ if(nav && !_isToolsHub){
 
 /* ── FIX-330: reel Grid/Carousel toggle (real switch, no fakery) ── */
 (function(){
+  if (_drPageMode !== 'marketing-home') return;
   var wrap = $('#reelViewToggle'); var grid = $('.reels-grid');
   if(!wrap || !grid) return;
   $$('.rvt-btn', wrap).forEach(function(btn){

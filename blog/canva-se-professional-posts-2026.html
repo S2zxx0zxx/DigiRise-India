@@ -72,8 +72,7 @@ a{color:var(--accent);}
   "publisher": {"@type": "Organization", "name": "DigiRise India", "logo": {"@type": "ImageObject", "url": "https://digiriseindia.tech/icon-512.png"}},
   "mainEntityOfPage": {"@type": "WebPage", "@id": "https://digiriseindia.tech/blog/canva-se-professional-posts-2026.html"},
   "inLanguage": "hi-IN",
-  "wordCount": "3000",
-  "timeRequired": "PT12M"
+  "wordCount": "3000"
 }
 </script>
 
@@ -179,7 +178,7 @@ a{color:var(--accent);}
   "@type": ["LocalBusiness", "ProfessionalService", "MarketingAgency"],
   "name": "DigiRise India",
   "url": "https://digiriseindia.tech",
-  "logo": "https://digiriseindia.tech/logo.png",
+  "logo": "https://digiriseindia.tech/icon-512.png",
   "image": "https://digiriseindia.tech/og-image.png",
   "description": "Premium Digital Marketing & Website Design Agency in Kolkata, West Bengal. Specializing in Meta Ads, SEO, and High-Conversion Websites.",
   "email": "digiriseindia@gmail.com",
@@ -279,24 +278,19 @@ a{color:var(--accent);}
     <a href="https://digi-rise-admin-beta.vercel.app/" target="_blank" rel="noopener" aria-label="Partner Login — DigiRise India Admin Panel" class="nav-cta" style="background:rgba(255,255,255,0.05);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);border:1.5px solid rgba(255,255,255,0.1);color:var(--text2);box-shadow:none;padding:10px 18px;font-weight:600;"><span style="font-size:14px;margin-right:6px;opacity:0.8;">🔒</span>Partner Login</a>
     <a href="mailto:digiriseindia@gmail.com?subject=Hi%2C%20DigiRise%20se%20baat%20karni%20hai!" target="_blank" rel="noopener" class="nav-cta">Book Free Call</a>
   </div>
-  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="https://digiriseindia.tech/#industries" onclick="toggleMenu()">Services</a>
-  <a href="https://digiriseindia.tech/#packages" onclick="toggleMenu()">Packages</a>
-  <a href="https://digiriseindia.tech/#projects" onclick="toggleMenu()">Work</a>
-  <a href="https://digiriseindia.tech/#audit" onclick="toggleMenu()">Free Audit</a>
+  <a href="https://digiriseindia.tech/#industries">Services</a>
+  <a href="https://digiriseindia.tech/#packages">Packages</a>
+  <a href="https://digiriseindia.tech/#projects">Work</a>
+  <a href="https://digiriseindia.tech/#audit">Free Audit</a>
   <a href="mailto:digiriseindia@gmail.com" target="_blank" rel="noopener" style="color:var(--gold);">Email Us Now &#8594;</a>
-  <a href="https://digi-rise-admin-beta.vercel.app/" target="_blank" rel="noopener" aria-label="Partner Login — DigiRise India Admin Panel" onclick="toggleMenu()" style="border-top:1px solid var(--border);margin-top:12px;padding-top:16px;color:var(--text2);font-weight:600;"><span style="font-size:14px;margin-right:6px;opacity:0.8;">🔒</span>Partner Login</a>
+  <a href="https://digi-rise-admin-beta.vercel.app/" target="_blank" rel="noopener" aria-label="Partner Login — DigiRise India Admin Panel" style="border-top:1px solid var(--border);margin-top:12px;padding-top:16px;color:var(--text2);font-weight:600;"><span style="font-size:14px;margin-right:6px;opacity:0.8;">🔒</span>Partner Login</a>
 </div>
 
-<script>
-function toggleMenu() {
-  const m = document.getElementById('mobileMenu');
-  m.classList.toggle('active');
-}
-</script>
+
 
 <div class="breadcrumb-bar" aria-label="Breadcrumb">
   <a href="https://digiriseindia.tech">Home</a>
@@ -951,41 +945,17 @@ function toggleMenu() {
     <span class="fab-ico">✉️</span>
   </a>
   
-  <div class="fab-center" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <div class="fab-center">
     <div class="fab-brand-led">DIGIRISE</div>
   </div>
 
-  <button class="fab-btn fab-theme-btn" aria-label="Toggle Theme" onclick="toggleTheme()">
+  <button class="fab-btn fab-theme-btn" aria-label="Toggle Theme">
     <svg class="sun-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
     <svg class="moon-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
   </button>
 </div>
 
-<script>
-function toggleTheme() {
-  const root = document.documentElement;
-  const isDark = root.getAttribute('data-theme') === 'dark';
-  const newTheme = isDark ? 'light' : 'dark';
-  root.setAttribute('data-theme', newTheme);
-  localStorage.setItem('dr_theme', newTheme);
-  document.querySelector('.sun-ico').style.display = newTheme==='dark'?'block':'none';
-  document.querySelector('.moon-ico').style.display = newTheme==='dark'?'none':'block';
-}
-// Init theme
-if(localStorage.getItem('dr_theme') === 'light') {
-  toggleTheme();
-}
-</script>
 
-
-<script>
-function toggleFAQ(btn){
-  var item=btn.parentElement;
-  var isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});
-  if(!isOpen) item.classList.add('open');
-}
-</script>
 
 <!--
 CHECKLIST:
@@ -1025,5 +995,6 @@ sitemap.xml ENTRY:
 <script src="/js/nextgen.js" defer></script>
 <script src="/js/ios26.js" defer></script>
 <script src="/js/pwa.js" defer></script>
+<script src="/js/blog-events.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+[
+  {
+    "id": "starter",
+    "name": "Starter",
+    "price": 7999,
+    "currency": "INR",
+    "billingModel": "retainer",
+    "includedFeatures": [
+      "Meta Ads Management",
+      "Content Creation (10 Posts)",
+      "Basic SEO",
+      "Monthly Reporting"
+    ]
+  },
+  {
+    "id": "growth",
+    "name": "Growth",
+    "price": 24999,
+    "currency": "INR",
+    "billingModel": "retainer",
+    "includedFeatures": [
+      "Lead Generation",
+      "Google Ads Management",
+      "Personal Branding",
+      "Advanced SEO"
+    ]
+  },
+  {
+    "id": "enterprise",
+    "name": "Enterprise",
+    "price": 34999,
+    "currency": "INR",
+    "billingModel": "retainer",
+    "includedFeatures": [
+      "AI Automation",
+      "E-commerce Solutions",
+      "Custom Funnel Design",
+      "Weekly Strategy Calls"
+    ]
+  },
+  {
+    "id": "one-time",
+    "name": "One-Time Web Build",
+    "price": 7999,
+    "currency": "INR",
+    "billingModel": "one-time",
+    "includedFeatures": [
+      "Website Design & Development",
+      "Brand Identity Design",
+      "WhatsApp Marketing Setup"
+    ]
+  }
+]
